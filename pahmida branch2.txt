@@ -1,5 +1,0 @@
-git is open source
--clone
--commit
--push
--pull
