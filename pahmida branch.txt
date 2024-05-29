@@ -2,3 +2,4 @@ Doing branch
 -commit
 -push
 -pull
+-mearge
