@@ -1,0 +1,2 @@
+before going to resolving merge conflict go to
+-study commit
