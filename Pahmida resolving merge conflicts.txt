@@ -1,3 +1,5 @@
 before going to resolving merge conflict go to
 -study commit
+-study Pull
+
 -study push
