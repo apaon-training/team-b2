@@ -1,2 +1,2 @@
 This is revision class
-This is testing branch
+This is testing branch - friday revision on cnflicts
