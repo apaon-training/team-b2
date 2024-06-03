@@ -1,3 +1,0 @@
-App clone
-jnsnj
-git push config.rebase true
