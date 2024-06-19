@@ -1,0 +1,18 @@
+.loginpage{
+    background-color: rgb(239, 148, 239);
+    text-align: center;
+    padding: 300px;
+    font-size: xx-large;
+    color: white;
+}
+.Login{
+    padding: 24px;
+}
+.Submit{
+    background-color: rgb(163, 244, 34);
+    color: white;
+}
+.Cancel{
+    background-color: rgb(220, 52, 52);
+    color: white;
+}
