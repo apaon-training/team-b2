@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>login.html</title>
+<body style=background-color:"skyblue">
+<div class="main">
+<h1>CSS Exercise</h1>
+<form>
+<label for="Login">
+Login:
+</label>
+<input type="text"
+placeholder="Enter your Login" required>
+<label for="Password">
+Password:
+</label>
+<input type="Password"
+placeholder="Enter your Password" required>
+<div class="wrap">
+<button type="submit">background-color:"lightred"</button>
+<button type="cancel">background-color:"green/button>
+</form>
+</body>
+</head>
+</html>
