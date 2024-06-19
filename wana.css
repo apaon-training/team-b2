@@ -1,0 +1,40 @@
+.bodycss{
+    background-color:rgb(127, 227, 114);
+    text-align: center;
+    padding top: 300px;
+    padding right:300px;
+    padding bottom: 300px;
+    padding left:300px;
+
+    font-size: larger;
+}
+.customerlist{
+    padding: 24px;
+
+}
+th{
+    background-color:yellow;
+    color:black;
+    text-align: center;
+    
+    
+}
+td{
+    background-color: yellowgreen;
+    color: black;
+    text-align: center;
+}
+th,td{
+    padding: 10px;
+    text-align: left;
+
+}
+
+table{
+    border-collapse: collapse;
+    
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
