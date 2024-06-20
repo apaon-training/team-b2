@@ -1,0 +1,24 @@
+.cssstyling
+{
+    table {
+        border-collapse:collapse;
+        align:center;
+    }
+    th, td{
+        padding:28px;
+        text-align: center;
+    }
+    th{
+        background-color: yellow;
+        color: black;
+    }
+    td{
+        background-color: khaki;
+        color: black;
+    }
+    background-color: royalblue;
+    table{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
