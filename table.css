@@ -1,0 +1,28 @@
+table, tr, th, td{
+    border: 1px solid whitesmoke;
+    border-collapse: collapse;
+    padding: 20px;
+}
+body{
+    background-color: rgb(84, 84, 234);
+    text-align: center;
+    color:black;
+}
+table{
+    margin: auto;
+    font-family: sans-serif;
+    width: 80%;
+}
+th{
+    background-color: yellow;
+}
+td{
+    background-color: rgb(241, 197, 113);
+}
+.headings{
+    font-size: x-large;
+}
+.Customer{
+    font-size: xx-large;
+    color: white;
+}
