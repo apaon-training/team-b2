@@ -3,22 +3,28 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React from apaon 
-        </a>
-      </header>
-    </div>
+    <div className="App flex-column">
+      <div className='flex h-10rem'>
+        <div className='flex-column w-full bg-cyan-300'>
+             Store locator
+        </div>
+        <div className='flex-column w-5rem bg-cyan-700'>
+             Avatar
+        </div>
+     </div>
+     <div className='flex h-full'>
+      <div className='flex-column w-30rem bg-cyan-300'>
+        List container
+      </div>
+      <div className='flex-column w-full bg-cyan-500'>
+        <div className='flex h-25rem'>
+      <div className='flex-column w-full bg-cyan-800'>
+      Detail container</div>
+      </div>
+      </div>
+      </div>
+      </div>
+    
   );
 }
 
