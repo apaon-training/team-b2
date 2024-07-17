@@ -16,10 +16,12 @@ function App() {
         <div className='flex-column w-30rem bg-purple-400'>
           List container
         </div>
-        <div className='flex-column w-full bg-indigo-100'>
-          Detail container
-       </div>
-
+        <div className='flex-column w-full bg-orange-200'>
+           <div className='flex h-25rem'>
+          <div className='flex-column w-full bg-indigo-100'>
+        Detail container</div>
+        </div>
+       </div>   
       </div>
     </div>
   );
