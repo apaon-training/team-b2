@@ -19,7 +19,15 @@ function App() {
       <div className='flex-column w-full bg-cyan-500'>
         <div className='flex h-25rem'>
       <div className='flex-column w-full bg-cyan-800'>
-      Detail container</div>
+       Detail container</div>
+       </div>
+       <div className='flex h-20rem'>
+        <div className='flex-row w-full bg-cyan-900'>
+          Store Detail
+      </div>
+      <div className='flex-row w-30rem bg-cyan-700'>
+             store address
+        </div>
       </div>
       </div>
       </div>
