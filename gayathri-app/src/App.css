@@ -5,7 +5,7 @@
 .App-logo {
   height: 100vh;
   pointer-events: none;
-  background-color: burlywood;
+  background-color:gold;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -14,18 +14,18 @@
 }
 
 .App-header {
-  background-color: #070f1105;
+  background-color:dimgray;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color:aqua;
 }
 
 .App-link {
-  color: #61dafb;
+  color:greenyellow;
 }
 
 @keyframes App-logo-spin {
