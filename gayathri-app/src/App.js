@@ -5,10 +5,10 @@ function App() {
   return (
     <div className="App flex-column">
       <div className='flex h-10rem'>
-        <div className='flex-column w-full bg-teal-500'>
+        <div className='flex-column w-full bg-purple-400'>
           Store Locator
         </div>
-        <div className='flex-column w-5rem bg-teal-700'>
+        <div className='flex-column w-5rem bg-purple-500'>
           Avatar
         </div>
       </div>
@@ -23,7 +23,8 @@ function App() {
 
       </div>
 
-    </div>
+      </div>
+
   );
 }
 
