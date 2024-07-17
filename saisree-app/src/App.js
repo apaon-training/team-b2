@@ -22,10 +22,10 @@ function App() {
        Detail container</div>
        </div>
        <div className='flex h-20rem'>
-        <div className='flex-row w-full bg-cyan-900'>
+        <div className='flex-row w-6 bg-cyan-900'>
           Store Detail
       </div>
-      <div className='flex-row w-30rem bg-cyan-700'>
+      <div className='flex-row w-6 bg-cyan-700'>
              store address
         </div>
       </div>
