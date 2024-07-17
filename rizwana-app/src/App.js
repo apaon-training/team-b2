@@ -18,10 +18,14 @@ function App() {
         </div>
         <div className='flex-column w-full bg-orange-200'>
            <div className='flex h-25rem'>
-          <div className='flex-column w-full bg-indigo-100'>
+              <div className='flex-column w-full bg-indigo-100'>   
         Detail container</div>
         </div>
-       </div>   
+        
+        <div className='flex-column w-full bg-yellow-300'>
+          address
+        </div>
+       </div> 
       </div>
     </div>
   );
