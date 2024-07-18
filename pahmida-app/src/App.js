@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { Avatar } from 'primereact/avatar';
+
+
 function App() {
   return (
     //Main container
@@ -9,8 +12,8 @@ function App() {
       <div className='flex-column w-full bg-pink-200'>
        store locator
       </div>
-        <div className='flex-column w-5rem bg-pink-300'>
-            Avatar
+        <div className='flex-column shadow-8 w-5rem bg-pink-300'>
+            <Avatar label="PP" size="xlarge" shape="circle" />
         </div>
      </div>
      <div className='flex h-full'>
