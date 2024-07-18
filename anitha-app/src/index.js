@@ -5,11 +5,16 @@ import App from  './App'
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/primeflex/primeflex.css';
 import 'primeflex/themes/primeone-light.css';
-
+import {PrimeReactProvider,PrimeReactContext}from 'primereact/api';
+import 'primeicons/primeicons.css';
+import 'primereact/resources/primereact.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <PrimeReactProvider>
     <App />
+    </PrimeReactProvider>
   </React.StrictMode>
 );
 
