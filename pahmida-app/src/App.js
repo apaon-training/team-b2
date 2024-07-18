@@ -3,6 +3,7 @@ import './App.css';
 
 function App() {
   return (
+    //Main container
     <div className="App flex-column">
      <div className='flex h-10rem'>
       <div className='flex-column w-full bg-pink-200'>
@@ -11,32 +12,27 @@ function App() {
         <div className='flex-column w-5rem bg-pink-300'>
             Avatar
         </div>
-    </div>
-
+     </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem bg-pink-400'>
          list container
       </div>
       <div className='flex-column w-full bg-pink-500'>
-        <div className='flex h-25rem '>
-           Detail container
+        <div className='flex h-25rem'>
+          <div className='flex-column w-full bg-pink-300'>
+          map  Details</div>
          </div>
-         <div className='flex-column w-full bg-pink-600'>
-          <div className='flex h-20rem'>
-     <div className='flex h-20rem'>
-      <div className='flex-row w-30rem bg-pink-200'>
-       details
-      </div>
-        <div className='flex-row w-30rem bg-pink-300'>
-            phone number
+        <div className='flex h-20 rem'>
+          <div className='flex w-6 bg-pink-300'>
+            store details
+          </div>
+          <div className='flex w-6 jutify bg-pink-300'>
+            address
+          </div>
         </div>
-    </div>
-          </div>
-          </div>
-          </div>
       </div>
-      </div>
+   </div>
+  </div>
   );
 }
-
 export default App;
