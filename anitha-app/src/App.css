@@ -8,6 +8,9 @@
   pointer-events: none;
   background-color: aliceblue;
 }
+.navigation-bar{
+  background-color: #473DC1;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
