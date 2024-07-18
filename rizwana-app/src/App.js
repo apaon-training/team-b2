@@ -8,7 +8,7 @@ function App() {
     <div className="App flex-column">
       <div className='flex justify-content-center h-8rem navigation-bar'>
         <div className='flex align-items-center justify-content-center text-7xl store-container w-full '>
-             store locator
+             Store Locator
         </div>
         <div className='flex  align-items-center justify-content-center mr-3  w-5rem '>
         <Avatar label="SR" size="xlarge" shape="circle" />
