@@ -22,11 +22,11 @@ function App() {
           <div className='flex-column w-full bg-pink-300'>
           map  Details</div>
          </div>
-        <div className='flex h-20 rem'>
-          <div className='flex w-6 bg-pink-300'>
+        <div className='flex h-20rem'>
+          <div className='flex w-6 bg-pink-500'>
             store details
           </div>
-          <div className='flex w-6 jutify bg-pink-300'>
+          <div className='flex w-6 jutify bg-pink-600'>
             address
           </div>
         </div>
