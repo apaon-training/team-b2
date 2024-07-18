@@ -10,13 +10,14 @@ function App() {
              Store locator
         </div>
         <div className='flex-column w-5rem bg-cyan-700'>
-        <Avatar label="P" size="xlarge" shape="circle" />       
+        <Avatar label="sv" size="xlarge" shape="circle" />       
         </div>
      </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem bg-cyan-300'>
         List container
       </div>
+
       <div className='flex-column w-full bg-cyan-500'>
         <div className='flex h-25rem'>
       <div className='flex-column w-full bg-cyan-800'>
