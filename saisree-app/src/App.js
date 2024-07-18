@@ -1,21 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import { Avatar } from 'primereact/avatar';
+import { InputText } from 'primereact/inputtext';
 
 function App() {
   return (
     <div className="App flex-column">
-      <div className='flex h-10rem'>
-        <div className='flex-column w-full bg-cyan-300'>
+      <div className='flex justify-content-center h-8rem navbar'>
+        <div className='flex align-items-center justify-content-center w-full text-6xl textcolor'>
              Store locator
         </div>
-        <div className='flex-column w-5rem bg-cyan-700'>
+        <div className='flex align-items-center justify-content-center w-5rem text-6xl mr-4'>
         <Avatar label="sv" size="xlarge" shape="circle" />       
         </div>
      </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem bg-cyan-300'>
-        List container
+      <InputText type="text" className="p-inputtext-lg" placeholder="Search" />
       </div>
 
       <div className='flex-column w-full bg-cyan-500'>
