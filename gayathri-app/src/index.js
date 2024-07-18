@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {PrimeReactProvider,PrimeReactContext} from 'primereact/api';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.css';
-import 'primereact/resources/themes/lara-dark-cyan/theme.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import '../node_modules/primeflex/primeflex.css';
 import 'primeflex/themes/primeone-light.css';
 

@@ -5,12 +5,12 @@ import {Avatar} from 'primereact/avatar';
 function App() {
   return (
     <div className="App flex-column">
-      <div className='flex h-10rem'>
-        <div className='flex-column text-indigo-900 font-bold w-full bg-pink-400'>
+      <div className='flex justify-content-center navigation-bar h-8rem'>
+        <div className='flex align-items-center justify-content-center store-locator-container text-6xl w-full'>
           Store Locator
         </div>
-        <div className='flex-column text-white-alpha-90 font-bold w-5rem bg-pink-300'>
-          <Avatar label="KG" size="xlarge" shape="circle" />
+        <div className='flex align-items-center justify-content-center w-5rem'>
+          <Avatar label="BA" size="xlarge" shape="circle" className='mr-3'/>
         </div>
       </div>
       <div className='flex h-auto'>
