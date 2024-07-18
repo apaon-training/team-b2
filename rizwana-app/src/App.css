@@ -11,6 +11,13 @@
   pointer-events: none;
 }
 
+.navigation-bar{
+  background-color: #473dc1;
+}
+
+.store-container{
+  color:white;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
