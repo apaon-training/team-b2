@@ -21,9 +21,13 @@ function App() {
               <div className='flex-column w-full bg-indigo-100'>   
         Detail container</div>
         </div>
-        
-        <div className='flex-column w-full bg-yellow-300'>
-          address
+        <div className='flex h-20rem'>
+        <div className='flex-column w-6 bg-yellow-300'>
+           store detail
+        </div>
+        <div className='flex-row w-6 bg-green-300'>
+          store address
+          </div>
         </div>
        </div> 
       </div>
