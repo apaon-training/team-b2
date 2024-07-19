@@ -14,7 +14,7 @@ function App() {
        </div>
        </div>
 
-  <div className='flex h-full'>
+  <div className='flex h-auto'>
    <div className='flex-column w-30rem bg-yellow-300'>
     List Container 
     </div>
@@ -22,11 +22,11 @@ function App() {
       <div className='flex h-30rem'>
         Map Container
       </div>
-      <div className='flex-align-items-stretch flex-wrap h-20rem'>
-        <div className='flex align-items-center w-6 justify-content-center bg-purple-300'>
+      <div className='flex-align-items-stretch flex-wrap h-15rem'>
+        <div className='flex w-6 justify-content-center bg-purple-300'>
           Store Details
         </div>
-        <div className='flex align-items-center w-6 justify-content-center shadow-8 bg-purple-300'>
+        <div className='flex w-6 justify-content-center bg-purple-300'>
           Address
         </div>
      </div>
