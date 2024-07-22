@@ -1,27 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
 import { Avatar } from 'primereact/avatar';
+import StoreList from './store-list/store-list';
 
 function App() {
   return (
     //Main container
     <div className="App flex-column">
       {/* Top navigation bar */}
-      <div className='flex h-10rem'>
+      <div className='flex justify-content-center h-8rem navigation-bar'>
         {/* Title column */}
-        <div className='flex-column w-full bg-green-300'>
-             Store locator
+        <div className='flex align-items-center justify-content-center store-locator-container text-6xl w-full'>
+             Store Locator
         </div>
         {/* Avatar column */}
-        <div className='flex-column shadow-8  w-5rem'>
-             <Avatar label="BH" size="xlarge" shape="circle" />
+        <div className='flex align-items-center justify-content-center w-5rem'>
+             <Avatar label="BH" size="xlarge" shape="circle" className='mr-3' />
         </div>
       </div> 
       {/* Details container */}
       <div className='flex h-full'>
         {/* List container */}
         <div className='flex-column w-30rem bg-green-300'>
-           List container
+           <StoreList/>
         </div>  
         {/* Details container */}
         <div className='flex-column w-full bg-green-500'>
