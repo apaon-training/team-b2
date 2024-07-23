@@ -1,26 +1,47 @@
+import './ Login.css';
 function Login() {
     return (
         <>
-        <div className=" Login flex-column"> 
-          <div className='flex justify-content-center h-10rem text-5xl'>
-          <div className='flex align-items-center justify-content-center w-full'>
-            Store locator Login </div>
+        {/*title*/}
+        <div className='flex-column h-full'>
+        <div className='flex align-items-center justify-content-center my-3 text-6xl h-15rem'>
+            <div>Store Locator Login</div>
+        </div>
+
+
+        {/*username*/}
+        <div className='flex align-items-center justify-content-center my-3 gap-2 text-3xl'>
+            <div className="">
+                Username:
             </div>
-        <div className=" Login flex-column"></div>
-        <div className='flex justify-content-center text-5xl'>   
-        <div className='flex align-items-center justify-content-center text-5xl'>
-        <label class="Username"> Username:</label>
-        <input type="text" id="username"/><br></br>
+            <div className="flex h-2rem">
+                <input></input>
+             </div>
         </div>
-        
-        
-        <label class="Password"> Password:</label>
-        <input type="text" id="password"/><br></br>
+
+
+        {/*password*/}
+        <div className='flex align-items-center justify-content-center my-3 gap-2 text-3xl'>
+            <div className=''>
+                Password:
+            </div>
+            <div className='flex h-2rem ml-2'>
+                <input></input>
+             </div>
         </div>
-       <div className='flex justify-content-center text-5xl'>
-        <div className='flex align-items-center justify-content-center'>
-        <button type="button">submit</button>
-        <button type="button"> cancel</button></div>
+
+
+        {/*button*/}
+        <div>
+            <div className='flex align-items-center justify-content-center gap-3 text-3xl'>
+            <button className='ccolor'>Cancel</button>
+            <button className='scolor'>Submit</button>
+            </div>
+        </div>
+
+        {/*end*/}
+        <div className='flex align-items-center justify-content-center my-3 gap-5 h-12rem text-lg'>
+            <span>@copyright developed by apaon.com.au - B2 batch</span>
         </div>
         </div>
         </>

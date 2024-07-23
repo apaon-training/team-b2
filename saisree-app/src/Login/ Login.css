@@ -1,5 +1,17 @@
-.Login {
-    text-align: center;
-  height: 100vh;
-  background-color: blue
+body{
+  background-color:#473Dc1;
+  color: white;
+
+}
+.scolor{
+  background-color: rgb(75, 75, 246);
+  color: white;
+  margin-top: 10px;
+  font-size: large;
+}
+.ccolor{
+  background-color:rgb(240, 170, 240);
+  color: white;
+  margin-top: 10px;
+  font-size: large;
 }
