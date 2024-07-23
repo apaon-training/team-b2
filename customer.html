@@ -1,63 +1,30 @@
 <!doctype>
 <html>
   <head>
-    <style>
-      table, th, td{
-        border:2px solid black;
-      }
-    </style>
+    <script>
+      function checkPassword(){
+
+        const credentials = {
+          "userId": 'Admin',
+          "password": 'super'
+        }
+
+        const t1 = 10; // number
+        const t2 = '100'; //string
+        
+        if(credentials.userId === document.getElementById('userText').value 
+            && credentials.password === document.getElementById('passText').value){
+              alert('Login successful !')
+            }else{
+              alert('Login failed !')
+            }
+      };
+    </script>
   </head>
   <body>
-    <h1>Customer List</h1>
-        <table>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Education</th>
-            <th>Postcode</th>
-          </tr>
-          <tr>
-            <td>Anitha</td>
-            <td>Kurnool</td>
-            <td>MCA</td>
-            <td>2112</td>
-          </tr>
-      <tr>
-        <td>Gayathri</td>
-        <td>Kurnool</td>
-        <td>MCA</td>
-        <td>2112</td>
-      </tr>
-      <tr>
-        <td>Phamida</td>
-        <td>Kurnool</td>
-        <td>MCA</td>
-        <td>2112</td>
-      </tr>
-      <tr>
-        <td>Rizwana</td>
-        <td>Kurnool</td>
-        <td>MCA</td>
-        <td>2112</td>
-      </tr>
-      <tr>
-        <td>Saisree</td>
-        <td>Kurnool</td>
-        <td>MCA</td>
-        <td>2222</td>
-      </tr>
-      <tr>
-        <td>Sandeep</td>
-        <td>Kurnool</td>
-        <td>Btech</td>
-        <td>2112</td>
-      </tr>
-      <tr>
-        <td>Bhaskar</td>
-        <td>Sydney</td>
-        <td>MCA</td>
-        <td>2522</td>
-      </tr>
-    </table>
+    <h1>Login system</h1>
+    <input type="text" id="userText"/><br><br>
+    <input type="text" id="passText"/><br><br>
+    <button type="button" onclick="checkPassword()">Submit</button>
     </body>
 </html>
