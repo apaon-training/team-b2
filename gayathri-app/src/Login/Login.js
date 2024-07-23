@@ -7,7 +7,7 @@ function Login() {
             Store Locator Login
             </span>
             </div>
-            <div className='flex-row'
+            </div>
      
     );
 }
