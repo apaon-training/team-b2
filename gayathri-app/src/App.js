@@ -14,7 +14,7 @@ function App() {
         </div>
       </div>
       <div className='flex h-auto'>
-        <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-pink-800'>
+        <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-pink-100'>
           List Container
         </div>
         <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-green-600'>
