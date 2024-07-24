@@ -32,7 +32,7 @@ function Login(){
     const submitClicked =() =>{
         // console.log('User name : ' + userText);
         // console.log('Password : ' + passText);
-        if(credentials.user === userText && credentials.password == passText){
+        if(credentials.user === userText && credentials.password === passText){
             //Login successful
             console.log('Login successful !');
         }else{
