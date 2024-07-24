@@ -1,12 +1,13 @@
 function Login() {
     return (
+        <>
         <div className="flex-column h-screen bg-primary">
-            <div className="flex h-15rem align-items-center justify-content-center text-6xl text-white">
+            <div className="flex h-15rem align-items-center justify-content-center text-5xl text-white">
             <span>
             Store Locator Login
             </span>
             </div>
-            <div className="flex align-items-center justify-content-center text-3xl text-white gap-7 md:h-1rem">
+            <div className="flex align-items-center justify-content-center text-2xl text-white gap-7 my-3">
             <div className="">
                 User :
             </div>
@@ -14,7 +15,7 @@ function Login() {
                 <input></input>
             </div>
             </div>
-            <div className="flex align-items-center justify-content-center text-3xl text-white gap-3 md:h-5rem">
+            <div className="flex align-items-center justify-content-center text-2xl text-white gap-3 my-3">
             <div className="">
                 Password :
             </div>
@@ -22,21 +23,21 @@ function Login() {
                 <input></input>
             </div>
             </div>
-            <div className="flex align-items-center justify-content-center gap-5 md:h-5rem">
-            <button className="bg-pink-400 text-white text-2xl">
+            <div className="flex align-items-center justify-content-center my-3 gap-5 ">
+            <button className="bg-gray-200 text-white text-2xl">
                 Cancel 
             </button>
-            <button className="bg-green-600 text-white text-2xl">
+            <button className="bg-blue-700 text-white text-2xl">
                 Submit 
             </button>
             </div>
-            <div className="flex align-items-center justify-content-center text-sm text-white gap-5 md:h-28rem">
+            <div className="flex align-items-center justify-content-center text-5m text-white gap-5 h-25rem">
                 <span>
                     @copyright developed by apaon.com.au - B2 batch
                 </span>
             </div>
             </div>
-     
+     </>
     );
 }
 export default Login;
