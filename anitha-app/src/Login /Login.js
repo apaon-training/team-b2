@@ -45,9 +45,9 @@ function Login() {
                 <InputText onChange={(e) => setPassword(e.target.value)} />    
             </div>
             </div>
-            <div className="flex align-items-center justify-content-center my-3 gap-5 ">
-            <Button label="Cancel" serverity="warning" raisrd />
-            <Button label="Submit" serverity="success" raised onClick={() => submitClicked()} />
+            <div className="flex align-items-center justify-content-center my-2 gap-5 ">
+            <Button label="Cancel" severity="warning" raised />
+            <Button label="Submit" severity="success" raised onClick={() => submitClicked()} />
             </div>
             <div className="flex align-items-center justify-content-center text-5m text-white gap-5 h-25rem">
                 <span>
