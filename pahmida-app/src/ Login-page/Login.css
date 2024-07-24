@@ -1,0 +1,16 @@
+ .submit{
+    background-color: blue;
+    color:aliceblue;
+    font-size: large;
+ } 
+ .cancel{
+    background-color: cornflowerblue;
+    color:aliceblue;
+    font-size: large;
+ }
+.user{
+    font-size: large;
+}
+.password{
+    font-size: large;
+}

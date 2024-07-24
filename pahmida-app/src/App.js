@@ -3,11 +3,10 @@ import './App.css';
 
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
-
 function App() {
   return (
     //Main container
-    <div className="App flex-column">
+    <div className='App flex-column'>
      <div className='flex justify-content-center h-7rem main'>
       <div className='flex align-items-center justify-content-center w-full text-6xl textcolor'>
        store Locator
@@ -18,7 +17,7 @@ function App() {
      </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem bg-pink-400'>
-         <InputText type="text" placeholder="Normal"/>
+         <InputText type="text" placeholder="Search"/>
          
       </div>
       <div className='flex-column w-full bg-pink-500'>
