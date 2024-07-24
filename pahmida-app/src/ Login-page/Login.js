@@ -31,7 +31,7 @@ const submitClicked=()=>{
             Store Locator
             </span>
       </div>
-     <div className="flex align-items-center justify-content-center my-3">
+     <div className="flex align-items-center justify-content-center gap-4 my-3">
       <div className="user">
          Username:
          </div>
@@ -39,7 +39,7 @@ const submitClicked=()=>{
          <InputText onChange={(e) => setUserName(e.target.value)} />
       </div>
      </div>
-     <div className="flex align-items-center justify-content-center my-3">
+     <div className="flex align-items-center justify-content-center gap-4 my-3">
       <div className="password">
          Password:
          </div>
@@ -47,7 +47,7 @@ const submitClicked=()=>{
          <InputText onChange={(e) => setPassword(e.target.value)} />
       </div>
      </div>
-     <div className="flex align-items-center justify-content-center text-5xl h-6rem gap-5">
+     <div className="flex align-items-center justify-content-center text-5xl h-3rem gap-5">
            <Button label="Cancel" severity="warning" raised />
           <Button label="Submit" severity="success" raised onClick={() => submitClicked()} />
      </div>
