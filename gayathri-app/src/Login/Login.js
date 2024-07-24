@@ -6,7 +6,7 @@ function Login() {
             Store Locator Login
             </span>
             </div>
-            <div className="flex align-items-center justify-content-center text-3xl text-white gap-7 md:h-1rem">
+            <div className="flex align-items-center justify-content-center text-3xl text-white gap-8 md:h-1rem">
             <div className="">
                 User :
             </div>
@@ -22,7 +22,7 @@ function Login() {
                 <input></input>
             </div>
             </div>
-            <div className="flex align-items-center justify-content-center gap-5 md:h-5rem">
+            <div className="flex align-items-center justify-content-center gap-4 md:h-5rem">
             <button className="bg-gray-500 text-white text-2xl">
                 Cancel 
             </button>
