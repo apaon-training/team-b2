@@ -30,7 +30,7 @@ function Login() {
                 Submit 
             </button>
             </div>
-            <div className="flex align-items-center justify-content-center text-sm text-white gap-5 md:h-30rem">
+            <div className="flex align-items-center justify-content-center text-sm text-white gap-5 md:h-28rem">
                 <span>
                     @copyright developed by apaon.com.au - B2 batch
                 </span>
