@@ -1,3 +1,22 @@
-.login{
-    background-color: blue;
+body{
+    background-color: rgb(77, 77, 254);
+    color: white;
+    font-style: oblique;
+}
+
+.cancel{
+    background-color:rgb(206, 220, 233);
+    color: white;
+    margin-top: 30px;
+    font-size: large;
+    font-style: oblique;
+
+}
+
+.submit{
+    background-color: rgb(14, 43, 232);
+    color: white;
+    margin-top: 30px;
+    font-size: large;
+    font-style: oblique;
 }
