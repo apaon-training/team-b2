@@ -15,7 +15,7 @@ function Login() {
         setPassText(value);
     }
     const submitClicked = () =>{
-        if(credentials.user === userText && credentials.password == passText){
+        if(credentials.user === userText && credentials.password === passText){
             console.log('Login successful !');
         }else{
             console.log('Login failed !');
