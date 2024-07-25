@@ -2,7 +2,7 @@ import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
 import { Password } from 'primereact/password';
-function Login() {
+function Login(props) {
     const [ userText, setUserText ] = useState();
     const [ passText, setPassText ] = useState();
 
@@ -20,6 +20,7 @@ function Login() {
     const submitClicked =() =>{
         if(credentials.User === userText && credentials.Password === passText){
             console.log('Login successful !');
+            props.loginSuccess();
         }else{
             console.log('Login failed !');
         }

@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './Login/Login.css';
-
-
+import './Home/home.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {PrimeReactProvider,PrimeReactContext} from 'primereact/api';
@@ -13,11 +12,12 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import '../node_modules/primeflex/primeflex.css';
 import 'primeflex/themes/primeone-light.css';
 import Login from './Login/Login';
+import Home from './Home/home';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <PrimeReactProvider>
-      <Login />
+      <App />
     </PrimeReactProvider>
   </React.StrictMode>
 );
