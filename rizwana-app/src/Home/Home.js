@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from '../logo.svg'
 import './Home.css';
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
