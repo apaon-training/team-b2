@@ -2,7 +2,7 @@ import './ Login.css';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
-import { InputMask } from 'primereact/inputmask';
+import { Password } from 'primereact/password';
 
 function Login() {
 
@@ -20,7 +20,7 @@ function Login() {
     const setPassword=(value)=>{
         setPassText(value);
     }
-    const Cancelclicked=()=>{
+
     const submitclicked=()=>{
         if(Credentials.user === usertext && Credentials.password ===passtext){
             console.log('Login successful !');
@@ -28,6 +28,7 @@ function Login() {
             console.log('Login failed !');
         }        
      }
+    
 
     return (
         <>
@@ -58,7 +59,7 @@ function Login() {
             </div>
             <div className='flex h-2rem ml-2'>
                 {/*<input></input>*/}
-                <InputMask onChange={(e) => setPassword (e.target.value)} mask="********"/>
+                <Password onChange={(e) => setPassword (e.target.value)} toggleMask/>
                 
              </div>
         </div>
@@ -71,7 +72,7 @@ function Login() {
             <button className=>Submit</button>*/}
             
             
-            <Button label="Cancel" severity="warning" raised onClick={() => Cancelclicked()}  size='small' />
+            <Button label="Cancel" severity="warning" size='small' />
             <Button label="Submit" severity="success" raised onClick={() => submitclicked()} size='small' />
          </div>
 
@@ -83,7 +84,6 @@ function Login() {
         </div>
         </>
     );
-}
 }
 
 export default Login;
