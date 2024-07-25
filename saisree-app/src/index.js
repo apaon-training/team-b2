@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-//import Login from './Login/Login';
 import Login from './Login/ Login';
 import reportWebVitals from './reportWebVitals';
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
@@ -17,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <PrimeReactProvider>
-    <Login/>
+    <App/>
     </PrimeReactProvider>
   </React.StrictMode>
 );
