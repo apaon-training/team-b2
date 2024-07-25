@@ -1,6 +1,7 @@
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
+import { Password } from 'primereact/password';
 function Login() {
     const [ userText, setUserText ] = useState();
     const [ passText, setPassText ] = useState();
@@ -43,12 +44,12 @@ function Login() {
                 Password :
             </div>
             <div className="">
-            <InputText onChange={(e) => setPassword(e.target.value)} />
+            <Password onChange={(e) => setPassword(e.target.value)} toggleMask />
             </div>
             </div>
             <div className="flex align-items-center justify-content-center gap-5 md:h-5rem">
-            <Button label="Cancel" severity="warning" />
-            <Button label="Submit" severity="success" onClick={() => submitClicked ()} /> 
+            <Button label="Cancel" severity="warning" size='small' />
+            <Button label="Submit" severity="success" size='small' onClick={() => submitClicked ()} /> 
             </div>
             <div className="flex align-items-center justify-content-center text-sm text-white gap-5 md:h-28rem">
                 <span>
