@@ -2,7 +2,10 @@
  import { InputText } from 'primereact/inputtext';
  import { Button } from 'primereact/button';
  import { useState } from 'react';
+ import { Password } from 'primereact/password';
+
  function Login() {
+
    const [userText, setUserText ]= useState();
    const [passText, setPassText ]= useState();
    const credentials={
@@ -36,7 +39,7 @@ const submitClicked=()=>{
          Username:
          </div>
          <div className="">
-         <InputText onChange={(e) => setUserName(e.target.value)} />
+         <InputText onChange={(e) => setUserName(e.target.value)}/>
       </div>
      </div>
      <div className="flex align-items-center justify-content-center gap-4 my-3">
@@ -44,12 +47,13 @@ const submitClicked=()=>{
          Password:
          </div>
          <div className="">
-         <InputText onChange={(e) => setPassword(e.target.value)} />
+         <Password onChange={(e) => setPassword(e.target.value)} toggleMask/>
+        
       </div>
      </div>
      <div className="flex align-items-center justify-content-center text-5xl h-3rem gap-5">
-           <Button label="Cancel" severity="warning" raised />
-          <Button label="Submit" severity="success" raised onClick={() => submitClicked()} />
+         <Button label="Cancel" severity="warning" raised size='small' />
+         <Button label="Submit" severity="success" raised onClick={() => submitClicked() } size='small' />
      </div>
      <div className="flex align-items-center justify-content-center text-xl h-12rem gap-5">
          <span>
