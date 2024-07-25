@@ -1,13 +1,13 @@
-import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
 function Login() {
     const [ userText, setUserText ] = useState();
     const [ passText, setPassText ] = useState();
 
     const credentials = {
-        User : 'Admin',
-        Password : 'apaon'
+        User: 'Admin',
+        Password: 'apaon'
     }
     const setUserName = (value)=>{
         setUserText(value);
@@ -16,8 +16,8 @@ function Login() {
         setPassText(value);
     }
 
-    const submitClicked = () =>{
-        if( credentials.user === userText && credentials.password === passText ){
+    const submitClicked =() =>{
+        if(credentials.User === userText && credentials.Password === passText){
             console.log('Login successful !');
         }else{
             console.log('Login failed !');
@@ -30,7 +30,7 @@ function Login() {
             Store Locator Login
             </span>
             </div>
-            <div className="flex align-items-center justify-content-center text-3xl text-white gap-8 md:h-1rem">
+            <div className="flex align-items-center justify-content-center text-3xl text-white gap-8 md:h-3rem">
             <div className="">
                 User :
             </div>
