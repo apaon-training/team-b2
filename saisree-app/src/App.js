@@ -1,10 +1,23 @@
+import { useState } from 'react';
 import Home from './Home/Home'
 import Login from './Login/ Login';
 function App() {
+  
+  const [loggedIn, setloggedIn] = useState(false);
+  const onLoginsuccess=()=>{setloggedIn(true)};
   return (
+    
     <>
-   {/*<Home/>*/}
-   <Login/>
+    {
+    (loggedIn === true)?
+    (
+      <Home/>
+    ):
+    (
+      <Login Loginsuccess={()=>onLoginsuccess()}/>
+    )
+  }
+   
     </>
     
     
