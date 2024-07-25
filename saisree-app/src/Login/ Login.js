@@ -2,6 +2,7 @@ import './ Login.css';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
+import { InputMask } from 'primereact/inputmask';
 
 function Login() {
 
@@ -19,14 +20,15 @@ function Login() {
     const setPassword=(value)=>{
         setPassText(value);
     }
-
+    const Cancelclicked=()=>{
     const submitclicked=()=>{
         if(Credentials.user === usertext && Credentials.password ===passtext){
             console.log('Login successful !');
         }else{
             console.log('Login failed !');
         }        
-     }    
+     }
+
     return (
         <>
         {/*title*/}
@@ -56,20 +58,21 @@ function Login() {
             </div>
             <div className='flex h-2rem ml-2'>
                 {/*<input></input>*/}
-                <InputText onChange={(e) => setPassword(e.target.value)} />
+                <InputMask onChange={(e) => setPassword (e.target.value)} mask="********"/>
+                
              </div>
         </div>
 
 
         {/*button*/}
         <div>
-            <div className='flex align-items-center justify-content-center gap-3 text-3xl'>
+            <div className='flex align-items-center justify-content-center gap-3 text-3xl h-5rem'>
             {/*<button className=>Cancel</button>
             <button className=>Submit</button>*/}
             
             
-            <Button label="Cancel" severity="warning" raised />
-            <Button label="Submit" severity="success" raised onClick={() => submitclicked()} />
+            <Button label="Cancel" severity="warning" raised onClick={() => Cancelclicked()}  size='small' />
+            <Button label="Submit" severity="success" raised onClick={() => submitclicked()} size='small' />
          </div>
 
         {/*end*/}
@@ -80,6 +83,7 @@ function Login() {
         </div>
         </>
     );
+}
 }
 
 export default Login;
