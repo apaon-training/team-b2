@@ -62,7 +62,7 @@ function Login() {
         <div className="flex  align-items-center justify-content-center  text-3xl my-3 gap-3">
         {/*<button className="cancel">Cancel</button>
         <button className="submit">Submit</button>*/}
-        <Button label="Cancel" severity="warning"  raised onClick={() => cancelClicked()} size="small" />
+        <Button label="Cancel" severity="warning"   size="small" />
         <Button label="Submit"  severity="success"  raised onClick={() => submitClicked()} size="small" />
         </div>
        </div>
