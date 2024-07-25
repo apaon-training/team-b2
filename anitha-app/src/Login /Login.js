@@ -1,6 +1,7 @@
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
+
 function Login() {
     const [userText, setUserText ] = useState();
     const [passText, setPassText ] = useState();
@@ -14,6 +15,7 @@ function Login() {
     const setPassword = (value)=>{
         setPassText(value);
     }
+
     const submitClicked = () =>{
         if(credentials.user === userText && credentials.password === passText){
             console.log('Login successful !');
@@ -41,13 +43,16 @@ function Login() {
             <div className="">
                 Password :
             </div>
-            <div className="">
-                <InputText onChange={(e) => setPassword(e.target.value)} />    
+            <div className="<InputMask /">
+         
+                <InputText onChange={(e) => setPassword(e.target.value)} />
+            
             </div>
             </div>
             <div className="flex align-items-center justify-content-center my-2 gap-5 ">
             <Button label="Cancel" severity="warning" raised />
             <Button label="Submit" severity="success" raised onClick={() => submitClicked()} />
+                
             </div>
             <div className="flex align-items-center justify-content-center text-5m text-white gap-5 h-25rem">
                 <span>
