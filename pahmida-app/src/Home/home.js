@@ -1,12 +1,12 @@
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import './home.css';
 
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
-function App() {
+function Home() {
   return (
     //Main container
-    <div className='App flex-column'>
+    <div className='home flex-column'>
      <div className='flex justify-content-center h-7rem main'>
       <div className='flex align-items-center justify-content-center w-full text-6xl textcolor'>
        store Locator
@@ -38,4 +38,4 @@ function App() {
   </div>
   );
 }
-export default home;
+export default Home;

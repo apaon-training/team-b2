@@ -4,7 +4,7 @@
  import { useState } from 'react';
  import { Password } from 'primereact/password';
 
- function Login() {
+ function Login(props) {
 
    const [userText, setUserText ]= useState();
    const [passText, setPassText ]= useState();
@@ -21,6 +21,7 @@ const setPassword=(value)=>{
 const submitClicked=()=>{
    if(credentials.user===userText && credentials.password===passText){
       console.log('Login Successful !');
+      props.LoginSuccess();
    }
    else{
       console.log('Login failed');
