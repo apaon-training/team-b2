@@ -34,6 +34,12 @@ function Login(props) {
         }
     }
 
+    const cancelClicked =() =>{
+        setUserText("");
+        setPassText("");
+        console.log('cancel Clicked');
+    }
+
     return(
         <>
          <div className="flex-column  h-full">
@@ -46,7 +52,7 @@ function Login(props) {
         </div>
         <div className="">
            {/*<input></input>*/}
-           <InputText onChange={(e) => setUserName(e.target.value)} />
+           <InputText value={userText}onChange={(e) => setUserName(e.target.value)} />
         </div>
         </div>
         
@@ -56,14 +62,14 @@ function Login(props) {
         </div>
         <div className="">
             {/*<input></input>*/}
-            <Password onChange={(e) => setPassword(e.target.value)} toggleMask />
+            <Password value={passText} onChange={(e) => setPassword(e.target.value)} toggleMask />
         </div>
        </div>
        <div>
         <div className="flex  align-items-center justify-content-center  text-3xl my-3 gap-3">
         {/*<button className="cancel">Cancel</button>
         <button className="submit">Submit</button>*/}
-        <Button label="Cancel" severity="warning"   size="small" />
+        <Button label="Cancel" severity="warning"   size="small"  onClick={() => cancelClicked()} />
         <Button label="Submit"  severity="success"  raised onClick={() => submitClicked()} size="small" />
         </div>
        </div>
