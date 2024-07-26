@@ -25,12 +25,17 @@ function Login(props) {
         if(Credentials.user === usertext && Credentials.password ===passtext){
             console.log('Login successful !');
             props.Loginsuccess();
-        }else{
+        }
+        else{
             console.log('Login failed !');
         }        
-     }
-    
-
+    }
+    const cancelclicked=()=>{
+        setUserText("");
+        setPassText("");
+        console.log('cancelclicked!');
+    }
+        
     return (
         <>
         {/*title*/}
@@ -47,7 +52,7 @@ function Login(props) {
             </div>
             <div className="flex h-2rem">
                 {/*<input></input>*/}
-                <InputText onChange={(e) => setUsername(e.target.value)} />
+                <InputText value={ usertext } onChange={(e) => setUsername(e.target.value)} />
 
              </div>
         </div>
@@ -60,7 +65,7 @@ function Login(props) {
             </div>
             <div className='flex h-2rem ml-2'>
                 {/*<input></input>*/}
-                <Password onChange={(e) => setPassword (e.target.value)} toggleMask/>
+                <Password value={ passtext } onChange={(e) => setPassword (e.target.value)} toggleMask/>
                 
              </div>
         </div>
@@ -73,7 +78,7 @@ function Login(props) {
             <button className=>Submit</button>*/}
             
             
-            <Button label="Cancel" severity="warning" size='small' />
+            <Button label="Cancel" severity="warning"  raised onClick={() => cancelclicked()}size='small' />
             <Button label="Submit" severity="success" raised onClick={() => submitclicked()} size='small' />
          </div>
 

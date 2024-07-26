@@ -2,6 +2,7 @@ import logo from '../logo.svg'
 import './Home.css';
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
              Store locator
         </div>
         <div className='flex align-items-center justify-content-center w-5rem text-6xl mr-4'>
+        <Button label="logout" severity="danger" />
         <Avatar label="sv" size="xlarge" shape="circle" />       
         </div>
      </div>
