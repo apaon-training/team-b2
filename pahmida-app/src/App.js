@@ -5,20 +5,20 @@ import Home from "./Home/home";
     const [loggedIn, SetLoggedIn] = useState(false);
     
     const onLoginSuccess=()=>{SetLoggedIn(true)};
+   
+    const onLogoutSuccess=()=>{SetLoggedIn(false)};
     return(
         <>
         {(loggedIn==true)?
         (
-            <Home/>
+            <Home  logoutSuccess={()=> onLogoutSuccess()}/>
         ):
         (
-            <Login LoginSuccess={()=>onLoginSuccess()}
+            <Login loginSuccess={()=>onLoginSuccess()}
+
             />
         )
-    } 
-
-    
-        
+    }    
         </>
         );
  }

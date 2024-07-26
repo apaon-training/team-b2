@@ -21,11 +21,16 @@ const setPassword=(value)=>{
 const submitClicked=()=>{
    if(credentials.user===userText && credentials.password===passText){
       console.log('Login Successful !');
-      props.LoginSuccess();
+      props.loginSuccess();
    }
    else{
       console.log('Login failed');
    }
+}
+const cancelClicked=()=>{
+    setUserText("");
+    setPassText("");
+    console.log('cancelclicked');
 }
     return (
        <> 
@@ -40,7 +45,7 @@ const submitClicked=()=>{
          Username:
          </div>
          <div className="">
-         <InputText onChange={(e) => setUserName(e.target.value)}/>
+         <InputText value={ userText } onChange={(e) => setUserName(e.target.value)}/>
       </div>
      </div>
      <div className="flex align-items-center justify-content-center gap-4 my-3">
@@ -48,12 +53,12 @@ const submitClicked=()=>{
          Password:
          </div>
          <div className="">
-         <Password onChange={(e) => setPassword(e.target.value)} toggleMask/>
+         <Password value= { passText } onChange={(e) => setPassword(e.target.value)} toggleMask/>
         
       </div>
      </div>
      <div className="flex align-items-center justify-content-center text-5xl h-3rem gap-5">
-         <Button label="Cancel" severity="warning" raised size='small' />
+         <Button label="cancel" severity="warning" raised size='small' onClick={() => cancelClicked() }/>
          <Button label="Submit" severity="success" raised onClick={() => submitClicked() } size='small' />
      </div>
      <div className="flex align-items-center justify-content-center text-xl h-12rem gap-5">

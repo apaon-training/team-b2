@@ -1,9 +1,12 @@
 import logo from '../logo.svg';
 import './home.css';
-
+import { Button } from 'primereact/button';
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
-function Home() {
+function Home(props) {
+  const onLogoutClicked=()=>{
+  props.logoutSuccess();
+  }
   return (
     //Main container
     <div className='home flex-column'>
@@ -11,7 +14,8 @@ function Home() {
       <div className='flex align-items-center justify-content-center w-full text-6xl textcolor'>
        store Locator
       </div>
-        <div className='flex align-items-center justify-content-center w-5rem text-6xl mr-4'>
+        <div className='flex align-items-center justify-content-center w-9rem text-6xl mr-4'>
+        <Button label="Logout" severity="danger" onClick={()=> onLogoutClicked()} />
             <Avatar label="PP" size="xlarge" shape="circle" className='text'/>
         </div>
      </div>
