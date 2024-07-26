@@ -3,21 +3,22 @@ import Home from './Home/Home'
 import Login from './Login/ Login';
 function App() {
   
-  const [loggedIn, setloggedIn] = useState(false);
-  const onLoginsuccess=()=>{setloggedIn(true)};
+  const [loggedIn, setLoggedIn] = useState(false);
+  const onLoginSuccess=()=>{setLoggedIn(true)};
+  const onLogoutSuccess=()=>{setLoggedIn(false)};
+  
   return (
     
     <>
     {
     (loggedIn === true)?
     (
-      <Home/>
+      <Home LogoutSuccess={()=>onLogoutSuccess()}/>
     ):
     (
-      <Login Loginsuccess={()=>onLoginsuccess()}/>
+      <Login LoginSuccess={()=>onLoginSuccess()}/>
     )
   }
-   
     </>
     
     

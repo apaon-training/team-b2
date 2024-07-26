@@ -24,7 +24,7 @@ function Login(props) {
     const submitclicked=()=>{
         if(Credentials.user === usertext && Credentials.password ===passtext){
             console.log('Login successful !');
-            props.Loginsuccess();
+            props.LoginSuccess();
         }
         else{
             console.log('Login failed !');

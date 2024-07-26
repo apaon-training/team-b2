@@ -3,16 +3,18 @@ import './Home.css';
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-
-function Home() {
+function Home(props) {
+  const onLogoutclicked = ()=>{
+  props.LogoutSuccess();
+  }
   return (
     <div className="App flex-column">
       <div className='flex justify-content-center h-8rem navbar'>
         <div className='flex align-items-center justify-content-center w-full text-6xl textcolor'>
              Store locator
         </div>
-        <div className='flex align-items-center justify-content-center w-5rem text-6xl mr-4'>
-        <Button label="logout" severity="danger" />
+        <div className='flex align-items-center justify-content-center w-8rem text-6xl mr-4'>
+        <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" />
         <Avatar label="sv" size="xlarge" shape="circle" />       
         </div>
      </div>
