@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -10,13 +10,12 @@ import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import '../node_modules/primeflex/primeflex.css'
 import 'primeflex/themes/primeone-light.css';
-import Login from './login/login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      <PrimeReactProvider>
-          <Login />
+        <App />
      </PrimeReactProvider>
   </React.StrictMode>
 );

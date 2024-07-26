@@ -1,3 +1,11 @@
+.navigation-bar{
+  background: #473DC1;
+}
+
+.store-locator-container{
+  color: white;
+}
+
 .App {
   text-align: center;
   height: 100vh;
@@ -8,13 +16,6 @@
   pointer-events: none;
 }
 
-.navigation-bar{
-  background: #473DC1;
-}
-
-.store-locator-container{
-  color: white;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

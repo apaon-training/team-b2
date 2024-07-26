@@ -1,8 +1,9 @@
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
+import { Password } from 'primereact/password';
 
-function Login(){
+function Login(props){
 
     //declare 'user' variable
     const [userText, setUserText ] = useState();
@@ -35,10 +36,17 @@ function Login(){
         if(credentials.user === userText && credentials.password === passText){
             //Login successful
             console.log('Login successful !');
+            props.loginSuccess();
         }else{
             //Login failed.
             console.log('Login failed !');
         }
+    }
+
+    const cancelClicked =()=>{
+        setUserText(""); 
+        setPassText(""); 
+        console.log('Cancel clicked');
     }
 
     return (
@@ -52,24 +60,24 @@ function Login(){
             </div>
 
             {/* Username */}
-            <div className="flex align-items-center justify-content-center my-3">
+            <div className="flex align-items-center justify-content-center my-3 gap-3">
                 <div className="">
                     Username:
                 </div>
-                <div className="">
+                <div className="w-3">
                     {/* <input></input> */}
-                    <InputText onChange={(e) => setUserName(e.target.value)} />
+                    <InputText value={userText} onChange={(e) => setUserName(e.target.value)} />
                 </div>
             </div>
 
             {/* Password */}
-            <div className="flex align-items-center justify-content-center my-3">
+            <div className="flex align-items-center justify-content-center my-3 gap-3">
                 <div className="">
                     Password:
                 </div>
-                <div className="">
+                <div className="w-3">
                     {/* <input></input> */}
-                    <InputText onChange={(e) => setPassword(e.target.value)} />
+                    <Password value={passText} onChange={(e) => setPassword(e.target.value)} toggleMask />
                 </div>
             </div>
 
@@ -81,8 +89,8 @@ function Login(){
                 <button className="">
                     Submit:
                 </button> */}
-                <Button label="Cancel" severity="warning"   raised />
-                <Button label="Submit"  severity="success"  raised  onClick={() => submitClicked()} />
+                <Button label="Cancel" severity="warning"   raised size="small" onClick={() => cancelClicked()}/>
+                <Button label="Submit"  severity="success"  raised  size="small" onClick={() => submitClicked()} />
             </div>
 
             {/* copyright footer */}
