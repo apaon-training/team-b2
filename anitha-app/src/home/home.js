@@ -14,7 +14,7 @@ function Home(props) {
           Store Locator
         </div>
         <div className='flex align-items-center justify-content-center w-10rem'>
-          <Button label="Logout" severity="danger" raised size='small' onClick={() => onLogoutClicked ()} />
+        <Button label="Logout" severity="danger" raised size='small' onClick={() => onLogoutClicked ()} />
           <Avatar label="VA" size="xlarge" shape="circle" className='mr-3'/>
         </div>
       </div>
