@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
     // if loggedIn is false ... that we need to show login 
     // if loggedIn is true ... that we need to show Home page
