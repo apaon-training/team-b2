@@ -69,8 +69,8 @@ function Login(props) {
         <div className="flex  align-items-center justify-content-center  text-3xl my-3 gap-3">
         {/*<button className="cancel">Cancel</button>
         <button className="submit">Submit</button>*/}
-        <Button label="Cancel" severity="warning"   size="small"  onClick={() => cancelClicked()} />
-        <Button label="Submit"  severity="success"  raised onClick={() => submitClicked()} size="small" />
+        <Button label="Cancel" severity="warning" size="small"  onClick={() => cancelClicked()} />
+        <Button label="Submit"  severity="success" size="small" onClick={() => submitClicked()}  />
         </div>
        </div>
        <div className="flex  align-items-center justify-content-center text-3xl my-3 gap-5 h-12rem text-sm">
