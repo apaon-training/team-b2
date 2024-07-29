@@ -14,7 +14,7 @@ function storelist(){
         "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
      },
      "storeMaplocation":{
-        "latitude":16,33,
+        "latitude":"16,33",
         "logitude":14.56
      }
  },
@@ -29,7 +29,7 @@ function storelist(){
         "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
      },
      "storeMaplocation":{
-        "latitude":16,33,
+        "latitude":"16,33",
         "logitude":14.56
      }
   }];
@@ -40,15 +40,18 @@ function storelist(){
             <div>{store.storeAddress}</div>
             </div>
     );
+};
     return(
+        <>
         <span className="title">
-        <InputText value={'test'} className='m-3'/>
+        <InputText value={'text'} className='m-3'/>
         <div className="card flex justify-content-center">
                 <ListBox options={storeDirectory}
                     itemTemplate={storeTemplate}
                      className="w-full"/>
             </div>
             </span>
+        </>
     );
 
 }
