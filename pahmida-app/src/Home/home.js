@@ -21,7 +21,8 @@ function Home(props) {
      </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem bg-pink-400'>
-         <InputText type="text" placeholder="Search"/>
+         <InputText type="text" placeholder=" "/>
+        <storelist/>
          
       </div>
       <div className='flex-column w-full bg-pink-500'>
