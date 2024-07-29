@@ -1,3 +1,4 @@
+import { InputText } from 'primereact/inputtext';
 import logo from '../logo.svg';
 import './home.css';
 import {Avatar} from 'primereact/avatar';
@@ -20,8 +21,9 @@ function Home(props) {
         </div>
       </div>
       <div className='flex h-auto'>
-        <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-pink-100'>
-          List Container
+        <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-pink-400'>
+          <InputText type="text" placeholder=" "/>
+          <storelist/>
         </div>
         <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-green-600'>
         <div className='flex h-30rem'>
