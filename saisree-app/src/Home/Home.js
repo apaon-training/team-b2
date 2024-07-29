@@ -20,7 +20,8 @@ function Home(props) {
      </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem bg-cyan-300'>
-      <InputText type="text" className="p-inputtext-lg" placeholder="Search" />
+      {/*<InputText type="text" className="p-inputtext-lg" placeholder="Search" />*/}
+      <storelist/>
       </div>
 
       <div className='flex-column w-full bg-cyan-500'>
