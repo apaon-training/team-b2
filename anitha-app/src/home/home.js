@@ -2,6 +2,7 @@ import { Button } from 'primereact/button';
 import logo from '../logo.svg'
 import './home.css';
 import {Avatar} from 'primereact/avatar';
+import { InputText } from 'primereact/inputtext';
 function Home(props) {
   const onLogoutClicked = () => {
     props.logoutSuccess()
@@ -20,7 +21,8 @@ function Home(props) {
       </div>
       <div className='flex h-auto'>
         <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-green-100'>
-          List Container
+          <InputText type="text" placeholder=" "/>
+          <storelist/>
         </div>
         <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-pink-600'>
         <div className='flex h-30rem'>
