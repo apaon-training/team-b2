@@ -6,10 +6,13 @@ function App() {
   const onLoginSuccess = () => {
     setloggedIn(true);
   }
+  const onLogoutSuccess = () => {
+    setloggedIn(false);
+  }
     return (
       <>
       {(loggedIn === true) ?(
-        <Home/>
+        <Home logoutSuccess = {() =>onLogoutSuccess()}/>
       ):
       (
         <Login loginSuccess = {() => onLoginSuccess()}/>

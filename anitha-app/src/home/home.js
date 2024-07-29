@@ -1,7 +1,11 @@
+import { Button } from 'primereact/button';
 import logo from '../logo.svg'
 import './home.css';
 import {Avatar} from 'primereact/avatar';
-function Home() {
+function Home(props) {
+  const onLogoutClicked = () => {
+    props.logoutSuccess()
+  }
   return (
     <>
     <div className="App flex-column">
@@ -9,7 +13,8 @@ function Home() {
         <div className='flex align-items-center justify-content-center store-locator-container text-6xl text-white-alpha-90 w-full'>
           Store Locator
         </div>
-        <div className='flex align-items-center justify-content-center w-5rem'>
+        <div className='flex align-items-center justify-content-center w-10rem'>
+          <Button label="Logout" severity="danger" raised size='small' onClick={() => onLogoutClicked ()} />
           <Avatar label="VA" size="xlarge" shape="circle" className='mr-3'/>
         </div>
       </div>
