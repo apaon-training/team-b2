@@ -1,9 +1,15 @@
 import logo from '../logo.svg';
+import { Button } from 'primereact/button';
 import './home.css';
 import { Avatar } from 'primereact/avatar';
 import StoreList from '../store-list/store-list';
 
-function Home() {
+function Home(props) {
+
+  const onLogoutClicked = () =>{
+    props.logoutSucess()
+  }
+  
   return (
     //Main container
     <div className="App flex-column">
@@ -13,10 +19,11 @@ function Home() {
         <div className='flex align-items-center justify-content-center store-locator-container text-6xl w-full'>
              Store Locator
         </div>
-        <StoreList/>
+
         {/* Avatar column */}
-        <div className='flex align-items-center justify-content-center w-5rem'>
-             <Avatar label="BH" size="xlarge" shape="circle" className='mr-3' />
+        <div className='flex align-items-center justify-content-center w-10rem'>
+            <Button label="Logout" severity="danger"   raised size="small" onClick={() => onLogoutClicked()}/>
+             <Avatar label="BH" size="xlarge" shape="circle" className='mr-3 ml-3' />
         </div>
       </div> 
       {/* Details container */}
