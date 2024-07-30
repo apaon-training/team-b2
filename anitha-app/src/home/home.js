@@ -22,7 +22,7 @@ function Home(props) {
       </div>
       <div className='flex h-auto'>
         <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-green-100'>
-          <InputText type="text" placeholder=" "/>
+    
           <StoreList/>
         </div>
         <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-pink-600'>

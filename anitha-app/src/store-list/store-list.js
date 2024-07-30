@@ -6,8 +6,8 @@ function StoreList() {
    const storeDirectory=[
     {
         "id": 1001,
-        "storeName": "Wollong",
-        "storeDetails": "D-mart",
+        "storeName": "beauty parlour",
+        "storeDetails": "Make up kits",
         "storeTimings": [
             "Mon-Fri 9 to 10pm",
             "Sat-Sun 9 to 05pm"
@@ -23,8 +23,8 @@ function StoreList() {
     },
     {
         "id":1001,
-        "storeName":"Wollong",
-        "storeDetails":"D-mart",
+        "storeName":"Denny shop",
+        "storeDetails":"clothes",
         "sttoreTimings":[
                           "Mon-Fri 9 to 10pm",
                           "Sat-Sun 9 to 05pm"
@@ -41,8 +41,8 @@ function StoreList() {
     },
     {
         "id":1002,
-        "storeName":"Birds way",
-        "storeDetails":"Jyothi mall",
+        "storeName":"Jyothi mall",
+        "storeDetails":"Groceries",
         "sttoreTimings":[
                           "Mon-Fri 9 to 8pm",
                           "Sat-Sun 9 to 06pm"
@@ -59,8 +59,8 @@ function StoreList() {
     },
     {
         "id":1003,
-        "storeName":"Cross road store",
-        "storeDetails":"Digital",
+        "storeName":"Big C",
+        "storeDetails":"Appliances",
         "sttoreTimings":[
                           "Mon-Fri 8 to 10pm",
                           "Sat-Sun 8 to 05pm"
@@ -79,9 +79,15 @@ function StoreList() {
 
  const storeTemplate = (store) => {
         return (
+            <div className="flex-column">
             <div className="flex column align-items-center w-8rem ">
-                
-                <div>{store.storeName}</div>
+                  <div>{store.storeName}
+                </div>
+                </div>
+                <div className="flex-column">
+                    <div className="flex align-items-center w-8 ">
+                        </div>
+                </div>
                 <div>{store.storeDetails}
                 </div>
             </div>
@@ -90,7 +96,7 @@ function StoreList() {
     return (
         <>
         <span className="title">
-            <InputText value={'test'} className='m-3' />
+            <InputText value={'Wollong'} className='m-3' />
             <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
         itemTemplate={storeTemplate}
