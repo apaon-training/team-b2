@@ -4,7 +4,8 @@ import { OrderList } from 'primereact/orderlist';
 import React, { useState, useEffect } from 'react';
 import { ListBox } from 'primereact/listbox';
 
-function StoreList(){
+
+function StoreList(props){
 
   const storeDirectory = [
     //First store object
@@ -13,7 +14,7 @@ function StoreList(){
         "storeName": "Wollongong",
         "storeDetails": "Textile mall",
         "storeTimings": [
-            "Mon - Fri - 9 to 10 PM",
+            "Mon - Tue - 9 to 03 PM",
             "Sat - Sun - 9 to 05 PM",
         ],
         "storeContact": {
@@ -51,8 +52,8 @@ function StoreList(){
             "storeName": "aad Way",
             "storeDetails": "Groceries mall",
             "storeTimings": [
-                "Mon - Fri - 9 to 07 PM",
-                "Sat - Sun - 9 to 05 PM",
+                "Fri - Sat - 9 to 03 PM",
+                "Sat - Sun - 9 to 10 PM",
             ],
             "storeContact": {
                 "phone": "+61 123 434 763",
@@ -94,6 +95,11 @@ function StoreList(){
         );
     };
 
+    const setSelectedStore = (value)=>{
+        // console.log(value);
+       // setPassText(value); // saving value into 'passText' variable
+       props.selectedStore(value);
+    }
 
     return (
         <>
@@ -101,6 +107,7 @@ function StoreList(){
             <InputText value={'test'}  className='m-3'/>
             <div className="card xl:flex xl:justify-content-center">
             <ListBox options={storeDirectory}  
+                onChange={(e) => setSelectedStore(e.value)}
                 itemTemplate={storeTemplate} 
                 className="w-full" 
                 />

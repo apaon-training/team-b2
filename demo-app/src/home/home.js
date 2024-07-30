@@ -3,13 +3,16 @@ import { Button } from 'primereact/button';
 import './home.css';
 import { Avatar } from 'primereact/avatar';
 import StoreList from '../store-list/store-list';
+import StoreTimings from '../store-timings/store-timings';
+import React, { useState } from 'react';
 
 function Home(props) {
+  const [selectedStoreObj, setSelectedStoreObj] = useState(null);
 
   const onLogoutClicked = () =>{
     props.logoutSucess()
   }
-  
+
   return (
     //Main container
     <div className="App flex-column">
@@ -30,7 +33,7 @@ function Home(props) {
       <div className='flex h-full'>
         {/* List container */}
         <div className='flex-column w-30rem bg-green-300'>
-           <StoreList/>
+           <StoreList selectedStore={(value) => setSelectedStoreObj(value) }/>
         </div>  
         {/* Details container */}
         <div className='flex-column w-full bg-green-500'>
@@ -38,9 +41,9 @@ function Home(props) {
             Map container
           </div>
         <div className='flex align-items-stretch flex-wrap h-20rem'>
-            {/* Store details */}
+            {/* Store timings */}
             <div className='flex align-items-center w-6  justify-content-center bg-green-300'>
-                Store details
+                <StoreTimings storeObj={selectedStoreObj}/>
             </div>
             {/* Store address */}
             <div className='flex align-items-center w-6  justify-content-center shadow-8  bg-green-700'>
