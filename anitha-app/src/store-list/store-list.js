@@ -1,8 +1,26 @@
 import logo from '../logo.svg'
 import './store-list.css';
 import { ListBox } from 'primereact/listbox';
+import { InputText } from 'primereact/inputtext';
 function StoreList() {
-   const StoreDirectory=[
+   const storeDirectory=[
+    {
+        "id": 1001,
+        "storeName": "Wollong",
+        "storeDetails": "D-mart",
+        "storeTimings": [
+            "Mon-Fri 9 to 10pm",
+            "Sat-Sun 9 to 05pm"
+        ],
+        "storeAddress": {
+           "phone": "+61 224 445 665",
+            "address": "54-76-sri rama nagar"
+        },
+        "storeMapLocation": {
+            "latitute": 65.657,
+            "longitude": 76.876
+        }
+    },
     {
         "id":1001,
         "storeName":"Wollong",
@@ -13,7 +31,7 @@ function StoreList() {
 
         ],
         "storeAddress":{
-            "phone":+"61 224 445 665",
+            "phone":"+61 224 445 665",
             "address":"54-76-sri rama nagar",
         },
         "storeMapLocation":{
@@ -31,7 +49,7 @@ function StoreList() {
 
         ],
         "storeAddress":{
-            "phone":+"61 665 678 987",
+            "phone":"+61 665 678 987",
             "address":"54-54 ganesh nagar",
         },
         "storeMapLocation":{
@@ -49,27 +67,31 @@ function StoreList() {
 
         ],
         "storeAddress":{
-            "phone":+"61 276 487 564",
+            "phone":"+61 276 487 564",
             "address":"54-76-laksmi nagar",
         },
         "storeMapLocation":{
             "latitute":65.748,
             "logitude":23.345
         }
-    }
+    } 
    ];
-}
+
  const storeTemplate = (store) => {
         return (
             <div className="flex column align-items-center w-8rem ">
                 
-                <div>{store.storeAddress}</div>
+                <div>{store.storeName}</div>
+                <div>{store.storeDetails}
+                </div>
             </div>
+        )
+    };
     return (
         <>
         <span className="title">
-            <InputText value={'test'} className='m-3/>
-            <div className="card xl:flex xl:justify-content-center"
+            <InputText value={'test'} className='m-3' />
+            <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
         itemTemplate={storeTemplate}
         className="w-full"
@@ -78,4 +100,5 @@ function StoreList() {
         </span>
         </>
     );
-    export default StoreList;
+}
+export default StoreList;
