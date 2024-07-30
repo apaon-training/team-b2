@@ -3,7 +3,7 @@ import './Home.css';
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-
+import StoreList from '../store-list/Store-List';
 function Home(props) {
   const onLogoutClicked= ()=>{
     props.LogoutSuccess();
@@ -16,15 +16,18 @@ function Home(props) {
              Store Locator
         </div>
         <div className='flex  align-items-center justify-content-center mr-3  w-8rem '>
-        <Avatar label="SR" size="xlarge" shape="circle" />
         <Button label="Logout" severity="danger"  raised size='small' onClick={()=>onLogoutClicked()} />
+        <Avatar label="SR" size="xlarge" shape="circle" />
+        
        
 
         </div>
       </div>
       <div className='flex h-full'>
         <div className='flex-column w-30rem bg-purple-400'>
-        <InputText value={"rizu"}  />
+        {/* <InputText type="text" placeholder=" "/> */}
+        <StoreList/>
+
         </div>
         <div className='flex-column w-full bg-orange-200'>
            <div className='flex h-25rem'>
