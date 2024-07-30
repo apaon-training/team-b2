@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import './home.css';
 import {Avatar} from 'primereact/avatar';
 import { Button } from 'primereact/button';
+import StoreList from '../store-list/store-list';
 
 
 function Home(props) {
@@ -23,7 +24,7 @@ function Home(props) {
       <div className='flex h-auto'>
         <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-pink-400'>
           <InputText type="text" placeholder=" "/>
-          <storelist/>
+          <StoreList/>
         </div>
         <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-green-600'>
         <div className='flex h-30rem'>
