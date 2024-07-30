@@ -63,14 +63,18 @@ const storeDirectory=[
 
     const storeTemplate = (store) => {
         return (
+            <div className='flex-cloumn'>
             <div className="flex align-items-center w-8rem">
-            
-                
-                <div>{store.storeName}</div>
+                 <div>{store.storeName}
+                 </div>
+                 </div>
+                 <div className='flex-cloumn'>
+                    <div className='flex align-items-center w-8rem'></div>
                 <div>{store.storeDetails}</div>
             </div>
             
-        )
+            
+        );
     };
     return(
     <>
