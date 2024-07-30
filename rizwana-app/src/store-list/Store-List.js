@@ -30,19 +30,19 @@ const StoreDirectory=[
 
 [
     {
-        "id":10001,
-        "storeName":"Wollong",
-        "storeDetails":"D-mart",
-        "storeTimings":["Mon-Fri- 9 to 10 pm",
-            "Sat-Sun-9 to 5pm",
+        "id":10002,
+        "storeName":"Jothi Mall",
+        "storeDetails":"cloths",
+        "storeTimings":["Mon-Fri- 3 to 10 pm",
+            "Sat-Sun-10 to 4pm",
         ],
         "storeAddress":{
-            "phoneNumber":"+91 799 339 2948",
-            "Address": "71-127 kallur",
+            "phoneNumber":"+91 564 237 8907",
+            "Address": "23-123 kurnool",
          },
          "storeMapLocator":{
-            "Lattitudes":45.8965,
-            "Longitudes":65.8923
+            "Lattitudes":31.87535,
+            "Longitudes":11.82178
          }
         
 
@@ -52,19 +52,19 @@ const StoreDirectory=[
 
 [
     {
-        "id":10001,
-        "storeName":"Wollong",
-        "storeDetails":"D-mart",
-        "storeTimings":["Mon-Fri- 9 to 10 pm",
-            "Sat-Sun-9 to 5pm",
+        "id":10003,
+        "storeName":"Jewellary ",
+        "storeDetails":"Gold",
+        "storeTimings":["Mon-Fri- 9:30 to 11 pm",
+            "Sat-Sun-10 to 6pm",
         ],
         "storeAddress":{
-            "phoneNumber":"+91 799 339 2948",
-            "Address": "71-127 kallur",
+            "phoneNumber":"+91 456 896 3457",
+            "Address": "34-189 new york",
          },
          "storeMapLocator":{
-            "Lattitudes":45.8965,
-            "Longitudes":65.8923
+            "Lattitudes":21.7890,
+            "Longitudes":91.2346
          }
         
 
