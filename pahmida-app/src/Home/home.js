@@ -3,7 +3,12 @@ import './home.css';
 import { Button } from 'primereact/button';
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
+import StoreList from '../store-list/store-list';
+import StoreTimings from '../Store-Timings/store-timings';
+import { useState } from 'react';
+
 function Home(props) {
+  const [SelectedStoreObj, setSelectedStoreObj]:useState(null);
   const onLogoutClicked=()=>{
   props.logoutSuccess();
   }
@@ -21,8 +26,10 @@ function Home(props) {
      </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem bg-pink-400'>
-         <InputText type="text" placeholder=" "/>
-        <storelist/>
+         {/* <InputText type="text" placeholder=" "/> */}
+        <StoreList 
+        SelectedStore={(value)=>setSelectedStoreObj(value)}/>
+         <StoreTimings StoreObj={SelectedStoreObj}/>
          
       </div>
       <div className='flex-column w-full bg-pink-500'>
@@ -31,8 +38,8 @@ function Home(props) {
           map  Details</div>
          </div>
         <div className='flex h-20rem'>
-          <div className='flex w-6 bg-pink-500'>
-            store details
+          <div className='flex w-6 bg-pink-100'>
+             <StoreTimings/>
           </div>
           <div className='flex w-6 jutify bg-pink-600'>
             address

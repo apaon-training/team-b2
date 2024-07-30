@@ -2,7 +2,7 @@
 import Login from "./ Login-page/Login";
 import Home from "./Home/home";
  function App(){ 
-    const [loggedIn, SetLoggedIn] = useState(false);
+    const [loggedIn, SetLoggedIn] = useState(true);
     
     const onLoginSuccess=()=>{SetLoggedIn(true)};
    
