@@ -10,8 +10,8 @@ function StoreList(props) {
         "storeName": "beauty parlour",
         "storeDetails": "Make up kits",
         "storeTimings": [
-            "Mon-Fri 9 to 10pm",
-            "Sat-Sun 9 to 05pm"
+            "Sat-Fri 8am to 10pm",
+            "Mon-Sun 10am to 05pm"
         ],
         "storeAddress": {
            "phone": "+61 224 445 665",
@@ -33,7 +33,7 @@ function StoreList(props) {
         ],
         "storeAddress":{
             "phone":"+61 224 445 665",
-            "address":"54-76-sri rama nagar"
+            "address":"54-76- ashok nagar"
         },
         "storeMapLocation":{
             "latitute":65.657,
@@ -45,8 +45,8 @@ function StoreList(props) {
         "storeName":"Jyothi mall",
         "storeDetails":"Groceries",
         "sttoreTimings":[
-                          "Mon-Fri 9 to 8pm",
-                          "Sat-Sun 9 to 06pm"
+                          "Thus-Fri 5am to 5pm",
+                          "Wed-Sun 7am to 06pm"
 
         ],
         "storeAddress":{
@@ -63,8 +63,8 @@ function StoreList(props) {
         "storeName":"Big C",
         "storeDetails":"Appliances",
         "sttoreTimings":[
-                          "Mon-Fri 8 to 10pm",
-                          "Sat-Sun 8 to 05pm"
+                          "Tue-Fri 8 to 10pm",
+                          "Fri-Sun 8 to 05pm"
 
         ],
         "storeAddress":{
