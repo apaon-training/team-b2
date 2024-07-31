@@ -1,9 +1,10 @@
-import logo from '../logo.svg'
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
+import { useState } from 'react';
 
          
-function StoreList(){
+function Storelist(props){
+    const [selectedstore, setSelectedstore]=useState(null);
     const storeDirectory = [{
      "id":1001,
      "storeName":"Birdsway",
@@ -24,8 +25,8 @@ function StoreList(){
     "id":1002,
     "storeName":"wollongong",
      "storeDetails":"Textile mall",
-     "storeTimings":["Mon-Fri-8am to 9pm", 
-                     "sat-sun-9am to 5pm"
+     "storeTimings":["Mon-Fri-7am to 8pm", 
+                     "sat-sun-10am to 4pm"
                     ],
      "storeContact":{
         "phone": "+61 253 453 654",
@@ -40,8 +41,8 @@ function StoreList(){
     "id":1003,
     "storeName":"wallmart",
      "storeDetails":"grocery",
-     "storeTimings":["Mon-Fri-8am to 9pm", 
-                     "sat-sun-9am to 5pm"
+     "storeTimings":["Mon-Fri-10am to 8pm", 
+                     "sat-sun-8am to 6pm"
                     ],
      "storeContact":{
         "phone": "+61 253 483 654",
@@ -68,8 +69,9 @@ function StoreList(){
         "logitudes":19.85
      }
 }];
-  const storeTemplate = (store) => {
-    return (
+
+       const storeTemplate = (store) => {
+       return (
         <div className='flex-column'>
         <div className='flex align-items-center w-8rem'>
             <div>{store.storeName}</div></div>
@@ -80,13 +82,17 @@ function StoreList(){
             
     );
 };
-    return(
+const setselectedstore =(value)=>{
+   props.Selectedstore=(value);
+}
+   return(
         <>
         <div className="title">
         <InputText type={"text"} placeholder="Search"/>
         <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
-                itemTemplate={storeTemplate} className="w-full"/>
+                 onChange={(e) => setSelectedstore(e.value)}
+                 itemTemplate={storeTemplate} className="w-full"/>
         </div>
             </div>
         </>
@@ -94,4 +100,4 @@ function StoreList(){
 
 
 }
-export default StoreList;
+export default Storelist;
