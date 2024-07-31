@@ -2,7 +2,8 @@ import logo from '../logo.svg'
 import './store-list.css';
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
-function StoreList() {
+import { mergeprops } from 'primereact/utils';
+function StoreList(props) {
    const storeDirectory=[
     {
         "id": 1001,
@@ -78,6 +79,7 @@ function StoreList() {
    ];
 
  const storeTemplate = (store) => {
+    
         return (
             <div className="flex-column">
             <div className="flex column align-items-center w-8rem ">
@@ -93,12 +95,17 @@ function StoreList() {
             </div>
         )
     };
+    const setSelectedStore = (value) => {
+        props.selectedStore(value);
+    }
+    
     return (
         <>
         <span className="title">
-            <InputText value={'Wollong'} className='m-3' />
+            <InputText value={'Wollong'} className='m-3'/>
             <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
+        onChange={(e) => setSelectedStore(e.value)}
         itemTemplate={storeTemplate}
         className="w-full"
         />
