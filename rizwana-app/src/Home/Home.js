@@ -8,6 +8,8 @@ import React, { useState } from 'react';
 import StoreTimings from '../store-timings/Store-Timings';
 
 function Home(props) {
+  const [selectedStoreObj, setSelectedStoreObj] = useState(null);
+
   const onLogoutClicked= ()=>{
     props.LogoutSuccess();
   }
@@ -29,7 +31,7 @@ function Home(props) {
       <div className='flex h-full'>
         <div className='flex-column w-30rem bg-purple-400'>
         {/* <InputText type="text" placeholder=" "/> */}
-        <StoreList selectedStore={ (value) => setSelectedStoreObj (value) }/>
+        <StoreList selectedStore={(value) => setSelectedStoreObj(value) }/>
 
         </div>
         <div className='flex-column w-full bg-orange-200'>

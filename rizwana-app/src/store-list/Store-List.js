@@ -2,6 +2,8 @@ import logo from '../logo.svg'
 import './Store-List.css';
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
+import React, { useState, useEffect }from 'react';
+import { OrderList } from 'primereact/orderlist';
 
 
 
@@ -96,7 +98,7 @@ const storeDirectory=[
       </div>
       </div>
     </>
-);
+)
 
- };
+ }
 export default StoreList;
