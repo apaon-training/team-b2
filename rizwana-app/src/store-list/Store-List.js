@@ -6,7 +6,7 @@ import { InputText } from 'primereact/inputtext';
 
 
 
-function StoreList(){
+function StoreList(props){
 const storeDirectory=[
     {
         "id": 10001,
@@ -63,26 +63,33 @@ const storeDirectory=[
 
     const storeTemplate = (store) => {
         return (
-            <div className='flex-cloumn'>
+
+            <div className="flex-cloumn">
             <div className="flex align-items-center w-8rem">
                  <div>{store.storeName}
                  </div>
                  </div>
-                 <div className='flex-cloumn'>
-                    <div className='flex align-items-center w-8rem'></div>
+                 <div className="flex-cloumn">
+                    <div className="flex align-items-center w-8rem"></div>
                 <div>{store.storeDetails}</div>
+            </div>
             </div>
             
             
         );
     };
-    return(
+    const setSelectedStore = (value)=>{
+        props.selectedStore(value);
+    }
+    return (
     <>
       <div className="title">
       <InputText value={'test'} className='m-3' />
       <div className="card xl:flex xl:justify-content-center">
 
       <ListBox options={storeDirectory}
+           onChange={(e) => setSelectedStore(e.value)}
+
           itemTemplate={storeTemplate}
           className="w-full"
           />
@@ -91,6 +98,5 @@ const storeDirectory=[
     </>
 );
 
-
-}
+ };
 export default StoreList;

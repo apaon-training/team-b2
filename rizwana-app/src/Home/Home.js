@@ -4,6 +4,9 @@ import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import StoreList from '../store-list/Store-List';
+import React, { useState } from 'react';
+import StoreTimings from '../store-timings/Store-Timings';
+
 function Home(props) {
   const onLogoutClicked= ()=>{
     props.LogoutSuccess();
@@ -26,7 +29,7 @@ function Home(props) {
       <div className='flex h-full'>
         <div className='flex-column w-30rem bg-purple-400'>
         {/* <InputText type="text" placeholder=" "/> */}
-        <StoreList/>
+        <StoreList selectedStore={ (value) => setSelectedStoreObj (value) }/>
 
         </div>
         <div className='flex-column w-full bg-orange-200'>
@@ -36,7 +39,7 @@ function Home(props) {
         </div>
         <div className='flex h-20rem'>
         <div className='flex-column w-6 bg-yellow-300'>
-           store detail
+           <StoreTimings storeObj={selectedStoreObj}/>
         </div>
         <div className='flex-row w-6 bg-green-300'>
           store address
