@@ -1,23 +1,22 @@
 import logo from '../logo.svg'
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
-import { useState } from 'react';
+
          
-function storelist(){
-    const [selectedstore, setselectedstore] = useState();
+function StoreList(){
     const storeDirectory = [{
      "id":1001,
      "storeName":"Birdsway",
      "storeDetails":"Near Juction road",
      "storeTimings":["Mon-Fri-8am to 9pm", 
-                     "sat-sun-9am to 5pm",
+                     "sat-sun-9am to 5pm"
                     ],
      "storeContact":{
         "phone": "+61 234 453 654",
         "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
      },
      "storeMaplocation":{
-        "latitude":"16,33",
+        "latitude":16.43,
         "logitude":14.56
      }
  },
@@ -26,36 +25,73 @@ function storelist(){
     "storeName":"wollongong",
      "storeDetails":"Textile mall",
      "storeTimings":["Mon-Fri-8am to 9pm", 
-                     "sat-sun-9am to 5pm",
+                     "sat-sun-9am to 5pm"
                     ],
      "storeContact":{
         "phone": "+61 253 453 654",
-        "address":"10-20 station road, NSW",
+        "address":"10-20 station road, NSW"
      },
      "storeMaplocation":{
-        "latitude":"16,33",
-        "logitude":14.56
+        "lattitudes":16.33,
+        "logitudes":14.65
      }
-  }];
+  },
+  {
+    "id":1003,
+    "storeName":"wallmart",
+     "storeDetails":"grocery",
+     "storeTimings":["Mon-Fri-8am to 9pm", 
+                     "sat-sun-9am to 5pm"
+                    ],
+     "storeContact":{
+        "phone": "+61 253 483 654",
+        "address":"10-20 station road"
+     },
+     "storeMaplocation":{
+        "lattitudes":16.73,
+        "logitudes":14.85
+     }
+},
+{
+    "id":1004,
+    "storeName":"Jyothi",
+     "storeDetails":"grocery",
+     "storeTimings":["Mon-Fri-8am to 9pm", 
+                     "sat-sun-9am to 5pm"
+                    ],
+     "storeContact":{
+        "phone": "+61 253 483 654",
+        "address":"10-20 Near Abdullah Khan estate"
+     },
+     "storeMaplocation":{
+        "lattitudes":18.73,
+        "logitudes":19.85
+     }
+}];
   const storeTemplate = (store) => {
     return (
-        <div className="flex align-items-center gap-2">
-           <div className='flex-column'></div>
-            <div>{store.storeAddress}</div>
+        <div className='flex-column'>
+        <div className='flex align-items-center w-8rem'>
+            <div>{store.storeName}</div></div>
+               <div className='flex align-items-center'>
+               <div>{store.storeDetails}</div>
+               </div>
             </div>
+            
     );
 };
     return(
         <>
-        <span className="title">
-        <InputText value={'text'} className='m-3'/>
+        <div className="title">
+        <InputText type={"text"} placeholder="Search"/>
         <div className="card xl:flex xl:justify-content-center">
-        <ListBox value={selectedstore} onChange={(e) = setselectedstore(e.value)} options={storeDirectory} 
+        <ListBox options={storeDirectory} 
                 itemTemplate={storeTemplate} className="w-full"/>
         </div>
-            </span>
+            </div>
         </>
     );
 
+
 }
-export default storelist;
+export default StoreList;
