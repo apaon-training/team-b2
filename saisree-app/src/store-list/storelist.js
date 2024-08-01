@@ -80,16 +80,17 @@ function Storelist(props){
             
     );
 };
-const setselectedStore =(value)=>{
-   props.selectedStore=(value);
+const setselectedstore =(value)=>{
+   props.selectedstore(value);
 }
+
    return(
         <>
         <div className="title">
         <InputText type={"text"} placeholder="Search"/>
         <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
-                 onChange={(e) => setselectedStore(e.value)}
+                 onChange={(e) => setselectedstore(e.value)}
                  itemTemplate={storeTemplate} className="w-full"/>
         </div>
             </div>

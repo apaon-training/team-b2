@@ -1,4 +1,4 @@
-function StoreTimings(props){
+function storeTimings(props){
     
         return(
             <>
@@ -10,4 +10,4 @@ function StoreTimings(props){
             </>
     );
 }
-export default StoreTimings;
+export default storeTimings;
