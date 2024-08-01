@@ -4,15 +4,16 @@ import { Button } from 'primereact/button';
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
 import StoreList from '../store-list/store-list';
-import StoreTimings from '../Store-Timings/store-timings';
-import { useState } from 'react';
+ 
+import React, { useState } from 'react';
+import StoreTimings from '../store--Timings/store-timings';
+import StoreAddress from '../store-Address/store-address';
 
 function Home(props) {
-  const [SelectedStoreObj, setSelectedStoreObj]:useState(null);
+  const [SelectedstoreObj, setSelectedstoreObj] = useState(null);
   const onLogoutClicked=()=>{
   props.logoutSuccess();
   }
-
   return (
     //Main container
     <div className='home flex-column'>
@@ -26,11 +27,9 @@ function Home(props) {
         </div>
      </div>
      <div className='flex h-full'>
-      <div className='flex-column w-30rem bg-pink-400'>
+      <div className='flex-column w-30rem  bg-white'>
          {/* <InputText type="text" placeholder=" "/> */}
-        <StoreList 
-        SelectedStore={(value)=>setSelectedStoreObj(value)}/>
-         <StoreTimings StoreObj={SelectedStoreObj}/>
+          <StoreList Selectedstore={(value)=>setSelectedstoreObj(value)}/>
          
       </div>
       <div className='flex-column w-full bg-pink-500'>
@@ -38,12 +37,17 @@ function Home(props) {
           <div className='flex-column w-full bg-pink-300'>
           map  Details</div>
          </div>
-        <div className='flex h-20rem'>
-          <div className='flex w-6 bg-pink-100'>
-             <StoreTimings/>
+        <div className='flex justify-content-center h-20rem'>
+          <div className='flex w-6 bg-white'>
+             <StoreTimings storeObj={SelectedstoreObj}/>
+             <div className='timings'> 
           </div>
-          <div className='flex w-6 jutify bg-pink-600'>
-            address
+          </div>
+          <div className='flex w-6 jutify bg-pink-600 justify-content-center'>
+            <div className='flex align-items-center justify-content-center'>
+            
+            <StoreAddress storeObj={SelectedstoreObj}/>
+          </div>
           </div>
         </div>
       </div>

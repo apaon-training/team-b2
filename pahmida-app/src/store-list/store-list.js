@@ -2,7 +2,7 @@ import logo from '../logo.svg';
 import './store-list.css';
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
-import { Props } from 'primereact/utils';
+import {props} from 'primereact/utils';
 function StoreList(props){
 const storeDirectory=[
     {
@@ -25,7 +25,7 @@ const storeDirectory=[
 "storeName":" blue berry",
 "storeDetails":"Groceries",
 "storeTimings": ["Mon-Fri-9am t0 10pm",
-                 "Sat-Sun-9am to 05pm"],
+                 "Sat-Sun-9am to 07pm"],
 "storeAddress":{
          "phone" :  "+61 234 4556",
          "address": "nh"
@@ -39,8 +39,8 @@ const storeDirectory=[
     "id":5003,
     "storeName":"Wollong-A",
     "storeDetails":"textile",
-    "storeTimings": ["Mon-Fri-9am t0 10pm",
-                     "Sat-Sun-9am to 05pm"],
+    "storeTimings": ["Mon-tue-9am t0 10pm",
+                     "wed-sun-9am to 05pm"],
     "storeAddress":{
              "phone" :  "+61 234 453 656",
              "address" :"jam radionodelist"
@@ -54,7 +54,7 @@ const storeDirectory=[
     "id":5003,
     "storeName":"Wollong-B",
     "storeDetails":"textile",
-    "storeTimings": ["Mon-Fri-9am t0 10pm",
+    "storeTimings": ["Mon-Fri-9am t0 11pm",
                      "Sat-Sun-9am to 05pm"],
     "storeAddress":{
              "phone" :  "+61 234 453 656",
@@ -69,7 +69,7 @@ const storeDirectory=[
     "id":5003,
     "storeName":"Wollong-A",
     "storeDetails":"textile",
-    "storeTimings": ["Mon-Fri-9am t0 10pm",
+    "storeTimings": ["Mon-Fri-10am t0 10pm",
                      "Sat-Sun-9am to 05pm"],
     "storeAddress":{
              "phone" :  "+61 234 453 656",
@@ -84,7 +84,7 @@ const storeDirectory=[
     "id":5003,
     "storeName":"Wollong-c",
     "storeDetails":"textile",
-    "storeTimings": ["Mon-Fri-9am t0 10pm",
+    "storeTimings": ["Mon-Fri-10am t0 10pm",
                      "Sat-Sun-9am to 05pm"],
     "storeAddress":{
              "phone" :  "+61 234 453 656",
@@ -101,20 +101,20 @@ const storeDirectory=[
  const storeTemplate = (store) => {
     return (
        
-        <div className="flex-cloumn"> 
-        <div className="flex align-items-center w-8rem ">
+        <div className="flex-cloumn border-500 surface-overlay border-1 border-round font-bold"> 
+        <div className="flex align-items-center w-20rem md:p-3">
             <div>{store.storeName}
             </div>
             </div>
             <div className="flex-cloumn">   
-        <div className="flex align-items-center w-8rem "></div>
+        <div className="flex align-items-center w-10rem "></div>
             <div>{store.storeDetails}</div>
         </div>
         </div>
     );
  }; 
- const setSelectedStore=(value)=>{   
-    props.setSelectedStore(value);
+ const SetSelectedstore=(value)=>{   
+    props.Selectedstore(value);
 } 
     return (
         <>
@@ -122,7 +122,7 @@ const storeDirectory=[
             <InputText value={'test'} className='Hi'/>
             <div className="card xl:flex xl:justfy-content-center">
                 <ListBox options={storeDirectory }
-                onChange={(e) => setSelectedStore(e.value)}
+                onChange={(e) => SetSelectedstore(e.value)}
                 itemTemplate={storeTemplate}
                 className= 'List' w-10rem/>
                 </div>
