@@ -4,6 +4,8 @@ import { Button } from 'primereact/button';
 import Storelist from '../store-list/storelist';
 import React, { useState } from 'react';
 import StoreTimings from '../store-Timings/storeTimings';
+import StoreAddress from '../store-Address/storeAddress';
+
 
 function Home(props) {
   const [selectedstoreObj, setselectedstoreObj]=useState(null);
@@ -37,7 +39,7 @@ function Home(props) {
           <StoreTimings storeObj={selectedstoreObj}/>
       </div>
       <div className='flex-row w-6 bg-cyan-700'>
-             store address
+             <StoreAddress storeObj={selectedstoreObj}/>
         </div>
       </div>
       </div>

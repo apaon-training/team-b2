@@ -10,7 +10,7 @@ function Storelist(props){
      "storeTimings":["Mon-Fri-8am to 9pm", 
                      "sat-sun-9am to 5pm"
                     ],
-     "storeContact":{
+     "storeAddress":{
         "phone": "+61 234 453 654",
         "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
      },
@@ -26,7 +26,7 @@ function Storelist(props){
      "storeTimings":["Mon-Fri-7am to 8pm", 
                      "sat-sun-10am to 4pm"
                     ],
-     "storeContact":{
+     "storeAddress":{
         "phone": "+61 253 453 654",
         "address":"10-20 station road, NSW"
      },
@@ -42,7 +42,7 @@ function Storelist(props){
      "storeTimings":["Mon-Fri-10am to 8pm", 
                      "sat-sun-8am to 6pm"
                     ],
-     "storeContact":{
+     "storeAddress":{
         "phone": "+61 253 483 654",
         "address":"10-20 station road"
      },
@@ -58,7 +58,7 @@ function Storelist(props){
      "storeTimings":["Mon-Fri-8am to 9pm", 
                      "sat-sun-9am to 5pm"
                     ],
-     "storeContact":{
+     "storeAddress":{
         "phone": "+61 253 483 654",
         "address":"10-20 Near Abdullah Khan estate"
      },
