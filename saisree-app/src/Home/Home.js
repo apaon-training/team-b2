@@ -18,27 +18,27 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center w-full text-6xl textcolor'>
              Store locator
         </div>
-        <div className='flex align-items-center justify-content-center w-8rem text-6xl mr-4'>
-        <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small"/>
+        <div className='flex align-items-center justify-content-center w-8rem text-6xl mr-6'>
+        <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" className='flex mr-4 pl-2'/>
         <Avatar label="sv" size="xlarge" shape="circle" />       
         </div>
      </div>
      <div className='flex h-full'>
-      <div className='flex-column  w-30rem bg-cyan-300'>
+      <div className='flex-column  w-30rem bg-white'>
       {/* <InputText type="text" placeholder="Search" /> */}
       <Storelist selectedstore={(value)=>setselectedstoreObj(value)}/>
       </div>
 
-      <div className='flex-column w-full bg-cyan-500'>
+      <div className='flex-column w-full'>
         <div className='flex h-25rem'>
-      <div className='flex-column w-full bg-cyan-800'>
+      <div className='flex-column w-full bg-cyan-800 text-4xl'>
        Detail container</div>
        </div>
-       <div className='flex h-20rem'>
-        <div className='flex-row w-6 bg-cyan-900'>
+       <div className='flex h-20rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
+        <div className='flex-row w-6'>
           <StoreTimings storeObj={selectedstoreObj}/>
       </div>
-      <div className=' flex-row w-6 bg-cyan-700 '>
+      <div className=' flex-row w-6 '>
              <StoreAddress storeObj={selectedstoreObj}/>
         </div>
       </div>
