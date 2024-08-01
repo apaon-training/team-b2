@@ -12,6 +12,7 @@ function Home(props) {
   const onLogoutClicked=()=>{
   props.logoutSuccess();
   }
+
   return (
     //Main container
     <div className='home flex-column'>
