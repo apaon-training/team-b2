@@ -1,10 +1,8 @@
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
-import { useState } from 'react';
 
          
 function Storelist(props){
-    const [selectedstore, setSelectedstore]=useState(null);
     const storeDirectory = [{
      "id":1001,
      "storeName":"Birdsway",
@@ -82,8 +80,8 @@ function Storelist(props){
             
     );
 };
-const setselectedstore =(value)=>{
-   props.Selectedstore=(value);
+const setselectedStore =(value)=>{
+   props.selectedStore=(value);
 }
    return(
         <>
@@ -91,7 +89,7 @@ const setselectedstore =(value)=>{
         <InputText type={"text"} placeholder="Search"/>
         <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
-                 onChange={(e) => setSelectedstore(e.value)}
+                 onChange={(e) => setselectedStore(e.value)}
                  itemTemplate={storeTemplate} className="w-full"/>
         </div>
             </div>
