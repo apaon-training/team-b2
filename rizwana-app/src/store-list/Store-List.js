@@ -15,8 +15,8 @@ const storeDirectory=[
         "storeName": "Wollong",
         "storeDetails": "D-mart",
         "storeTimings": [
-            "Mon-Fri- 9 to 10 pm",
-            "Sat-Sun-9 to 5pm"
+            "Mon-Fri- 9 to 12 pm",
+            "Sat-Sun-9 to 4 pm"
         ],
         "storeAddress": {
             "phoneNumber": "+91 799 339 2948",
@@ -49,8 +49,8 @@ const storeDirectory=[
         "storeName": "Wollong",
         "storeDetails": "D-mart",
         "storeTimings": [
-            "Mon-Fri- 9 to 10 pm",
-            "Sat-Sun-9 to 5pm"
+            "Mon-Fri- 9 to 5pm",
+            "Sat-Sun-9 to 9 pm"
         ],
         "storeAddress": {
             "phoneNumber": "+91 799 339 2948",
@@ -66,13 +66,13 @@ const storeDirectory=[
     const storeTemplate = (store) => {
         return (
 
-            <div className="flex-cloumn">
-            <div className="flex align-items-center w-8rem">
+            <div className='flex-cloumn'>
+            <div className='flex align-items-center w-8rem'>
                  <div>{store.storeName}
                  </div>
                  </div>
-                 <div className="flex-cloumn">
-                    <div className="flex align-items-center w-8rem"></div>
+                 
+                    <div className='flex align-items-center'>
                 <div>{store.storeDetails}</div>
             </div>
             </div>
