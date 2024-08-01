@@ -66,7 +66,7 @@ const storeDirectory=[
     const storeTemplate = (store) => {
         return (
 
-            <div className='flex-cloumn'>
+            <div className='flex-cloumn border-500 surface-overlay border-1 border-round font-bold '>
             <div className='flex align-items-center w-8rem'>
                  <div>{store.storeName}
                  </div>
