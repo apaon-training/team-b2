@@ -32,7 +32,7 @@ function StoreList(props) {
 
         ],
         "storeContact": {
-            "phone": "+06` 303 801 585",
+            "phone": "+06 303 801 585",
             "address": "40-37-M-Bus Stand road"
         },
         "storeMapLocation": {
@@ -49,7 +49,7 @@ function StoreList(props) {
         "storeTimings": ["mon-Fri-9 to 8 pm", 
             "sat-Sun-10 to 6 pm"
         ],
-        "storeAddress": {
+        "storeContact": {
             "phone":"+61 987 765 543",
             "address":"33-98-chenamma circle"
         },
@@ -66,7 +66,7 @@ function StoreList(props) {
         "storeTimings": ["mon-Fri-10 to 10 pm", 
             "sat-Sun-10 to 6 pm"
         ],
-        "storeAddress": {
+        "storeContact": {
             "phone":"+91 567 234 890",
             "address": "23-44-Near junction road"
         },
@@ -79,12 +79,13 @@ function StoreList(props) {
 
 
     const storeTemplate = (store) => {
+       
         return (
-            <div className="flex column p-5">
-                <div className="flex align-items-center w-10rem">
+            <div className="flex-column border-500 surface-overlay border-2 border-round p-3">
+                <div className="flex column align-items-center w-8rem">
                     {store.storeName}
                 </div>
-                <div className="flex align-items-center  w-10rem">
+                <div className="flex align-items-center">
                     {store.storeDetails}
                 </div>
                 </div>

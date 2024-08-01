@@ -5,10 +5,11 @@ import {Avatar} from 'primereact/avatar';
 import { Button } from 'primereact/button';
 import StoreList from '../store-list/store-list';
 import { useState } from 'react';
+import StoreTimings from '../store-timings/store-timings';
+import StoreContact from '../store-contact/store-contact';
 
 function Home(props) {
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
-  const [selectedStorecon,setSelectedStoreCon]=useState(null);
   const onLogoutClicked = () =>{
     props.logoutSuccess()
   }
@@ -25,7 +26,7 @@ function Home(props) {
         </div>
       </div>
       <div className='flex h-auto'>
-        <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-pink-400'>
+        <div className='flex-column justify-content-center align-items-center text-white-alpha-90 font-bold w-30rem bg-pink-400'>
           <StoreList selectedStore={ (value) => setSelectedStoreObj (value) }/>
         </div>
         <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-green-600'>
@@ -33,11 +34,11 @@ function Home(props) {
           Map container 
         </div>
         <div className='flex align-items-stretch flex-wrap h-15rem'>
-        <div className='flex w-6 justify-content-center text-white-alpha-90 font-bold bg-indigo-700'>
-          <storeTimings storeObj={selectedStoreObj}/>
+        <div className='flex w-6 justify-content-center align-items-center text-white-alpha-90 font-bold bg-indigo-700'>
+          <StoreTimings storeObj={selectedStoreObj}/>
           </div>
-        <div className='flex w-6 justify-content-center text-white-alpha-90 font-bold bg-indigo-800'>
-          <storeAddress storeCon={selectedStorecon}/>
+        <div className='flex w-6 justify-content-center align-items-center text-white-alpha-90 font-bold bg-indigo-800'>
+          <StoreContact storeObj={selectedStoreObj}/>
           </div>
       </div>
     </div>
