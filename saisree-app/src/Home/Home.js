@@ -15,12 +15,12 @@ function Home(props) {
   return (
     <div className="App flex-column">
       <div className='flex justify-content-center h-8rem navbar'>
-        <div className='flex align-items-center justify-content-center w-full text-6xl textcolor'>
+        <div className='flex align-items-center justify-content-center w-full text-6xl'>
              Store locator
         </div>
         <div className='flex align-items-center justify-content-center w-8rem text-6xl mr-6'>
         <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" className='flex mr-4 pl-2'/>
-        <Avatar label="sv" size="xlarge" shape="circle" />       
+        <Avatar label="sv" size="xlarge" className='text-black-alpha-60' shape="circle" />       
         </div>
      </div>
      <div className='flex h-full'>
