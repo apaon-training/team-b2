@@ -13,7 +13,7 @@ function StoreList(props) {
             "Sat-Fri 8am to 10pm",
             "Mon-Sun 10am to 05pm"
         ],
-        "storeAddress": {
+        "storeContact": {
            "phone": "+61 224 445 665",
             "address": "54-76-sri rama nagar"
         },
@@ -31,7 +31,7 @@ function StoreList(props) {
                           "Sat-Sun 9 to 05pm"
 
         ],
-        "storeAddress":{
+        "storeContact":{
             "phone":"+61 224 445 665",
             "address":"54-76- ashok nagar"
         },
@@ -49,7 +49,7 @@ function StoreList(props) {
                           "Wed-Sun 7am to 06pm"
 
         ],
-        "storeAddress":{
+        "storeContact":{
             "phone":"+61 665 678 987",
             "address":"54-54 ganesh nagar"
         },
@@ -67,7 +67,7 @@ function StoreList(props) {
                           "Fri-Sun 8 to 05pm"
 
         ],
-        "storeAddress":{
+        "storeContact":{
             "phone":"+61 276 487 564",
             "address":"54-76-laksmi nagar"
         },
@@ -81,16 +81,13 @@ function StoreList(props) {
  const storeTemplate = (store) => {
     
         return (
-            <div className="flex-column">
-            <div className="flex column align-items-center w-8rem ">
-                  <div>{store.storeName}
+            <div className='flex-column border-500 surface-overlay border-1 border-round p-3'>
+            <div className='flex column align-items-center w-8rem'>
+                  {store.storeName}
+                
                 </div>
-                </div>
-                <div className="flex-column">
-                    <div className="flex align-items-center w-8 ">
-                        </div>
-                </div>
-                <div>{store.storeDetails}
+                <div className='flex align-items-center'>
+                  {store.storeDetails}
                 </div>
             </div>
         )

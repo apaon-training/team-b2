@@ -6,8 +6,7 @@ import { InputText } from 'primereact/inputtext';
 import StoreList from '../store-list/store-list';
 import React, { useState } from 'react';
 import StoreTimings from '../store-timings/store-timings';
-
-
+import StoreContact from '../store-contact/store-contact';
 function Home(props) {
   const onLogoutClicked = () => {
     props.logoutSuccess()
@@ -27,7 +26,6 @@ function Home(props) {
       </div>
       <div className='flex h-auto'>
         <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-green-100'>
-    
           <StoreList selectedStore={(value) => setSelectedStoreObj(value)} />
         </div>
         <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-pink-600'>
@@ -35,11 +33,14 @@ function Home(props) {
           Map container 
         </div>
         <div className='flex align-items-stretch flex-wrap h-15rem'>
-        <div className='flex w-6 justify-content-center text-white-alpha-90 font-bold bg-purple-500'>
+        <div className='flex w-6 justify-content-center align-items-center text-black-alpha-90 font-bold bg-purple-500'>
+          <div className='flex justify-content-center text-blue-200'>
+            Store Timings
+          </div>
           <StoreTimings storeObj={selectedStoreObj}/>
           </div>
-        <div className='flex w-6 justify-content-center text-white-alpha-90 font-bold bg-blue-400'>
-          Store Contact Details 
+        <div className='flex w-6 justify-content-center align-items-center text-black-alpha-90 font-bold bg-blue-400'>
+        <StoreContact storeObj={selectedStoreObj}/>
           </div>
       </div>
     </div>
