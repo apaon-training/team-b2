@@ -5,7 +5,8 @@ import {Avatar} from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
 import StoreList from '../store-list/store-list';
 import React, { useState } from 'react';
-import storeTimings from '../store Timings/store Timings';
+import StoreTimings from '../store-timings/store-timings';
+
 
 function Home(props) {
   const onLogoutClicked = () => {
@@ -27,7 +28,7 @@ function Home(props) {
       <div className='flex h-auto'>
         <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-green-100'>
     
-          <StoreList selectedStore = {(value) => setSelectedStoreObj (value)} />
+          <StoreList selectedStore={(value) => setSelectedStoreObj(value)} />
         </div>
         <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-pink-600'>
         <div className='flex h-30rem'>
@@ -35,7 +36,7 @@ function Home(props) {
         </div>
         <div className='flex align-items-stretch flex-wrap h-15rem'>
         <div className='flex w-6 justify-content-center text-white-alpha-90 font-bold bg-purple-500'>
-          <storeTimings storeObj = {selectedStoreObj} />
+          <StoreTimings storeObj={selectedStoreObj}/>
           </div>
         <div className='flex w-6 justify-content-center text-white-alpha-90 font-bold bg-blue-400'>
           Store Contact Details 

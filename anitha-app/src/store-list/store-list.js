@@ -26,7 +26,7 @@ function StoreList(props) {
         "id":1001,
         "storeName":"Denny shop",
         "storeDetails":"clothes",
-        "sttoreTimings":[
+        "storeTimings":[
                           "Mon-Fri 9 to 10pm",
                           "Sat-Sun 9 to 05pm"
 
@@ -44,7 +44,7 @@ function StoreList(props) {
         "id":1002,
         "storeName":"Jyothi mall",
         "storeDetails":"Groceries",
-        "sttoreTimings":[
+        "storeTimings":[
                           "Thus-Fri 5am to 5pm",
                           "Wed-Sun 7am to 06pm"
 
@@ -62,7 +62,7 @@ function StoreList(props) {
         "id":1003,
         "storeName":"Big C",
         "storeDetails":"Appliances",
-        "sttoreTimings":[
+        "storeTimings":[
                           "Tue-Fri 8 to 10pm",
                           "Fri-Sun 8 to 05pm"
 

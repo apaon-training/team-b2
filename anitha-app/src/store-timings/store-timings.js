@@ -1,4 +1,4 @@
-function storeTimings(props) {
+function StoreTimings(props) {
     return (
         <>
         <div className="flex-column">
@@ -9,4 +9,4 @@ function storeTimings(props) {
         </>
     )
 }
-export default storeTimings;
+export default StoreTimings;
