@@ -4,10 +4,11 @@ function StoreAddress(props) {
 
     return(
         <>
-        <div className="felx-column">
+        <div>
+        <div className="felx mr-4 h-4rem text-4xl">StoreAddress</div>
             <span className="flex">{props?.storeObj?.storeAddress?.phoneNumber}</span>
             <span className="flex">{props?.storeObj?.storeAddress?.Address}</span>
-            <span></span>
+           
         </div>
         </>
     )

@@ -28,8 +28,93 @@ const storeDirectory=[
         }
     },
     {
-        "id": 10001,
-        "storeName": "Wollong",
+        "id": 10002,
+        "storeName": "jewellery",
+        "storeDetails": "chains",
+        "storeTimings": [
+            "Mon-Fri- 9 to 8 pm",
+            "Sat-Sun-9 to 5 pm"
+        ],
+        "storeAddress": {
+            "phoneNumber": "+91 897 567 2345",
+            "Address": "32-890 hyderabad"
+        },
+        "storeMapLocator": {
+            "Lattitudes": 15.3456,
+            "Longitudes": 89.0912
+        }
+    },
+    {
+        "id": 10003,
+        "storeName": "Market",
+        "storeDetails": "vegetables",
+        "storeTimings": [
+            "Mon-Fri- 9:30 to 7pm",
+            "Sat-Sun-9 to 8 pm"
+        ],
+        "storeAddress": {
+            "phoneNumber": "+91 567 894 2345",
+            "Address": "34-90 kerala"
+        },
+        "storeMapLocator": {
+            "Lattitudes": 89.7890,
+            "Longitudes": 34.7098
+        }
+    },
+    {
+        "id": 10004,
+        "storeName": "Resturant",
+        "storeDetails": "Biriyani",
+        "storeTimings": [
+            "Mon-Fri-11 to 9 pm",
+            "Sat-Sun-10 to 7 pm"
+        ],
+        "storeAddress": {
+            "phoneNumber": "+91 907 345 2309",
+            "Address": "89-12 kurnool"
+        },
+        "storeMapLocator": {
+            "Lattitudes": 67.7890,
+            "Longitudes": 78.1267
+        }
+    },
+    {
+        "id": 10005,
+        "storeName": "Dress Circle",
+        "storeDetails": "Cloths",
+        "storeTimings": [
+            "Mon-Fri- 8 to 11:30 pm",
+            "Sat-Sun-8:30 to 11 pm"
+        ],
+        "storeAddress": {
+            "phoneNumber": "+91 789 345 7865",
+            "Address": "45-96 old bustand"
+        },
+        "storeMapLocator": {
+            "Lattitudes": 87.1287,
+            "Longitudes": 43.5678
+        }
+    },
+    {
+        "id": 10006,
+        "storeName": "Industry",
+        "storeDetails": "Products",
+        "storeTimings": [
+            "Mon-Fri- 10 to 10:30 pm",
+            "Sat-Sun-10:30 to 7 pm"
+        ],
+        "storeAddress": {
+            "phoneNumber": "+91 567 890 2345",
+            "Address": "12-67 Banglore"
+        },
+        "storeMapLocator": {
+            "Lattitudes": 89.6543,
+            "Longitudes": 32.9023
+        }
+    },
+    {
+        "id": 10007,
+        "storeName": "n",
         "storeDetails": "D-mart",
         "storeTimings": [
             "Mon-Fri- 9 to 10 pm",
@@ -49,8 +134,8 @@ const storeDirectory=[
         "storeName": "Wollong",
         "storeDetails": "D-mart",
         "storeTimings": [
-            "Mon-Fri- 9 to 5pm",
-            "Sat-Sun-9 to 9 pm"
+            "Mon-Fri- 9 to 10 pm",
+            "Sat-Sun-9 to 5pm"
         ],
         "storeAddress": {
             "phoneNumber": "+91 799 339 2948",
@@ -60,19 +145,19 @@ const storeDirectory=[
             "Lattitudes": 45.8965,
             "Longitudes": 65.8923
         }
-    }
+    },
 ];
 
     const storeTemplate = (store) => {
         return (
 
-            <div className='flex-cloumn border-500 surface-overlay border-1 border-round font-bold '>
-            <div className='flex align-items-center w-8rem'>
+            <div className='flex-cloumn border-500 surface-overlay border-1 border-round font-medium line-height-3 1g:2 w-full h-4rem'>
+            <div className='flex align-items-center ml-2 w-8rem'>
                  <div>{store.storeName}
                  </div>
                  </div>
                  
-                    <div className='flex align-items-center'>
+                    <div className='flex align-items-center ml-2 w-8rem'>
                 <div>{store.storeDetails}</div>
             </div>
             </div>
@@ -86,7 +171,7 @@ const storeDirectory=[
     return (
     <>
       <div className="title">
-      <InputText value={'test'} className='m-3' />
+      <InputText value={'test'} className="p-inputtext-1g" placeholder="wollong" />
       <div className="card xl:flex xl:justify-content-center">
 
       <ListBox options={storeDirectory}

@@ -23,8 +23,8 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center text-7xl store-container w-full '>
              Store Locator
         </div>
-        <div className='flex  align-items-center justify-content-center mr-3  w-8rem '>
-        <Button label="Logout" severity="danger"  raised size='small' onClick={()=>onLogoutClicked()} />
+        <div className='flex  align-items-center justify-content-center w-8rem text-6xl mr-6 '>
+        <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/>
         <Avatar label="SR" size="xlarge" shape="circle" />
         
        
@@ -32,7 +32,7 @@ function Home(props) {
         </div>
       </div>
       <div className='flex h-full'>
-        <div className='flex-column  w-30rem bg-purple-400'>
+        <div className='flex-column  w-30rem bg-white'>
         {/* <InputText type="text" placeholder=" "/> */}
         <StoreList selectedStore={(value) => setSelectedStoreObj(value) }/>
         
@@ -43,11 +43,11 @@ function Home(props) {
               <div className='flex-column w-full bg-indigo-100'>   
         Detail container</div>   
         </div>
-        <div className='flex h-20rem'>
-        <div className='flex align-items-center justify-content-center w-6 bg-yellow-300'>
+        <div className='flex h-20rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
+        <div className='flex-row w-6 '>
            <StoreTimings storeObj={selectedStoreObj}/>
         </div>
-        <div className='flex align-items-center justify-content-center w-6 bg-green-300'>
+        <div className='flex-row w-6 '>
           <StoreAddress storeObj={selectedStoreObj}/>
           </div>
         </div>

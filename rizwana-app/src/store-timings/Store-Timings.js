@@ -5,13 +5,14 @@ function StoreTimings(props) {
 
     return(
         <>
-        <div className="felx-column">
+        <div>
+        <div className="felx mr-4 h-4rem text-4xl">StoreTimings</div>
             <span className="flex">{props?.storeObj?.storeTimings[0]}</span>
             <span className="flex">{props?.storeObj?.storeTimings[1]}</span>
-            <span></span>
+            
         </div>
         </>
-    )
+    );
 
     
 }
