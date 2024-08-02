@@ -5,41 +5,7 @@ import { InputText } from 'primereact/inputtext';
 import { mergeprops } from 'primereact/utils';
 function StoreList(props) {
    const storeDirectory=[
-    {
-        "id": 1001,
-        "storeName": "beauty parlour",
-        "storeDetails": "Make up kits",
-        "storeTimings": [
-            "Sat-Fri 8am to 10pm",
-            "Mon-Sun 10am to 05pm"
-        ],
-        "storeContact": {
-           "phone": "Phone: +61 224 445 665",
-            "address": "Adress: 54-76-sri rama nagar"
-        },
-        "storeMapLocation": {
-            "latitute": 65.657,
-            "longitude": 76.876
-        }
-    },
-    {
-        "id":1001,
-        "storeName":"Denny shop",
-        "storeDetails":"clothes",
-        "storeTimings":[
-                          "Mon-Fri 9 to 10pm",
-                          "Sat-Sun 9 to 05pm"
-
-        ],
-        "storeContact":{
-            "phone":"Phone:+61 224 445 665",
-            "address":"Address: 54-76- ashok nagar"
-        },
-        "storeMapLocation":{
-            "latitute":65.657,
-            "longitude":76.876
-        }
-    },
+    
     {
         "id":1002,
         "storeName":"Jyothi mall",
@@ -95,7 +61,7 @@ function StoreList(props) {
         }
     },
     {
-        "id":1003,
+        "id":1005,
         "storeName":"Restaurent",
         "storeDetails":"Food Items",
         "storeTimings":[
@@ -113,7 +79,7 @@ function StoreList(props) {
         }
     },
     {
-        "id":1003,
+        "id":1006,
         "storeName":"Skanda",
         "storeDetails":"realestate",
         "storeTimings":[
@@ -131,7 +97,7 @@ function StoreList(props) {
         }
     },
     {
-        "id":1003,
+        "id":1007,
         "storeName":"Mobile shop",
         "storeDetails":"Mobiles,chargers",
         "storeTimings":[
@@ -148,24 +114,8 @@ function StoreList(props) {
             "logitude":23.345
         }
     },
-    {
-        "id":1003,
-        "storeName":"Footware",
-        "storeDetails":"slippers,shoes",
-        "storeTimings":[
-                          "Tue-Fri 8 to 10pm",
-                          "Fri-Sun 8 to 05pm"
-
-        ],
-        "storeContact":{
-            "phone":"Phone: +61 276 487 564",
-            "address":"Address: 54-76-maddur Nagar"
-        },
-        "storeMapLocation":{
-            "latitute":65.748,
-            "logitude":23.345
-        }
-    }   
+    
+ 
    ];
 
  const storeTemplate = (store) => {
@@ -188,7 +138,7 @@ function StoreList(props) {
     return (
         <>
         <span className="title">
-            <InputText value={'Wollong'} className='text-black-alpha-90 text-xl border-700 surface-overly border-round m-3'/>
+            <InputText value={'Wollong'} className='text-black-alpha-90 text-3xl border-700 surface-overly border-round m-3'/>
             <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
         onChange={(e) => setSelectedStore(e.value)}
