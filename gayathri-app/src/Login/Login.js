@@ -50,7 +50,7 @@ function Login(props) {
                 Password :
             </div>
             <div className="">
-            <Password value={passText} onChange={(e) => setPassword(e.target.value)} toggleMask />
+            <Password value={passText} onChange={(e) => setPassword(e.target.value)} feedback={false} />
             </div>
             </div>
             <div className="flex align-items-center justify-content-center gap-5 md:h-5rem">

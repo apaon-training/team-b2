@@ -137,7 +137,7 @@ function StoreList(props) {
     const storeTemplate = (store) => {
        
         return (
-            <div className="flex-column border-700 surface-overlay border-2 border-round p-1 text-blue-800 text-xl">
+            <div className="flex-column border-700 surface-overlay border-1 border-round p-3 text-blue-800 text-xl">
                 <div className="flex column align-items-center w-8rem">
                     {store.storeName}
                 </div>
@@ -154,7 +154,7 @@ function StoreList(props) {
     return(
         <>
         <span className="title"/>
-        <InputText value={'wollong'} className=' text-black-alpha-90 text-xl  border-700 surface-overlay border-2 border-round m-4'/>
+        <InputText value={'wollong'} className=' text-black-alpha-90 text-xl w-20rem border-700 surface-overlay border-1 border-round m-4'/>
         <div className="card xl:flex xl:justify-content-center">
             <ListBox options={storeDirectory}
             onChange={(e) => setSelectedStore(e.value)}

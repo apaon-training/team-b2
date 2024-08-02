@@ -7,12 +7,32 @@ import StoreList from '../store-list/store-list';
 import { useState } from 'react';
 import StoreTimings from '../store-timings/store-timings';
 import StoreContact from '../store-contact/store-contact';
+import { Menu } from 'primereact/menu';
+import React, { useRef } from 'react';
 
 function Home(props) {
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
   const onLogoutClicked = () =>{
     props.logoutSuccess()
   }
+  const menuRight = useRef(null);
+  const items = [
+    {
+        items: [
+            {
+                label: 'About',
+                icon: 'pi pi-exclamation-circle'
+            },
+            {
+                label: 'Logout',
+                icon: 'pi pi-sign-out',
+                command: () =>{
+                  props.logoutSuccess()
+                }
+            }
+        ]
+    }
+];
 
   return (
     <div className="App flex-column">
@@ -21,8 +41,8 @@ function Home(props) {
           Store Locator
         </div>
         <div className='flex align-items-center justify-content-center gap-3 w-11rem'>
-        <Button label="Logout" severity="danger" raised  size='small' onClick={() => onLogoutClicked ()} />
-          <Avatar label="BA" size="xlarge" shape="circle" className='mr-3'/>
+        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
+          <Avatar label="BA" size="xlarge" shape="circle" className='mr-3' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
         </div>
       </div>
       <div className='flex h-auto'>
@@ -30,14 +50,14 @@ function Home(props) {
           <StoreList selectedStore={ (value) => setSelectedStoreObj (value) }/>
         </div>
         <div className='flex-column text-white-alpha-90 text-right w-full bg-green-600'>
-        <div className='flex h-30rem'>
+        <div className='flex h-25rem'>
           Map container 
         </div>
         <div className='flex h-15rem'>
-        <div className='flex w-6 justify-content-center align-items-center text-blue-800 font-bold text-xl bg-white'>
+        <div className='flex w-6 justify-content-center align-items-center text-blue-800 text-xl bg-white'>
           <StoreTimings storeObj={selectedStoreObj}/>
           </div>
-        <div className='flex w-6 justify-content-center align-items-center text-black-alpha-90 font-bold text-xl bg-white'>
+        <div className='flex w-6 justify-content-center align-items-center text-black-alpha-90 text-xl bg-white'>
           <StoreContact storeObj={selectedStoreObj}/>
           </div>
       </div>
