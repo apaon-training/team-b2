@@ -7,9 +7,32 @@ import StoreList from '../store-list/Store-List';
 import React, { useState } from 'react';
 import StoreTimings from '../store-timings/Store-Timings';
 import StoreAddress from '../store-address/Store-Address';
+import { Menu } from 'primereact/menu';
+
+
 
 function Home(props) {
   const [selectedStoreObj, setSelectedStoreObj] = useState(null);
+  const menuRight = useState(null);
+  
+  const items = [
+    {
+        // label: 'Options',
+        items: [
+            {
+                label: 'About',
+                icon: 'pi pi-exclamation-circle'
+            },
+            {
+                label: 'Logout',
+                icon: 'pi pi-sign-out',
+                command:() =>{
+                  props.LogoutSuccess();
+                }
+            }
+        ]
+    }
+];
   
   
 
@@ -24,8 +47,9 @@ function Home(props) {
              Store Locator
         </div>
         <div className='flex  align-items-center justify-content-center w-8rem text-6xl mr-6 '>
-        <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/>
-        <Avatar label="SR" size="xlarge" shape="circle" />
+        {/* <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/> */}
+        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
+        <Avatar label="SR" size="xlarge" shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
         
        
 

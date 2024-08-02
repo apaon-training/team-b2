@@ -62,7 +62,7 @@ function Login(props) {
         </div>
         <div className="">
             {/*<input></input>*/}
-            <Password value={passText} onChange={(e) => setPassword(e.target.value)} toggleMask />
+            <Password value={passText} onChange={(e) => setPassword(e.target.value)} toggleMask feedback={false} />
         </div>
        </div>
        <div>
