@@ -5,6 +5,7 @@ import Storelist from '../store-list/storelist';
 import React, { useState } from 'react';
 import StoreTimings from '../store-Timings/storeTimings';
 import StoreAddress from '../store-Address/storeAddress';
+import { Menu } from 'primereact/menu';
 
 
 function Home(props) {
@@ -12,6 +13,26 @@ function Home(props) {
   const onLogoutclicked = ()=>{
   props.LogoutSuccess();
   }
+  const menuRight = useState(null);
+    const items = [
+        {
+            // label: 'Options',
+            items: [
+                {
+                    label: 'About',
+                    icon: 'pi pi-exclamation-circle'
+                },
+                {
+                    label: 'Logout',
+                    icon: 'pi pi-sign-out',
+                    command: () =>{
+                      props.LogoutSuccess();
+
+                    }
+                }
+            ]
+        }
+    ];
   return (
     <div className="App flex-column">
       <div className='flex justify-content-center h-8rem navbar'>
@@ -19,8 +40,9 @@ function Home(props) {
              Store locator
         </div>
         <div className='flex align-items-center justify-content-center w-8rem text-6xl mr-6'>
-        <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" className='flex mr-4 pl-2'/>
-        <Avatar label="sv" size="xlarge" className='text-black-alpha-60' shape="circle" />       
+        {/* <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" className='flex mr-4 pl-2'/> */}
+        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" label="logout" raised onClick={() => onLogoutclicked()}/>
+        <Avatar label="sv" size="xlarge" className='text-black-alpha-60' shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />      
         </div>
      </div>
      <div className='flex h-full'>
@@ -34,7 +56,7 @@ function Home(props) {
       <div className='flex-column w-full bg-cyan-800 text-4xl'>
        Detail container</div>
        </div>
-       <div className='flex h-20rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
+       <div className='flex h-23rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
         <div className='flex-row w-6'>
           <StoreTimings storeObj={selectedstoreObj}/>
       </div>

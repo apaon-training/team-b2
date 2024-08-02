@@ -65,7 +65,7 @@ function Login(props) {
             </div>
             <div className='flex h-2rem ml-2'>
                 {/*<input></input>*/}
-                <Password value={ passtext } onChange={(e) => setPassword (e.target.value)} toggleMask/>
+                <Password value={ passtext } onChange={(e) => setPassword (e.target.value)} toggleMask feedback={false}/>
                 
              </div>
         </div>

@@ -151,13 +151,13 @@ const setselectedstore =(value)=>{
    return(
         <>
         <div className="title">
-        <InputText type="text" className="p-inputtext-lg" placeholder="wollong" />
+        <InputText type="text" className="p-inputtext-lg" placeholder="wollong"  />
         <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
                  onChange={(e) => setselectedstore(e.value)}
                  itemTemplate={storeTemplate} className="w-full"/>
         </div>
-            </div>
+            </div>   ``
         </>
     );
 
