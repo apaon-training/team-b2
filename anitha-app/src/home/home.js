@@ -19,7 +19,7 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center store-locator-container text-6xl text-white-alpha-90 w-full'>
           Store Locator
         </div>
-        <div className='flex align-items-center justify-content-center w-10rem'>
+        <div className='flex align-items-center justify-content-center gap-3 w-10rem'>
         <Button label="Logout" severity="danger" raised size='small' onClick={() => onLogoutClicked ()} />
           <Avatar label="VA" size="xlarge" shape="circle" className='mr-3'/>
         </div>
@@ -28,18 +28,17 @@ function Home(props) {
         <div className='flex-column text-white-alpha-90 font-bold w-30rem bg-green-100'>
           <StoreList selectedStore={(value) => setSelectedStoreObj(value)} />
         </div>
-        <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-pink-600'>
+        <div className='flex-column text-white-alpha-90 text-right font-bold w-full bg-purple-600'>
         <div className='flex h-30rem'>
           Map container 
         </div>
-        <div className='flex align-items-stretch flex-wrap h-15rem'>
-        <div className='flex w-6 justify-content-center align-items-center text-black-alpha-90 font-bold bg-purple-500'>
-          <div className='flex justify-content-center text-blue-200'>
-            Store Timings
-          </div>
+        <div className='flex h-15rem'>
+        <div className='flex w-6 justify-content-center align-items-center text-blue-900 font-bold bg-gray-200'>
+         Store Timings
           <StoreTimings storeObj={selectedStoreObj}/>
           </div>
-        <div className='flex w-6 justify-content-center align-items-center text-black-alpha-90 font-bold bg-blue-400'>
+        <div className='flex w-6 justify-content-center align-items-center text-blue-900 font-bold bg-gray-200'>
+       Store Contact Details 
         <StoreContact storeObj={selectedStoreObj}/>
           </div>
       </div>
