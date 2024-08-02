@@ -33,7 +33,7 @@ function Home(props) {
       </div>
       <div className='flex h-full  '>
         <div className='flex-column w-30rem bg-white'>
-        {/* <InputText type="text" placeholder=" "/> */}
+        {/* <InputText type="" placeholder=""/> */}
         <StoreList selectedStore={(value) => setSelectedStoreObj(value) }/>
         
 

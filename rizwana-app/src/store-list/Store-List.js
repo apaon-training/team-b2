@@ -19,8 +19,8 @@ const storeDirectory=[
             "Sat-Sun-9 to 4 pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 799 339 2948",
-            "Address": "71-127 kallur"
+            "phoneNumber": "Phone: +91 799 339 2948",
+            "Address": "Address: 71-127 kallur"
         },
         "storeMapLocator": {
             "Lattitudes": 45.8965,
@@ -36,8 +36,8 @@ const storeDirectory=[
             "Sat-Sun-9 to 5 pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 897 567 2345",
-            "Address": "32-890 hyderabad"
+            "phoneNumber": "Phone: +91 897 567 2345",
+            "Address": "Address: 32-890 hyderabad"
         },
         "storeMapLocator": {
             "Lattitudes": 15.3456,
@@ -53,8 +53,8 @@ const storeDirectory=[
             "Sat-Sun-9 to 8 pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 567 894 2345",
-            "Address": "34-90 kerala"
+            "phoneNumber": "Phone: +91 567 894 2345",
+            "Address": "Address: 34-90 kerala"
         },
         "storeMapLocator": {
             "Lattitudes": 89.7890,
@@ -70,8 +70,8 @@ const storeDirectory=[
             "Sat-Sun-10 to 7 pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 907 345 2309",
-            "Address": "89-12 kurnool"
+            "phoneNumber": "Phone: +91 907 345 2309",
+            "Address": "Address: 89-12 kurnool"
         },
         "storeMapLocator": {
             "Lattitudes": 67.7890,
@@ -87,8 +87,8 @@ const storeDirectory=[
             "Sat-Sun-8:30 to 11 pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 789 345 7865",
-            "Address": "45-96 old bustand"
+            "phoneNumber": "Phone: +91 789 345 7865",
+            "Address": "Address: 45-96 old bustand"
         },
         "storeMapLocator": {
             "Lattitudes": 87.1287,
@@ -104,8 +104,8 @@ const storeDirectory=[
             "Sat-Sun-10:30 to 7 pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 567 890 2345",
-            "Address": "12-67 Banglore"
+            "phoneNumber": "Phone: +91 567 890 2345",
+            "Address": "Address: 12-67 Banglore"
         },
         "storeMapLocator": {
             "Lattitudes": 89.6543,
@@ -121,8 +121,8 @@ const storeDirectory=[
             "Sat-Sun-9 to 6pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 789 567 2345",
-            "Address": "89-34 nanoor"
+            "phoneNumber": "Phone: +91 789 567 2345",
+            "Address": "Address: 89-34 nanoor"
         },
         "storeMapLocator": {
             "Lattitudes": 89.7890,
@@ -138,8 +138,8 @@ const storeDirectory=[
             "Sat-Sun-9 to 10pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 678 456 0978",
-            "Address": "34-12 assom"
+            "phoneNumber": "Phone: +91 678 456 0978",
+            "Address": "Address: 34-12 assom"
         },
         "storeMapLocator": {
             "Lattitudes": 43.9087,
