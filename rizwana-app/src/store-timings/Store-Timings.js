@@ -6,7 +6,7 @@ function StoreTimings(props) {
     return(
         <>
         <div>
-        <div className="felx mr-4 h-4rem text-4xl">StoreTimings</div>
+        <div className="felx mr-4 h-4rem text-4xl text-blue-600">StoreTimings</div>
             <span className="flex">{props?.storeObj?.storeTimings[0]}</span>
             <span className="flex">{props?.storeObj?.storeTimings[1]}</span>
             

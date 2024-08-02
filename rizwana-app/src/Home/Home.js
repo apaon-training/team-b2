@@ -40,7 +40,7 @@ function Home(props) {
         </div>
         <div className='flex-column  w-full bg-orange-200'>
            <div className='flex h-25rem'>
-              <div className='flex-column w-full bg-indigo-100'>   
+              <div className='flex-column w-full bg-pink-500 text-4xl'>   
         Detail container</div>   
         </div>
         <div className='flex h-20rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>

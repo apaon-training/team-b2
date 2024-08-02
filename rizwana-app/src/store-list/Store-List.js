@@ -114,36 +114,36 @@ const storeDirectory=[
     },
     {
         "id": 10007,
-        "storeName": "n",
-        "storeDetails": "D-mart",
+        "storeName": "carpenter",
+        "storeDetails": "woods",
         "storeTimings": [
-            "Mon-Fri- 9 to 10 pm",
-            "Sat-Sun-9 to 5pm"
+            "Mon-Fri- 9 to 11 pm",
+            "Sat-Sun-9 to 6pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 799 339 2948",
-            "Address": "71-127 kallur"
+            "phoneNumber": "+91 789 567 2345",
+            "Address": "89-34 nanoor"
         },
         "storeMapLocator": {
-            "Lattitudes": 45.8965,
-            "Longitudes": 65.8923
+            "Lattitudes": 89.7890,
+            "Longitudes": 23.2345
         }
     },
     {
-        "id": 10001,
-        "storeName": "Wollong",
-        "storeDetails": "D-mart",
+        "id": 10008,
+        "storeName": "food stall",
+        "storeDetails": "items",
         "storeTimings": [
-            "Mon-Fri- 9 to 10 pm",
-            "Sat-Sun-9 to 5pm"
+            "Mon-Fri- 9 to 6 pm",
+            "Sat-Sun-9 to 10pm"
         ],
         "storeAddress": {
-            "phoneNumber": "+91 799 339 2948",
-            "Address": "71-127 kallur"
+            "phoneNumber": "+91 678 456 0978",
+            "Address": "34-12 assom"
         },
         "storeMapLocator": {
-            "Lattitudes": 45.8965,
-            "Longitudes": 65.8923
+            "Lattitudes": 43.9087,
+            "Longitudes": 90.7432
         }
     },
 ];
