@@ -102,12 +102,12 @@ const storeDirectory=[
     return (
        
         <div className="flex-cloumn border-500 surface-overlay border-1 border-round font-bold"> 
-        <div className="flex align-items-center w-20rem md:p-3">
+        <div className="flex align-items-left w-20rem md:p-3">
             <div>{store.storeName}
             </div>
             </div>
             <div className="flex-cloumn">   
-        <div className="flex align-items-center w-10rem "></div>
+        <div className="flex text-left w-10rem "></div>
             <div>{store.storeDetails}</div>
         </div>
         </div>

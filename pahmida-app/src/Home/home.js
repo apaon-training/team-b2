@@ -37,13 +37,13 @@ function Home(props) {
           <div className='flex-column w-full bg-pink-300'>
           map  Details</div>
          </div>
-        <div className='flex justify-content-center h-20rem'>
+        <div className='flex align-items-center justify-content-center h-20rem bg-white px-8'>
           <div className='flex w-6 bg-white'>
              <StoreTimings storeObj={SelectedstoreObj}/>
              <div className='timings'> 
           </div>
           </div>
-          <div className='flex w-6 jutify bg-pink-600 justify-content-center'>
+          <div className='flex w-6 jutify bg- white justify-content-center'>
             <div className='flex align-items-center justify-content-center'>
             
             <StoreAddress storeObj={SelectedstoreObj}/>
