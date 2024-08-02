@@ -188,7 +188,7 @@ function StoreList(props) {
     return (
         <>
         <span className="title">
-            <InputText value={'Wollong'} className=' text-black-alpha-90 text-xl border-700 surface-overly border-round m-3'/>
+            <InputText value={'Wollong'} className='text-black-alpha-90 text-xl border-700 surface-overly border-round m-3'/>
             <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
         onChange={(e) => setSelectedStore(e.value)}
