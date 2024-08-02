@@ -31,8 +31,8 @@ function Home(props) {
 
         </div>
       </div>
-      <div className='flex h-full'>
-        <div className='flex-column  w-30rem bg-white'>
+      <div className='flex h-full  '>
+        <div className='flex-column w-30rem bg-white'>
         {/* <InputText type="text" placeholder=" "/> */}
         <StoreList selectedStore={(value) => setSelectedStoreObj(value) }/>
         
@@ -43,11 +43,11 @@ function Home(props) {
               <div className='flex-column w-full bg-pink-500 text-4xl'>   
         Detail container</div>   
         </div>
-        <div className='flex h-20rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
-        <div className='flex-row w-6 '>
+        <div className='flex h-23rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
+        <div className='flex-row text-blue-700 w-6 '>
            <StoreTimings storeObj={selectedStoreObj}/>
         </div>
-        <div className='flex-row w-6 '>
+        <div className='flex-row  text-black-alpha-90 w-6 '>
           <StoreAddress storeObj={selectedStoreObj}/>
           </div>
         </div>
