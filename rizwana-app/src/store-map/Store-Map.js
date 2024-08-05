@@ -11,14 +11,14 @@ function StoreMap(props) {
     const googleKey = "AIzaSyDSSP_p2LwfsNGP5eNXCd3cImC7Kf4RhBo";
 const [markerLocation, setMarkerLocation] = useState({
 
-    lat: props?.storeObj?.storeMapLocator?.Lattitudes,
+    lat:15.830277450411142, 
 
-    lng:props?.storeObj?.storeMapLocator?.Longitudes});
+    lng:78.03995450105494});
 
 
     return (
         <>
-        <div className="flex-column" >
+        {/* <div className="flex-column" > */}
         {/* <div className="flex mr-4 h-4rem text-4xl text-blue-600">Store Map </div>
             <span className="flex align-items-center justify-content-center">{props?.storeObj?.storeMapLocator?.Lattitudes}</span>
             <span className="flex align-items-center justify-content-center">{props?.storeObj?.storeMapLocator?.Longitudes}</span>
@@ -47,7 +47,7 @@ const [markerLocation, setMarkerLocation] = useState({
 
 
            
-        </div>
+        {/* </div> */}
         </>
     );
 
