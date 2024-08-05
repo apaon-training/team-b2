@@ -15,8 +15,8 @@ function Storelist(props){
         "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
      },
      "storeMaplocation":{
-        "latitude":16.43,
-        "logitude":14.56
+        "lattitudes":15.8337677,
+        "logitudes":78.0340215
      }
  },
   {
@@ -31,8 +31,8 @@ function Storelist(props){
         "address":"10-20 station road, NSW"
      },
      "storeMaplocation":{
-        "lattitudes":16.33,
-        "logitudes":14.65
+        "lattitudes":15.8224004,
+        "logitudes":78.0418776
      }
   },
   {
@@ -47,8 +47,8 @@ function Storelist(props){
         "address":"10-20 station road"
      },
      "storeMaplocation":{
-        "lattitudes":16.73,
-        "logitudes":14.85
+        "lattitudes":15.8261087,
+        "logitudes":78.0196085
      }
 },
 {
@@ -63,8 +63,8 @@ function Storelist(props){
         "address":"10-20 Near Abdullah Khan estate"
      },
      "storeMaplocation":{
-        "lattitudes":18.73,
-        "logitudes":19.85
+        "lattitudes":15.8125994,
+        "logitudes":78.0121861
      }
 },
    {
@@ -79,8 +79,8 @@ function Storelist(props){
         "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
      },
      "storeMaplocation":{
-        "latitude":16.43,
-        "logitude":14.56
+        "lattitudes":15.8125994,
+        "logitudes":78.0121861
      }
  },
   {
@@ -95,8 +95,8 @@ function Storelist(props){
         "address":"10-20 station road, NSW"
      },
      "storeMaplocation":{
-        "lattitudes":16.33,
-        "logitudes":14.65
+        "lattitudes":15.7551875,
+        "logitudes":77.8634611
      }
   },
   {
@@ -111,24 +111,8 @@ function Storelist(props){
         "address":"10-20 station road"
      },
      "storeMaplocation":{
-        "lattitudes":16.73,
-        "logitudes":14.85
-     }
-},
-{
-    "id":1009,
-    "storeName":"Jyothi",
-     "storeDetails":"grocery",
-     "storeTimings":["Mon-Fri-8am to 9pm", 
-                     "sat-sun-9am to 5pm"
-                    ],
-     "storeAddress":{
-        "phone": "+61 253 483 654",
-        "address":"10-20 Near Abdullah Khan estate"
-     },
-     "storeMaplocation":{
-        "lattitudes":18.73,
-        "logitudes":19.85
+        "lattitudes":15.7551875,
+        "logitudes":77.8634611,
      }
 }];
 

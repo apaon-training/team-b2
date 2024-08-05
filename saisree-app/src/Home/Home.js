@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import StoreTimings from '../store-Timings/storeTimings';
 import StoreAddress from '../store-Address/storeAddress';
 import { Menu } from 'primereact/menu';
+import StoreMap from '../store-Map/storeMap';
 
 
 function Home(props) {
@@ -53,8 +54,9 @@ function Home(props) {
 
       <div className='flex-column w-full'>
         <div className='flex h-25rem'>
-      <div className='flex-column w-full bg-cyan-800 text-4xl'>
-       Detail container</div>
+      <div className='flex-column text-xl px-8 bg-white text-black-alpha-60'>
+       <StoreMap storeObj={selectedstoreObj}/>
+       </div>
        </div>
        <div className='flex h-23rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
         <div className='flex-row w-6'>
