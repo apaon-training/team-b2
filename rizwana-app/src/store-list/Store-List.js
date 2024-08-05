@@ -171,7 +171,7 @@ const storeDirectory=[
     return (
     <>
       <div className="title">
-      <InputText value={'test'} className="p-inputtext-1g" placeholder="wollong" />
+      <InputText value={'wollong'} className="text-black-alpha-90 text-3xl border-700 surface-overly border-round m-3" />
       <div className="card xl:flex xl:justify-content-center">
 
       <ListBox options={storeDirectory}
