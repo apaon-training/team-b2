@@ -7,7 +7,7 @@ function StoreList(props) {
    const storeDirectory=[
     
     {
-        "id":1002,
+        "id":1001,
         "storeName":"Jyothi mall",
         "storeDetails":"Groceries",
         "storeTimings":[
@@ -20,12 +20,12 @@ function StoreList(props) {
             "address":"Address: 54-54 ganesh nagar"
         },
         "storeMapLocation":{
-            "latitute":34-378,
-            "logitude":98.765
+            "latitude":15.830749264964458,
+            "longitude":78.04023528591568
         }
     },
     {
-        "id":1003,
+        "id":1002,
         "storeName":"Big C",
         "storeDetails":"Appliances",
         "storeTimings":[
@@ -38,14 +38,14 @@ function StoreList(props) {
             "address":"Address: 54-76-laksmi nagar"
         },
         "storeMapLocation":{
-            "latitute":65.748,
-            "logitude":23.345
+            "latitude":15.828495179688767,
+            "longitude":78.03667830227081
         }
     },
     {
-        "id":1004,
+        "id":1003,
         "storeName":"Wollonong",
-        "storeDetails":"Textailes",
+        "storeDetails":"Textiles",
         "storeTimings":[
                           "Tue-Fri 8 to 10pm",
                           "Fri-Sun 8 to 05pm"
@@ -56,13 +56,13 @@ function StoreList(props) {
             "address":"Address: 35-66-check post"
         },
         "storeMapLocation":{
-            "latitute":66.888,
-            "logitude":22.345
+            "latitude":-34.422799442100015,
+            "longitude":150.8800977947275
         }
     },
     {
-        "id":1005,
-        "storeName":"Restaurent",
+        "id":1004,
+        "storeName":" Ajwa Restaurent",
         "storeDetails":"Food Items",
         "storeTimings":[
                           "Mon-Fri 8 to 11pm",
@@ -74,12 +74,12 @@ function StoreList(props) {
             "address":"Address: 54-55 old bustand"
         },
         "storeMapLocation":{
-            "latitute":90.444,
-            "logitude":75.333
+            "latitude":15.834460563102077, 
+            "longitude":78.03137544089209
         }
     },
     {
-        "id":1006,
+        "id":1005,
         "storeName":"Skanda",
         "storeDetails":"realestate",
         "storeTimings":[
@@ -92,14 +92,15 @@ function StoreList(props) {
             "address":"Address: 54-76-birlagate"
         },
         "storeMapLocation":{
-            "latitute":65.748,
-            "logitude":23.345
+            "latitude":15.830923273187274, 
+            "latitude":78.03962773380324
+            
         }
     },
     {
-        "id":1007,
-        "storeName":"Mobile shop",
-        "storeDetails":"Mobiles,chargers",
+        "id":1006,
+        "storeName":"D mart",
+        "storeDetails":"All items",
         "storeTimings":[
                           "Tue-Fri 8 to 10pm",
                           "Fri-Sun 8 to 05pm"
@@ -110,8 +111,9 @@ function StoreList(props) {
             "address":"Address: 54-76-deva Nagar"
         },
         "storeMapLocation":{
-            "latitute":65.748,
-            "logitude":23.345
+            "latitude":15.832909613449454,
+            "latitude":15.832909613449454
+            
         }
     },
     

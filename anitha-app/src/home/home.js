@@ -9,6 +9,7 @@ import StoreTimings from '../store-timings/store-timings';
 import StoreContact from '../store-contact/store-contact';
 import { Menu } from 'primereact/menu';
 import { useState } from 'react';
+import StoreMap from '../store-map/store-map';
 
 
 function Home(props) {
@@ -56,7 +57,7 @@ function Home(props) {
         </div>
         <div className='flex-column text-black-alpha-90 text-right text-2xl w-full bg-green-200'>
         <div className='flex h-30rem'>
-          Map container 
+          <StoreMap storeObj={selectedStoreObj}/>
         </div>
         <div className='flex h-15rem'>
         <div className='flex w-6 justify-content-center align-items-center Store-Timings text-3xl text-blue-900 bg-white'>
