@@ -57,7 +57,7 @@ function Home(props) {
       </div>
       <div className='flex-column w-full '>
         <div className='flex h-26rem'>
-          <div className='flex-column w-full '>
+          <div className='flex-column w-full'>
           <StoreMap storeObj={SelectedstoreObj}/> 
           </div>
          </div>
