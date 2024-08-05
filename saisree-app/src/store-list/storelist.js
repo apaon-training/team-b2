@@ -16,7 +16,7 @@ function Storelist(props){
      },
      "storeMaplocation":{
         "lattitudes":15.8337677,
-        "logitudes":78.0340215
+        "longitudes":78.0340215
      }
  },
   {
@@ -32,7 +32,7 @@ function Storelist(props){
      },
      "storeMaplocation":{
         "lattitudes":15.8224004,
-        "logitudes":78.0418776
+        "longitudes":78.0418776
      }
   },
   {
@@ -48,7 +48,7 @@ function Storelist(props){
      },
      "storeMaplocation":{
         "lattitudes":15.8261087,
-        "logitudes":78.0196085
+        "longitudes":78.0196085
      }
 },
 {
@@ -64,7 +64,7 @@ function Storelist(props){
      },
      "storeMaplocation":{
         "lattitudes":15.8125994,
-        "logitudes":78.0121861
+        "longitudes":78.0121861
      }
 },
    {
@@ -80,7 +80,7 @@ function Storelist(props){
      },
      "storeMaplocation":{
         "lattitudes":15.8125994,
-        "logitudes":78.0121861
+        "longitudes":78.0121861
      }
  },
   {
@@ -96,7 +96,7 @@ function Storelist(props){
      },
      "storeMaplocation":{
         "lattitudes":15.7551875,
-        "logitudes":77.8634611
+        "longitudes":77.8634611
      }
   },
   {
@@ -112,7 +112,7 @@ function Storelist(props){
      },
      "storeMaplocation":{
         "lattitudes":15.7551875,
-        "logitudes":77.8634611,
+        "longitudes":77.8634611,
      }
 }];
 
