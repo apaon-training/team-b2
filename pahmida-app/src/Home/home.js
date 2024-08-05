@@ -4,6 +4,9 @@ import { Button } from 'primereact/button';
 import { Avatar } from 'primereact/avatar';
 import { InputText } from 'primereact/inputtext';
 import StoreList from '../store-list/store-list';
+import StoreMap from '../store-Map/store-Map';
+ 
+import { Menu } from 'primereact/menu';
  
 import React, { useState } from 'react';
 import StoreTimings from '../store--Timings/store-timings';
@@ -14,6 +17,25 @@ function Home(props) {
   const onLogoutClicked=()=>{
   props.logoutSuccess();
   }
+  const menuRight = useState(null);
+  const items = [
+      {
+          // label: 'Options',
+          items: [
+              {
+                label: 'About',
+                icon: ' pi pi-exclamation-circle'
+              },
+              {
+                   label: ' LogOut',
+                  icon: ' pi pi-sign-out',
+                  command:()=>{props.logoutSuccess()
+
+                  }
+              }
+          ]
+      }
+    ];
   return (
     //Main container
     <div className='home flex-column'>
@@ -22,8 +44,9 @@ function Home(props) {
        store Locator
       </div>
         <div className='flex align-items-center justify-content-center w-9rem text-6xl mr-4'>
-        <Button label="Logout" severity="danger" onClick={()=> onLogoutClicked()} />
-            <Avatar label="PP" size="xlarge" shape="circle" className='text'/>
+        {/* <Button label="Logout" severity="danger" onClick={()=> onLogoutClicked()} /> */}
+        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
+            <Avatar label="PP" size="xlarge" shape="circle" className='text'   onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
         </div>
      </div>
      <div className='flex h-full'>
@@ -33,9 +56,10 @@ function Home(props) {
          
       </div>
       <div className='flex-column w-full bg-pink-500'>
-        <div className='flex h-25rem'>
+        <div className='flex h-26rem'>
           <div className='flex-column w-full bg-pink-300'>
-          map  Details</div>
+          <StoreMap storeObj={SelectedstoreObj}/> 
+          </div>
          </div>
         <div className='flex align-items-center justify-content-center h-20rem bg-white px-8'>
           <div className='flex w-6 bg-white'>

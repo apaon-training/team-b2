@@ -16,8 +16,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes":23.45,
-        "Longitudes":45.23
+        "Lattitudes": 17.446347238455438, 
+        "Longitudes": 78.48424496412154
     }
 },
 {
@@ -31,8 +31,8 @@ const storeDirectory=[
          "address": "nh"
         },
 "storeMapLocation":{
-    "Lattitudes":23.45,
-    "Longitudes":45.23
+    "Lattitudes": 13.030867019063377,
+    "Longitudes":77.5864833777009
 }
 },
 {
@@ -46,8 +46,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes":23.45,
-        "Longitudes":45.23
+        "Lattitudes": 28.613486438560322, 
+        "Longitudes": 77.20072864423555
     }
 },
 {
@@ -61,8 +61,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes":23.45,
-        "Longitudes":45.23
+        "Lattitudes": 28.606237408949315,
+        "Longitudes": 77.23665292842914
     }
 },
 {
@@ -76,11 +76,12 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes":23.45,
-        "Longitudes":45.23
+        "Lattitudes": 28.592578081787906,  
+        "Longitudes": 77.25672060383056
     }
-},
-{
+
+
+},{
     "id":5003,
     "storeName":"Wollong-c",
     "storeDetails":"textile",
@@ -91,8 +92,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes":23.45,
-        "Longitudes":45.23
+        "Lattitudes": 28.524532281697493,
+        "Longitudes":  77.18548550938071
     }
 }
 
@@ -102,14 +103,15 @@ const storeDirectory=[
     return (
        
         <div className="flex-cloumn border-500 surface-overlay border-1 border-round font-bold"> 
-        <div className="flex align-items-left w-20rem md:p-3">
+        <div className="flex-column w-20rem md:p-3">
             <div>{store.storeName}
             </div>
-            </div>
-            <div className="flex-cloumn">   
-        <div className="flex text-left w-10rem "></div>
             <div>{store.storeDetails}</div>
         </div>
+        {/* <div className="flex-cloumn">   
+        <div className="flex text-center w-10rem "></div>
+            <div>{store.storeDetails}</div>
+        </div> */}
         </div>
     );
  }; 
