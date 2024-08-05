@@ -23,8 +23,8 @@ const storeDirectory=[
             "Address": "Address: 71-127 kallur"
         },
         "storeMapLocator": {
-            "Lattitudes": 45.8965,
-            "Longitudes": 65.8923
+            "Lattitudes": 15.818716285887168,
+            "Longitudes": 78.02985281909494
         }
     },
     {
@@ -40,8 +40,8 @@ const storeDirectory=[
             "Address": "Address: 32-890 hyderabad"
         },
         "storeMapLocator": {
-            "Lattitudes": 15.3456,
-            "Longitudes": 89.0912
+            "Lattitudes": 17.44110669506619,
+            "Longitudes": 78.44167294347916
         }
     },
     {
@@ -57,8 +57,8 @@ const storeDirectory=[
             "Address": "Address: 34-90 kerala"
         },
         "storeMapLocator": {
-            "Lattitudes": 89.7890,
-            "Longitudes": 34.7098
+            "Lattitudes": 11.151132974584387, 
+            "Longitudes": 76.37419758584075
         }
     },
     {
@@ -74,8 +74,8 @@ const storeDirectory=[
             "Address": "Address: 89-12 kurnool"
         },
         "storeMapLocator": {
-            "Lattitudes": 67.7890,
-            "Longitudes": 78.1267
+            "Lattitudes": 15.835003101525297,
+            "Longitudes": 78.03019970361444
         }
     },
     {
@@ -91,8 +91,8 @@ const storeDirectory=[
             "Address": "Address: 45-96 old bustand"
         },
         "storeMapLocator": {
-            "Lattitudes": 87.1287,
-            "Longitudes": 43.5678
+            "Lattitudes": 15.83069524947175, 
+            "Longitudes": 78.03865625424572
         }
     },
     {
@@ -108,8 +108,8 @@ const storeDirectory=[
             "Address": "Address: 12-67 Banglore"
         },
         "storeMapLocator": {
-            "Lattitudes": 89.6543,
-            "Longitudes": 32.9023
+            "Lattitudes": 12.963316049614443, 
+            "Longitudes": 77.52624223337875
         }
     },
     {
