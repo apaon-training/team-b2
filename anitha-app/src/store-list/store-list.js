@@ -42,27 +42,10 @@ function StoreList(props) {
             "longitude":78.03667830227081
         }
     },
+    
     {
         "id":1003,
-        "storeName":"Wollonong",
-        "storeDetails":"Textiles",
-        "storeTimings":[
-                          "Tue-Fri 8 to 10pm",
-                          "Fri-Sun 8 to 05pm"
-
-        ],
-        "storeContact":{
-            "phone":"Phone: +61 888 768 564",
-            "address":"Address: 35-66-check post"
-        },
-        "storeMapLocation":{
-            "latitude":-34.422799442100015,
-            "longitude":150.8800977947275
-        }
-    },
-    {
-        "id":1004,
-        "storeName":" Ajwa Restaurent",
+        "storeName":" AjwaRestaurent",
         "storeDetails":"Food Items",
         "storeTimings":[
                           "Mon-Fri 8 to 11pm",
@@ -79,7 +62,7 @@ function StoreList(props) {
         }
     },
     {
-        "id":1005,
+        "id":1004,
         "storeName":"Skanda",
         "storeDetails":"realestate",
         "storeTimings":[
@@ -98,7 +81,7 @@ function StoreList(props) {
         }
     },
     {
-        "id":1006,
+        "id":1005,
         "storeName":"D mart",
         "storeDetails":"All items",
         "storeTimings":[
@@ -123,7 +106,7 @@ function StoreList(props) {
  const storeTemplate = (store) => {
     
         return (
-            <div className="flex-column border-500 surface-overlay border-1 border-round p-3 text-blue-900 text-xl">
+            <div className="flex-column border-500 surface-overlay border-1 border-round p-4 text-blue-900 text-xl">
             <div className="flex column align-items-center w-8rem">
                   {store.storeName}
              </div>
