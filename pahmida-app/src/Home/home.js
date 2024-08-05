@@ -55,9 +55,9 @@ function Home(props) {
           <StoreList Selectedstore={(value)=>setSelectedstoreObj(value)}/>
          
       </div>
-      <div className='flex-column w-full bg-pink-500'>
+      <div className='flex-column w-full '>
         <div className='flex h-26rem'>
-          <div className='flex-column w-full bg-pink-300'>
+          <div className='flex-column w-full '>
           <StoreMap storeObj={SelectedstoreObj}/> 
           </div>
          </div>
