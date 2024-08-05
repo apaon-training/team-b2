@@ -9,6 +9,7 @@ import StoreTimings from '../store-timings/store-timings';
 import StoreContact from '../store-contact/store-contact';
 import { Menu } from 'primereact/menu';
 import React, { useRef } from 'react';
+import StoreMap from '../store-map/store-map';
 
 function Home(props) {
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
@@ -46,12 +47,12 @@ function Home(props) {
         </div>
       </div>
       <div className='flex h-auto'>
-        <div className='flex-column justify-content-center align-items-center text-white-alpha-90 font-bold w-30rem bg-orange-200'>
+        <div className='flex-column justify-content-center align-items-center text-white-alpha-90 font-bold w-30rem bg-white'>
           <StoreList selectedStore={ (value) => setSelectedStoreObj (value) }/>
         </div>
-        <div className='flex-column text-white-alpha-90 text-right w-full bg-green-600'>
+        <div className='flex-column justify-content-center align-items-center text-black-alpha-90 text-right w-full bg-green-600'>
         <div className='flex h-25rem'>
-          Map container 
+          <StoreMap storeObj={selectedStoreObj}/> 
         </div>
         <div className='flex h-15rem'>
         <div className='flex w-6 justify-content-center align-items-center text-blue-800 text-xl bg-white'>

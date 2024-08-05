@@ -5,44 +5,9 @@ import { ListBox } from 'primereact/listbox';
 
 function StoreList(props) {
     const storeDirectory=[
+
     {
         "id":1001,
-        "storeName": "Jyothi Mall",
-        "storeDetails": "Groceries",
-        "storeTimings": ["Mon-Fri-9 to 10 pm", 
-            "Sat-Sun-9 to 5 pm"
-
-        ],
-        "storeContact": {
-            "phone": "Phone: +81 123 145 165",
-            "address": "Address: 22-86-wollongong main road"
-        },
-        "storeMapLocation": {
-            "latitude":54.0378,
-            "longitude":65.0954
-        }
-    },
-
-    {
-        "id":1002,
-        "storeName": "Dress Circle",
-        "storeDetails": "Saree Retailers",
-        "storeTimings": ["Mon-Fri-10 to 10 pm", 
-            "Sat-Sun-11 to 9 pm"
-
-        ],
-        "storeContact": {
-            "phone": "Phone: +08 886 989 992",
-            "address": "Address: 40-320C-Abdullah Khan Estate"
-        },
-        "storeMapLocation": {
-            "latitude":38.2134,
-            "longitude":89.9604
-        }
-    },
-
-    {
-        "id":1003,
         "storeName": "Joyalukkas",
         "storeDetails": "Jewellery Store",
         "storeTimings": ["Mon-Fri-10:30 to 8:30 pm", 
@@ -54,13 +19,13 @@ function StoreList(props) {
             "address": "Address: 40-29-SP Square Park road"
         },
         "storeMapLocation": {
-            "latitude":99.2548,
-            "longitude":66.9632
+            "latitude":15.82962667811701,
+            "longitude":78.04052562119666
         }
     },
 
     {
-        "id":1004,
+        "id":1002,
         "storeName": "Foresta",
         "storeDetails": " Cafe and Restaurant",
         "storeTimings": ["Mon-Fri-11 to 11 pm", 
@@ -72,13 +37,13 @@ function StoreList(props) {
             "address": "Address: Bangarpet Road"
         },
         "storeMapLocation": {
-            "latitude":87.7896,
-            "longitude":78.6897
+            "latitude":15.827545019755528,
+            "longitude":78.0360307362676
         }
     },
 
     {
-        "id":1005,
+        "id":1003,
         "storeName": "Polar Bear",
         "storeDetails": "Ice Cream Parlour",
         "storeTimings": ["Mon-Fri-11 to 11:30 pm", 
@@ -90,13 +55,13 @@ function StoreList(props) {
             "address": "Address: Nandyal Check Post-Sree Rama Nagar"
         },
         "storeMapLocation": {
-            "latitude":81.3456,
-            "longitude":91.7890
+            "latitude":15.799024873087912,
+            "longitude":78.05193162754628
         }
     },
 
     {
-        "id":1006,
+        "id":1004,
         "storeName": "City Square",
         "storeDetails": "Shopping and Entertainment",
         "storeTimings": ["Mon-Fri-10 to 10 pm", 
@@ -108,26 +73,26 @@ function StoreList(props) {
             "address": "Address: 40-37-M-Bus Stand road"
         },
         "storeMapLocation": {
-            "latitude":12.4567,
-            "longitude":70.2846
+            "latitude":15.82679589538261,
+            "longitude":78.03578543548318
         }
     },
 
 
        {
-        "id":1007,
-        "storeName": "Big Bazar",
-        "storeDetails": "Appliances",
+        "id":1005,
+        "storeName": "Vishal Mart",
+        "storeDetails": "Hyper Market",
         "storeTimings": ["Mon-Fri-9 to 8 pm", 
             "Sat-Sun-10 to 6 pm"
         ],
         "storeContact": {
-            "phone":"Phone: +61 987 765 543",
-            "address":"Address: 33-98-chenamma circle"
+            "phone":"Phone: +07 678 260 655",
+            "address":"Address: Venkata Ramana Colony"
         },
         "storeMapLocation":{
-            "latitude":86.0435,
-            "longitude":68.0398
+            "latitude":15.836253520256038,
+            "longitude":78.02349759613018
         }
         
     }
