@@ -19,8 +19,8 @@ function StoreList(props) {
             "address": "Address: 40-29-SP Square Park road"
         },
         "storeMapLocation": {
-            "latitude":15.82962667811701,
-            "longitude":78.04052562119666
+            "lat":15.82962667811701,
+            "lng":78.04052562119666
         }
     },
 
@@ -37,8 +37,8 @@ function StoreList(props) {
             "address": "Address: Bangarpet Road"
         },
         "storeMapLocation": {
-            "latitude":15.827545019755528,
-            "longitude":78.0360307362676
+            "lat":15.827545019755528,
+            "lng":78.0360307362676
         }
     },
 
@@ -55,8 +55,8 @@ function StoreList(props) {
             "address": "Address: Nandyal Check Post-Sree Rama Nagar"
         },
         "storeMapLocation": {
-            "latitude":15.799024873087912,
-            "longitude":78.05193162754628
+            "lat":15.799024873087912,
+            "lng":78.05193162754628
         }
     },
 
@@ -73,8 +73,8 @@ function StoreList(props) {
             "address": "Address: 40-37-M-Bus Stand road"
         },
         "storeMapLocation": {
-            "latitude":15.82679589538261,
-            "longitude":78.03578543548318
+            "lat":15.82679589538261,
+            "lng":78.03578543548318
         }
     },
 
@@ -91,8 +91,8 @@ function StoreList(props) {
             "address":"Address: Venkata Ramana Colony"
         },
         "storeMapLocation":{
-            "latitude":15.836253520256038,
-            "longitude":78.02349759613018
+            "lat":15.836253520256038,
+            "lng":78.02349759613018
         }
         
     }

@@ -41,9 +41,9 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center store-locator-container text-6xl w-full'>
           Store Locator
         </div>
-        <div className='flex align-items-center justify-content-center gap-3 w-11rem'>
+        <div className='flex align-items-center justify-content-center w-11rem'>
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
-          <Avatar label="BA" size="xlarge" shape="circle" className='mr-3' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
+          <Avatar label="BA" size="xlarge" shape="circle" className='mr-4' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
         </div>
       </div>
       <div className='flex h-auto'>
