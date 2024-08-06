@@ -23,8 +23,8 @@ const storeDirectory=[
             "Address": "Address: 71-127 kallur"
         },
         "storeMapLocator": {
-            "Lattitudes": 15.818716285887168,
-            "Longitudes": 78.02985281909494
+            "lat": 15.818716285887168,
+            "lng": 78.02985281909494
         }
     },
     {
@@ -40,8 +40,8 @@ const storeDirectory=[
             "Address": "Address: 32-890 hyderabad"
         },
         "storeMapLocator": {
-            "Lattitudes": 17.44110669506619,
-            "Longitudes": 78.44167294347916
+            "lat": 17.44110669506619,
+            "lng": 78.44167294347916
         }
     },
     {
@@ -57,8 +57,8 @@ const storeDirectory=[
             "Address": "Address: 34-90 kerala"
         },
         "storeMapLocator": {
-            "Lattitudes": 11.151132974584387, 
-            "Longitudes": 76.37419758584075
+            "lat": 11.151132974584387, 
+            "lng": 76.37419758584075
         }
     },
     {
@@ -74,8 +74,8 @@ const storeDirectory=[
             "Address": "Address: 89-12 kurnool"
         },
         "storeMapLocator": {
-            "Lattitudes": 15.835003101525297,
-            "Longitudes": 78.03019970361444
+            "lat": 15.835003101525297,
+            "lng": 78.03019970361444
         }
     },
     {
@@ -91,8 +91,8 @@ const storeDirectory=[
             "Address": "Address: 45-96 old bustand"
         },
         "storeMapLocator": {
-            "Lattitudes": 15.83069524947175, 
-            "Longitudes": 78.03865625424572
+            "lat": 15.83069524947175, 
+            "lng": 78.03865625424572
         }
     },
     {
@@ -108,8 +108,8 @@ const storeDirectory=[
             "Address": "Address: 12-67 Banglore"
         },
         "storeMapLocator": {
-            "Lattitudes": 12.963316049614443, 
-            "Longitudes": 77.52624223337875
+            "lat": 12.963316049614443, 
+            "lng": 77.52624223337875
         }
     },
     {
@@ -125,8 +125,8 @@ const storeDirectory=[
             "Address": "Address: 89-34 nanoor"
         },
         "storeMapLocator": {
-            "Lattitudes": 89.7890,
-            "Longitudes": 23.2345
+            "lat": 89.7890,
+            "lng": 23.2345
         }
     },
     {
@@ -142,8 +142,8 @@ const storeDirectory=[
             "Address": "Address: 34-12 assom"
         },
         "storeMapLocator": {
-            "Lattitudes": 43.9087,
-            "Longitudes": 90.7432
+            "lat": 43.9087,
+            "lng": 90.7432
         }
     },
 ];
