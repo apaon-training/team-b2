@@ -15,8 +15,8 @@ function Storelist(props){
         "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
      },
      "storeMaplocation":{
-        "lattitudes":15.8337677,
-        "longitudes":78.0340215
+        "lat":15.8337677,
+        "lng":78.0340215
      }
  },
   {
@@ -31,8 +31,8 @@ function Storelist(props){
         "address":"10-20 station road, NSW"
      },
      "storeMaplocation":{
-        "lattitudes":15.8224004,
-        "longitudes":78.0418776
+        "lat":15.8224004,
+        "lng":78.0418776
      }
   },
   {
@@ -47,8 +47,8 @@ function Storelist(props){
         "address":"10-20 station road"
      },
      "storeMaplocation":{
-        "lattitudes":15.8261087,
-        "longitudes":78.0196085
+        "lat":15.8261087,
+        "lng":78.0196085
      }
 },
 {
@@ -63,8 +63,8 @@ function Storelist(props){
         "address":"10-20 Near Abdullah Khan estate"
      },
      "storeMaplocation":{
-        "lattitudes":15.8125994,
-        "longitudes":78.0121861
+        "lat":15.8125994,
+        "lng":78.0121861
      }
 },
    {
@@ -79,8 +79,8 @@ function Storelist(props){
         "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
      },
      "storeMaplocation":{
-        "lattitudes":15.8125994,
-        "longitudes":78.0121861
+        "lat":15.8125994,
+        "lng":78.0121861
      }
  },
   {
@@ -95,8 +95,8 @@ function Storelist(props){
         "address":"10-20 station road, NSW"
      },
      "storeMaplocation":{
-        "lattitudes":15.7551875,
-        "longitudes":77.8634611
+        "lat":15.7551875,
+        "lng":77.8634611
      }
   },
   {
@@ -111,8 +111,8 @@ function Storelist(props){
         "address":"10-20 station road"
      },
      "storeMaplocation":{
-        "lattitudes":15.7551875,
-        "longitudes":77.8634611,
+        "lat":15.7551875,
+        "lng":77.8634611,
      }
 }];
 

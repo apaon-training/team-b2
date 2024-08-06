@@ -5,20 +5,18 @@ import { useState } from "react";
 
 
 function StoreMap(props){
-    const googleKey = "AIzaSyDSSP_p2LwfsNGP5eNXCd3cImC7Kf4RhBo";
-    const [markerLocation, setMarkerLocation] = useState({
 
-    lat:15.830315691912084,
-
-    lng:78.03944298015871});
+    //  lat:15.830315691912084,
+    // lat: props?.storeObj?.storeMaplocation?.lat,
+  
+    //  lng:78.03944298015871});
+    // lng: props?.storeObj?.storeMaplocation?.lng});
     
     return(
         <>
-        {/* <div className="flex-column"> */}
-        {/* <div className="flex mr-4 h-4rem text-4xl ">storeMap</div> */}
-        {/* <span className="flex">{props?.storeObj?.storeMaplocation?.lattitudes}</span> */}
-        {/* <span className="flex py-2">{props?.storeObj?.storeMaplocation?.longitudes}</span> */}
-        <APIProvider apiKey={googleKey}>
+        {
+          (props?.storeObj?.storeMaplocation)?(
+            <APIProvider apiKey={"AIzaSyDSSP_p2LwfsNGP5eNXCd3cImC7Kf4RhBo"}>
 
          <Map
 
@@ -26,7 +24,7 @@ function StoreMap(props){
 
        	defaultZoom={13}
 
-       	defaultCenter={markerLocation}
+       	defaultCenter={props?.storeObj?.storeMaplocation}
 
        	gestureHandling={"greedy"}
 
@@ -34,15 +32,24 @@ function StoreMap(props){
 
      >
 
-       <Marker position={markerLocation} />
+       <Marker position={props?.storeObj?.storeMaplocation} />
 
      </Map>
 
      </APIProvider>
+          ):(
+          <></>
+        )
+      }
+        {/* <div className="flex-column"> */}
+        {/* <div className="flex mr-4 h-4rem text-4xl ">storeMap</div> */}
+        {/* <span className="flex">{props?.storeObj?.storeMaplocation?.lattitudes}</span> */}
+        {/* <span className="flex py-2">{props?.storeObj?.storeMaplocation?.longitudes}</span> */}
+
 
 
         {/* </div> */}
          </>
-);
-}
+   )
+ }
 export default StoreMap;
