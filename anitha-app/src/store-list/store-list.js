@@ -20,8 +20,8 @@ function StoreList(props) {
             "address":"Address: 54-54 ganesh nagar"
         },
         "storeMapLocation":{
-            "latitude":15.830749264964458,
-            "longitude":78.04023528591568
+            "lat":15.830749264964458,
+            "lng":78.04023528591568
         }
     },
     {
@@ -38,8 +38,8 @@ function StoreList(props) {
             "address":"Address: 54-76-laksmi nagar"
         },
         "storeMapLocation":{
-            "latitude":15.828495179688767,
-            "longitude":78.03667830227081
+            "lat":15.828495179688767,
+            "lng":78.03667830227081
         }
     },
     
@@ -57,8 +57,8 @@ function StoreList(props) {
             "address":"Address: 54-55 old bustand"
         },
         "storeMapLocation":{
-            "latitude":15.834460563102077, 
-            "longitude":78.03137544089209
+            "lat":15.834460563102077, 
+            "lng":78.03137544089209
         }
     },
     {
@@ -75,8 +75,8 @@ function StoreList(props) {
             "address":"Address: 54-76-birlagate"
         },
         "storeMapLocation":{
-            "latitude":15.830923273187274, 
-            "latitude":78.03962773380324
+            "lat":15.830923273187274, 
+            "lng":78.03962773380324
             
         }
     },
@@ -94,8 +94,8 @@ function StoreList(props) {
             "address":"Address: 54-76-deva Nagar"
         },
         "storeMapLocation":{
-            "latitude":15.832909613449454,
-            "latitude":15.832909613449454
+            "lat":15.796829980130903, 
+            "lng": 78.06907243908894
             
         }
     },
