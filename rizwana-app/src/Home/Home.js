@@ -47,10 +47,10 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center text-7xl store-container w-full '>
              Store Locator
         </div>
-        <div className='flex  align-items-center justify-content-center w-8rem text-6xl mr-6 '>
+        <div className='flex  align-items-center justify-content-center avatar w-8rem text-6xl mr-6 '>
         {/* <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
-        <Avatar label="SR" mr-4 size="xlarge" shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
+        <Avatar label="SR" mr-9 size="xlarge"   shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
         
        
 
