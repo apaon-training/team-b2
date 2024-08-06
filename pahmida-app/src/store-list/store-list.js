@@ -16,8 +16,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes": 17.446347238455438, 
-        "Longitudes": 78.48424496412154
+        "lat": 17.446347238455438, 
+        "lng": 78.48424496412154
     }
 },
 {
@@ -31,8 +31,8 @@ const storeDirectory=[
          "address": "nh"
         },
 "storeMapLocation":{
-    "Lattitudes": 13.030867019063377,
-    "Longitudes":77.5864833777009
+    "lat": 13.030867019063377,
+    "lng":77.5864833777009
 }
 },
 {
@@ -46,8 +46,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes": 28.613486438560322, 
-        "Longitudes": 77.20072864423555
+        "lat": 28.613486438560322, 
+        "lng": 77.20072864423555
     }
 },
 {
@@ -61,8 +61,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes": 28.606237408949315,
-        "Longitudes": 77.23665292842914
+        "lat": 25.209921150048142,  
+        "lng": 55.272737096350745
     }
 },
 {
@@ -76,8 +76,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes": 28.592578081787906,  
-        "Longitudes": 77.25672060383056
+        "lat":  34.07578285886236,   
+        "Longitudes": 105.3599225695611,
     }
 
 
@@ -92,8 +92,8 @@ const storeDirectory=[
              "address" :"jam radionodelist"
             },
     "storeMapLocation":{
-        "Lattitudes": 28.524532281697493,
-        "Longitudes":  77.18548550938071
+        "lat": 28.524532281697493,
+        "lng":  77.18548550938071
     }
 }
 
@@ -121,7 +121,7 @@ const storeDirectory=[
     return (
         <>
          <div className="title">
-            <InputText value={'test'} className='Hi'/>
+            <InputText value={'test'} className="p-inputtext-lg w-full" />
             <div className="card xl:flex xl:justfy-content-center">
                 <ListBox options={storeDirectory }
                 onChange={(e) => SetSelectedstore(e.value)}

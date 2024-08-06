@@ -41,7 +41,7 @@ function Home(props) {
     <div className='home flex-column'>
      <div className='flex justify-content-center h-7rem main'>
       <div className='flex align-items-center justify-content-center w-full text-6xl textcolor'>
-       store Locator
+       Store Locator
       </div>
         <div className='flex align-items-center justify-content-center w-9rem text-6xl mr-4'>
         {/* <Button label="Logout" severity="danger" onClick={()=> onLogoutClicked()} /> */}
