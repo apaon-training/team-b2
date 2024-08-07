@@ -120,7 +120,7 @@ function StoreList(props) {
         props.selectedStore(value);
     }
     const searchDirectory = (value) => {
-        const filteredValues = storeDirectory.filter((item) => {
+        const filteredValues = displayedStoreDirectory.filter((item) => {
             if(item.storeName.indexOf(value) > -1) {
                 return true;
             }else{
@@ -135,7 +135,7 @@ function StoreList(props) {
         <span className="title"/>
         <InputText onChange={ (e) => searchDirectory(e.target.value)} className=' text-black-alpha-90 text-xl w-20rem p-2 border-700 surface-overlay border-1 border-round m-4'/>
         <div className="card xl:flex xl:justify-content-center">
-            <ListBox options={storeDirectory}
+            <ListBox options={displayedStoreDirectory}
             onChange={(e) => setSelectedStore(e.value)}
             itemTemplate={storeTemplate}
             className="w-full"
