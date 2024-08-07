@@ -148,6 +148,8 @@ const storeDirectory=[
     },
 ];
 
+const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(storeDirectory);
+
     const storeTemplate = (store) => {
         return (
 
@@ -168,6 +170,18 @@ const storeDirectory=[
     const setSelectedStore = (value)=>{
         props.selectedStore(value);
     }
+
+    const searchDirectory = (value) =>{
+        const filteredvalues = storeDirectory.filter((item) => {
+            if(item.storeName.indexOf(value) > -1){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        setDisplayedStoreDirectory(filteredvalues);
+    }
+    
     return (
     <>
       <div className="title">
