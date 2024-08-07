@@ -2,6 +2,7 @@ import { InputText } from 'primereact/inputtext';
 import logo from '../logo.svg';
 import './store-list.css';
 import { ListBox } from 'primereact/listbox';
+import { useState } from 'react';
 
 function StoreList(props) {
     const storeDirectory=[
@@ -98,6 +99,8 @@ function StoreList(props) {
     }
     ];
 
+    const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(storeDirectory);
+
 
     const storeTemplate = (store) => {
        
@@ -116,10 +119,21 @@ function StoreList(props) {
     const setSelectedStore = (value)=>{
         props.selectedStore(value);
     }
+    const searchDirectory = (value) => {
+        const filteredValues = storeDirectory.filter((item) => {
+            if(item.storeName.indexOf(value) > -1) {
+                return true;
+            }else{
+                return false;
+            }
+        })
+        setDisplayedStoreDirectory(filteredValues);
+    }
+
     return(
         <>
         <span className="title"/>
-        <InputText value={'wollong'} className=' text-black-alpha-90 text-xl w-20rem p-2 border-700 surface-overlay border-1 border-round m-4'/>
+        <InputText onChange={ (e) => searchDirectory(e.target.value)} className=' text-black-alpha-90 text-xl w-20rem p-2 border-700 surface-overlay border-1 border-round m-4'/>
         <div className="card xl:flex xl:justify-content-center">
             <ListBox options={storeDirectory}
             onChange={(e) => setSelectedStore(e.value)}
