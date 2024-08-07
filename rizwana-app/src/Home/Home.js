@@ -47,7 +47,7 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center text-7xl store-container w-full '>
              Store Locator
         </div>
-        <div className='flex  align-items-center justify-content-center avatar w-8rem text-6xl mr-6 '>
+        <div className='flex  align-items-center justify-content-center avatar w-8rem text-6xl mr-5 '>
         {/* <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
         <Avatar label="SR" mr-9 size="xlarge"   shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
@@ -56,7 +56,7 @@ function Home(props) {
 
         </div>
       </div>
-      <div className='flex h-full  '>
+      <div className='flex h-full'>
         <div className='flex-column w-30rem bg-white'>
         {/* <InputText type="" placeholder=""/> */}
         <StoreList selectedStore={(value) => setSelectedStoreObj(value) }/>
@@ -72,7 +72,7 @@ function Home(props) {
         
 
         </div>
-        <div className='flex h-15rem text-3xl align-items-center justify-content-center Store-Timings px-8 bg-white text-black-alpha-60'>
+        <div className='flex h-14rem text-2xl  align-items-center justify-content-center Store-Timings px-8 bg-white text-black-alpha-60'>
         <div className='flex-row text-blue-700 w-6 '>
            <StoreTimings storeObj={selectedStoreObj}/>
 
