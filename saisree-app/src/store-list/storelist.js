@@ -1,5 +1,6 @@
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
+import './storelist.css';
 
          
 function Storelist(props){
@@ -8,11 +9,11 @@ function Storelist(props){
      "storeName":"Birdsway",
      "storeDetails":"Near Juction road",
      "storeTimings":["Mon-Fri-8am to 9pm", 
-                     "sat-sun-9am to 5pm"
+                     "Sat-Sun-9am to 5pm"
                     ],
      "storeAddress":{
-        "phone": "+61 234 453 654",
-        "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
+        "phone": "Phone: +61 234 453 654",
+        "address":"Address: 2,12-20 jam RadioNodeList"
      },
      "storeMaplocation":{
         "lat":15.8337677,
@@ -24,11 +25,11 @@ function Storelist(props){
     "storeName":"wollongong",
      "storeDetails":"Textile mall",
      "storeTimings":["Mon-Fri-7am to 8pm", 
-                     "sat-sun-10am to 4pm"
+                     "Sat-Sun-10am to 4pm"
                     ],
      "storeAddress":{
-        "phone": "+61 253 453 654",
-        "address":"10-20 station road, NSW"
+        "phone": "Phone: +61 253 453 654",
+        "address":"Address: 10-20 station road, NSW"
      },
      "storeMaplocation":{
         "lat":15.8224004,
@@ -40,11 +41,11 @@ function Storelist(props){
     "storeName":"wallmart",
      "storeDetails":"grocery",
      "storeTimings":["Mon-Fri-10am to 8pm", 
-                     "sat-sun-8am to 6pm"
+                     "Sat-Sun-8am to 6pm"
                     ],
      "storeAddress":{
-        "phone": "+61 253 483 654",
-        "address":"10-20 station road"
+        "phone" :"phone: +61 253 483 654",
+        "address":"Address: 10-20 station road"
      },
      "storeMaplocation":{
         "lat":15.8261087,
@@ -56,11 +57,11 @@ function Storelist(props){
     "storeName":"Jyothi",
      "storeDetails":"grocery",
      "storeTimings":["Mon-Fri-8am to 9pm", 
-                     "sat-sun-9am to 5pm"
+                     "Sat-Sun-9am to 5pm"
                     ],
      "storeAddress":{
-        "phone": "+61 253 483 654",
-        "address":"10-20 Near Abdullah Khan estate"
+        "phone": "Phone: +61 253 483 654",
+        "address":"Address: 10-20 Near Abdullah Khan estate"
      },
      "storeMaplocation":{
         "lat":15.8125994,
@@ -75,8 +76,8 @@ function Storelist(props){
                      "sat-sun-9am to 5pm"
                     ],
      "storeAddress":{
-        "phone": "+61 234 453 654",
-        "address":"2, 12-20 jam RadioNodeList, wollongong-2432"
+        "phone": "Phone: +61 234 453 654",
+        "address":"Address: 2, 12-20 jam RadioNodeList"
      },
      "storeMaplocation":{
         "lat":15.8125994,
@@ -88,11 +89,11 @@ function Storelist(props){
     "storeName":"wollongong",
      "storeDetails":"Textile mall",
      "storeTimings":["Mon-Fri-7am to 8pm", 
-                     "sat-sun-10am to 4pm"
+                     "Sat-Sun-10am to 4pm"
                     ],
      "storeAddress":{
-        "phone": "+61 253 453 654",
-        "address":"10-20 station road, NSW"
+        "phone": "phone: +61 253 453 654",
+        "address":"Address: 10-20 station road, NSW"
      },
      "storeMaplocation":{
         "lat":15.7551875,
@@ -104,11 +105,11 @@ function Storelist(props){
     "storeName":"wallmart",
      "storeDetails":"grocery",
      "storeTimings":["Mon-Fri-10am to 8pm", 
-                     "sat-sun-8am to 6pm"
+                     "Sat-Sun-8am to 6pm"
                     ],
      "storeAddress":{
-        "phone": "+61 253 483 654",
-        "address":"10-20 station road"
+        "phone": "Phone: +61 253 483 654",
+        "address":"Address: 10-20 station road"
      },
      "storeMaplocation":{
         "lat":15.7551875,
@@ -118,7 +119,7 @@ function Storelist(props){
 
        const storeTemplate = (store) => {
        return (
-        <div className='flex-column border-500 surface-overlay border-1 border-round font-medium line-height-3 lg:2 w-full h-4rem '>
+        <div className='flex-column border-500 surface-overlay border-1 border-round font-medium line-height-3 lg:2 w-full h-4rem'>
         <div className='flex ml-2 w-8rem'>
             <div>{store.storeName}</div></div>
                <div className='flex ml-2 w-8rem'>
@@ -135,7 +136,7 @@ const setselectedstore =(value)=>{
    return(
         <>
         <div className="title">
-        <InputText type="text" className="p-inputtext-lg" placeholder="wollong"  />
+        <InputText value={'wollong'} className='text-black-alpha-60 text-3xl border-700 surface-overly border-round m-3'/>
         <div className="card xl:flex xl:justify-content-center">
         <ListBox options={storeDirectory} 
                  onChange={(e) => setselectedstore(e.value)}
