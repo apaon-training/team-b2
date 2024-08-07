@@ -171,10 +171,10 @@ const storeDirectory=[
     return (
     <>
       <div className="title">
-      <InputText value={'wollong'} className="text-black-alpha-90 text-3xl border-700  surface-overly border-round m-3" />
+      <InputText onChange={(e) => searchDirectory(e.target.value)}  className="text-black-alpha-90 text-3xl border-700  surface-overly border-round m-3" />
       <div className="card xl:flex xl:justify-content-center">
 
-      <ListBox options={storeDirectory}
+      <ListBox options={displayedStoreDirectory}
            onChange={(e) => setSelectedStore(e.value)}
 
           itemTemplate={storeTemplate}
