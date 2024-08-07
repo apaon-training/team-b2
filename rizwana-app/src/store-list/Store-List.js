@@ -151,13 +151,13 @@ const storeDirectory=[
     const storeTemplate = (store) => {
         return (
 
-            <div className='flex-cloumn border-500 surface-overlay  border-1 border-round font-medium line-height-3 1g:2 w-full h-4rem'>
-            <div className='flex align-items-center ml-2 w-8rem'>
+            <div className='flex-cloumn border-500 surface-overlay  border-1  border-round font-medium line-height-3 1g:2 w-full  h-4rem'>
+            <div className='flex align-items-center  ml-2 w-8rem'>
                  <div>{store.storeName}
                  </div>
                  </div>
                  
-                    <div className='flex align-items-center ml-2 w-8rem'>
+                    <div className='flex align-items-center  ml-2 w-8rem'>
                 <div>{store.storeDetails}</div>
             </div>
             </div>
@@ -171,7 +171,7 @@ const storeDirectory=[
     return (
     <>
       <div className="title">
-      <InputText value={'wollong'} className="text-black-alpha-90 text-3xl border-700 surface-overly border-round m-3" />
+      <InputText value={'wollong'} className="text-black-alpha-90 text-3xl border-700  surface-overly border-round m-3" />
       <div className="card xl:flex xl:justify-content-center">
 
       <ListBox options={storeDirectory}
