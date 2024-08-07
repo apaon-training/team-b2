@@ -61,7 +61,7 @@ function Home(props) {
           <StoreMap storeObj={SelectedstoreObj}/> 
           </div>
          </div>
-        <div className='flex align-items-center justify-content-center h-20rem bg-white px-8'>
+        <div className='flex align-items-center justify-content-center h-15rem bg-white px-8'>
           <div className='flex w-6 bg-white'>
              <StoreTimings storeObj={SelectedstoreObj}/>
              <div className='timings'> 
