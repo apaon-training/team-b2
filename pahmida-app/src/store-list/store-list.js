@@ -3,6 +3,7 @@ import './store-list.css';
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
 import {props} from 'primereact/utils';
+import { useState } from 'react';
 function StoreList(props){
 const storeDirectory=[
     {
@@ -98,11 +99,12 @@ const storeDirectory=[
 }
 
 ];
+const [displayedStoreDirectory, setDisplayedStoreDirectory]= useState(storeDirectory);
 
  const storeTemplate = (store) => {
     return (
        
-        <div className="flex-cloumn border-500 surface-overlay border-1 border-round font-bold line-height-3 lg:2 w-full h-4rem py-0.5 "> 
+        <div className="flex-cloumn border-800 surface-overlay border-1 border-round font-bold line-height-3 lg:2 w-full h-4rem py-0.5 "> 
         <div className="flex-column w-25rem md:p-3">
             <div>{store.storeName}
             </div>
@@ -118,12 +120,24 @@ const storeDirectory=[
  const SetSelectedstore=(value)=>{   
     props.Selectedstore(value);
 } 
-    return (
+
+const searchDirectory=(value)=>{
+     const filteredvalues = storeDirectory.filter((item)=>{
+        if(JSON.stringify(item).indexOf(value)>-1){
+            return true;
+        }
+        else{
+            return false;
+        }
+     })
+     setDisplayedStoreDirectory(filteredvalues);
+}
+        return (
         <>
          <div className="title">
-           <InputText value={'wollong'} className=" flex-cloumn border-500 surface-overlay border-1 border-round font-bold line-height-3 lg:2 w-full h-4rem"/>
+           <InputText onChange={(e)=> searchDirectory(e.target.value)} className="flex-black-apha-90 text-xl w-20rem border-800 surface-overlay border-1 border-round ml-7 lg:2 py:1 md:p-5 h-3rem w-3"/>
             <div className="card xl:flex xl:justfy-content-center">
-                <ListBox options={storeDirectory }
+                <ListBox options={displayedStoreDirectory}
                 onChange={(e) => SetSelectedstore(e.value)}
                 itemTemplate={storeTemplate}
                 className=  "w-full"/>

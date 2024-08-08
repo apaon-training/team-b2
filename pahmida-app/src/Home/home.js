@@ -16,6 +16,7 @@ function Home(props) {
   const [SelectedstoreObj, setSelectedstoreObj] = useState(null);
   const onLogoutClicked=()=>{
   props.logoutSuccess();
+  const [showAbout, setshowAbout]=useState(false);
   }
   const menuRight = useState(null);
   const items = [
@@ -46,12 +47,12 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center w-9rem text-6xl mr-4'>
         {/* <Button label="Logout" severity="danger" onClick={()=> onLogoutClicked()} /> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
-            <Avatar label="PP" size="xlarge" shape="circle" className='text'   onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
+            <Avatar label="PP" size="xlarge" shape="circle" className='text' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup  />
         </div>
      </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem  bg-white'>
-         {/* <InputText type="text" placeholder=" "/> */}
+         {/* <InputText type="text" placeholder=" "/> */}  
           <StoreList Selectedstore={(value)=>setSelectedstoreObj(value)}/>
          
       </div>
