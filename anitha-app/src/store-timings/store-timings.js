@@ -8,6 +8,6 @@ function StoreTimings(props) {
             <span></span>
         </div>
         </>
-    )
+    );
 }
 export default StoreTimings;

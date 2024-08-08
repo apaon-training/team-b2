@@ -2,7 +2,7 @@ import logo from '../logo.svg'
 import './store-list.css';
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
-import { mergeprops } from 'primereact/utils';
+import { props } from 'primereact/utils';
 import { useState } from 'react';
 function StoreList(props) {
    const storeDirectory=[
@@ -99,7 +99,7 @@ function StoreList(props) {
             "lng": 78.06907243908894
             
         }
-    },
+    }
     
  
    ];
@@ -119,11 +119,12 @@ function StoreList(props) {
         )
     };
     const setSelectedStore = (value) => {
-    };
+    props.selectedStore(value);
+    }
         
 const searchDirectory = (value) =>{
-const filteredValues = storeDirectory.filter((item) =>{
-        if(item.storeName.indexOf(value) > -1){
+const filteredValues = storeDirectory.filter((item) => {
+        if(JSON.stringify(item).indexOf(value) > -1){
         return true;
     }else{
     return false;
@@ -135,7 +136,7 @@ const filteredValues = storeDirectory.filter((item) =>{
     return (
         <>
         <span className="title">
-            <InputText onChange={(e) => searchDirectory(e.target.value)} className='m-3'/>
+            <InputText onChange={(e) => searchDirectory(e.target.value)} className=' flex-black-alpha-90 text-xl w-20rem h-5rem border-500 surface-overlay border-1 border-round w-3'/>
             <div className="card xl:flex xl:justify-content-center">
         <ListBox options={displayedStoreDirectory} 
         onChange={(e) => setSelectedStore(e.value)}
