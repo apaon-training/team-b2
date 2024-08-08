@@ -3,12 +3,13 @@ import './store-list.css';
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
 import { mergeprops } from 'primereact/utils';
+import { useState } from 'react';
 function StoreList(props) {
    const storeDirectory=[
     
     {
         "id":1001,
-        "storeName":"Jyothi mall",
+        "storeName":"Jyothi Mall",
         "storeDetails":"Groceries",
         "storeTimings":[
                           "Thus-Fri 5am to 5pm",
@@ -17,7 +18,7 @@ function StoreList(props) {
         ],
         "storeContact":{
             "phone":"Phone: +61 665 678 987",
-            "address":"Address: 54-54 ganesh nagar"
+            "address":"Address: 54-54 Ganesh Nagar, Kurnool-518002"
         },
         "storeMapLocation":{
             "lat":15.830749264964458,
@@ -29,13 +30,13 @@ function StoreList(props) {
         "storeName":"Big C",
         "storeDetails":"Appliances",
         "storeTimings":[
-                          "Tue-Fri 8 to 10pm",
-                          "Fri-Sun 8 to 05pm"
+                          "Tue-Fri 08am to 10pm",
+                          "Fri-Sun 07am to 03pm"
 
         ],
         "storeContact":{
             "phone":"Phone: +61 276 487 564",
-            "address":"Address: 54-76-laksmi nagar"
+            "address":"Address: 54-76 Laksmi Nagar, Kurnool-518002"
         },
         "storeMapLocation":{
             "lat":15.828495179688767,
@@ -48,13 +49,13 @@ function StoreList(props) {
         "storeName":" AjwaRestaurent",
         "storeDetails":"Food Items",
         "storeTimings":[
-                          "Mon-Fri 8 to 11pm",
-                          "Mon-Sun 8 to 05pm"
+                          "Mon-Fri 09am to 11pm",
+                          "Mon-Sun 10amto 05pm"
 
         ],
         "storeContact":{
             "phone":"Phone: +61 276 487 564",
-            "address":"Address: 54-55 old bustand"
+            "address":"Address: 54-55 Old Bustand, Kurnool-518002"
         },
         "storeMapLocation":{
             "lat":15.834460563102077, 
@@ -63,16 +64,16 @@ function StoreList(props) {
     },
     {
         "id":1004,
-        "storeName":"Skanda",
+        "storeName":"Skandha",
         "storeDetails":"realestate",
         "storeTimings":[
-                          "Tue-Fri 8 to 6pm",
-                          "Fri-Sun 8 to 4pm"
+                          "Tue-Fri 05am to 06pm",
+                          "Fri-Sun 09am to 04pm"
 
         ],
         "storeContact":{
             "phone":"Phone: +61 276 487 564",
-            "address":"Address: 54-76-birlagate"
+            "address":"Address: 54-76 Birlagate, Kurnool-518002"
         },
         "storeMapLocation":{
             "lat":15.830923273187274, 
@@ -85,13 +86,13 @@ function StoreList(props) {
         "storeName":"D mart",
         "storeDetails":"All items",
         "storeTimings":[
-                          "Tue-Fri 8 to 10pm",
-                          "Fri-Sun 8 to 05pm"
+                          "Tue-Fri 07am to 09pm",
+                          "Fri-Sun 06am to 05pm"
 
         ],
         "storeContact":{
             "phone":"Phone: +61 276 487 564",
-            "address":"Address: 54-76-deva Nagar"
+            "address":"Address: 54-76 Deva Nagar, Kurnool-518002"
         },
         "storeMapLocation":{
             "lat":15.796829980130903, 
@@ -103,6 +104,7 @@ function StoreList(props) {
  
    ];
 
+   const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(storeDirectory);
  const storeTemplate = (store) => {
     
         return (
@@ -117,15 +119,25 @@ function StoreList(props) {
         )
     };
     const setSelectedStore = (value) => {
-        props.selectedStore(value);
+    };
+        
+const searchDirectory = (value) =>{
+const filteredValues = storeDirectory.filter((item) =>{
+        if(item.storeName.indexOf(value) > -1){
+        return true;
+    }else{
+    return false;
+    }
+    })
+        setDisplayedStoreDirectory(filteredValues);
     }
     
     return (
         <>
         <span className="title">
-            <InputText value={'Wollong'} className='text-black-alpha-90 text-3xl border-700 surface-overly border-round m-3'/>
+            <InputText onChange={(e) => searchDirectory(e.target.value)} className='m-3'/>
             <div className="card xl:flex xl:justify-content-center">
-        <ListBox options={storeDirectory} 
+        <ListBox options={displayedStoreDirectory} 
         onChange={(e) => setSelectedStore(e.value)}
         itemTemplate={storeTemplate}
         className="w-full"

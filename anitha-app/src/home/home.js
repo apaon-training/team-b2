@@ -52,18 +52,18 @@ function Home(props) {
         </div>
       </div>
       <div className='flex h-auto'>
-        <div className='flex-column text-white-alpha-90 w-30rem bg-pink-100'>
+        <div className='flex-column text-white-alpha-90 w-30rem bg-pink-100 surface-500'>
           <StoreList selectedStore={(value) => setSelectedStoreObj(value)} />
         </div>
         <div className='flex-column text-black-alpha-90 text-right text-2xl w-full bg-green-200'>
         <div className='flex h-30rem'>
           <StoreMap storeObj={selectedStoreObj}/>
         </div>
-        <div className='flex h-15rem'>
-        <div className='flex w-6 justify-content-center align-items-center Store-Timings text-3xl text-blue-900 bg-white'>
+        <div className='flex h-15rem align-items-center justify-content-center Store-Timings px-8 text-black-alpha-60 bg-white'>
+        <div className='flex-row text-blue-700 w-6'>
           <StoreTimings storeObj={selectedStoreObj}/>
           </div>
-        <div className='flex w-6 justify-content-center align-items-center Store-Contact-Details text-3xl text-blue-900 bg-white'>
+        <div className='flex w-6 justify-content-center Store-Contact-Details text-1xl text-black-900 bg-white'>
         <StoreContact storeObj={selectedStoreObj}/>
           </div>
       </div>
