@@ -1,6 +1,7 @@
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
 import './storelist.css';
+import { useState } from 'react';
 
          
 function Storelist(props){
@@ -116,8 +117,22 @@ function Storelist(props){
         "lng":77.8634611,
      }
 }];
+const [displayedstoreDirectory, setDisplayedStoreDirectory] = useState(storeDirectory);
 
        const storeTemplate = (store) => {
+       };
+       const setselectedstore = (value)=>{
+       };
+       const searchDirectory = (value) =>{
+         const filteredvalues = storeDirectory.filter((item)=>{
+            if(item.storeName.indexOf(value) >-1){
+               return true;
+            }else{
+               return false;
+            }
+         })
+         setDisplayedStoreDirectory(filteredvalues);
+       }
        return (
         <div className='flex-column border-500 surface-overlay border-1 border-round font-medium line-height-3 lg:2 w-full h-4rem'>
         <div className='flex ml-2 w-8rem'>
@@ -136,11 +151,12 @@ const setselectedstore =(value)=>{
    return(
         <>
         <div className="title">
-        <InputText value={'wollong'} className='text-black-alpha-60 text-3xl border-700 surface-overly border-round m-3'/>
+        <InputText onChange={(e)=> searchDirectory(e.targetvalue)} className='text-black-alpha-60 text-3xl border-700 surface-overly border-round m-3'/>
         <div className="card xl:flex xl:justify-content-center">
-        <ListBox options={storeDirectory} 
+        <ListBox options={displayedstoreDirectory} 
                  onChange={(e) => setselectedstore(e.value)}
-                 itemTemplate={storeTemplate} className="w-full"/>
+                 itemTemplate={storeTemplate} 
+                 className="w-full"/>
         </div>
             </div>   ``
         </>
