@@ -86,22 +86,6 @@ function Storelist(props){
      }
  },
   {
-    "id":1007,
-    "storeName":"wollongong",
-     "storeDetails":"Textile mall",
-     "storeTimings":["Mon-Fri-7am to 8pm", 
-                     "Sat-Sun-10am to 4pm"
-                    ],
-     "storeAddress":{
-        "phone": "phone: +61 253 453 654",
-        "address":"Address: 10-20 station road, NSW"
-     },
-     "storeMaplocation":{
-        "lat":15.7551875,
-        "lng":77.8634611
-     }
-  },
-  {
     "id":1008,
     "storeName":"wallmart",
      "storeDetails":"grocery",
