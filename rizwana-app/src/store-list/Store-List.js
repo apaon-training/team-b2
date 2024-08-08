@@ -173,7 +173,7 @@ const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(storeDire
 
     const searchDirectory = (value) =>{
         const filteredvalues = storeDirectory.filter((item) => {
-            if(item.storeName.indexOf(value) > -1){
+            if(JSON.stringify(item).indexOf(value) > -1){
                 return true;
             }else{
                 return false;
