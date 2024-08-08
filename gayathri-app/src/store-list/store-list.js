@@ -120,8 +120,8 @@ function StoreList(props) {
         props.selectedStore(value);
     }
     const searchDirectory = (value) => {
-        const filteredValues = displayedStoreDirectory.filter((item) => {
-            if(item.storeName.indexOf(value) > -1) {
+        const filteredValues = storeDirectory.filter((item) => {
+            if(JSON.stringify(item).indexOf(value) > -1) {
                 return true;
             }else{
                 return false;
