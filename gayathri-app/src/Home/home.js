@@ -13,6 +13,7 @@ import StoreMap from '../store-map/store-map';
 import About from '../About/About';
 
 function Home(props) {
+  const [showAbout, setShowAbout] = useState(false);
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
   const onLogoutClicked = () =>{
     props.logoutSuccess()
@@ -23,7 +24,10 @@ function Home(props) {
         items: [
             {
                 label: 'About',
-                icon: 'pi pi-exclamation-circle'
+                icon: 'pi pi-exclamation-circle',
+                command: () =>{
+                  showAbout(true)
+                }
             },
             {
                 label: 'Logout',
@@ -45,7 +49,7 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center w-11rem'>
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
           <Avatar label="BA" size="xlarge" shape="circle" className='mr-4' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
-            <About/>
+            <About showAbout={ (visible) => setShowAbout (visible) }/>
         </div>
       </div>
       <div className='flex h-auto'>
