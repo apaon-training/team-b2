@@ -10,6 +10,7 @@ import StoreContact from '../store-contact/store-contact';
 import { Menu } from 'primereact/menu';
 import React, { useRef } from 'react';
 import StoreMap from '../store-map/store-map';
+import About from '../About/About';
 
 function Home(props) {
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
@@ -44,6 +45,7 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center w-11rem'>
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
           <Avatar label="BA" size="xlarge" shape="circle" className='mr-4' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
+            <About/>
         </div>
       </div>
       <div className='flex h-auto'>
