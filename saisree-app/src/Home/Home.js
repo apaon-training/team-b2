@@ -1,6 +1,6 @@
 import './Home.css';
 import { Avatar } from 'primereact/avatar';
-import { Button } from 'primereact/button';
+// import { Button } from 'primereact/button';
 import Storelist from '../store-list/storelist';
 import React, { useState } from 'react';
 import StoreTimings from '../store-Timings/storeTimings';
@@ -15,10 +15,12 @@ function Home(props) {
   const onLogoutclicked = ()=>{
   props.LogoutSuccess();
   }
-  const [showabout, setshowabout]=useState(false);
-  const visible = () =>{
-    props.visible();
+
+  const [showAbout, setshowAbout]=useState(false);
+  const setVisible = () => {
+        props.showAbout();
   }
+  
   const menuRight = useState(null);
     const items = [
         {
@@ -26,9 +28,9 @@ function Home(props) {
             items: [
                 {
                     label: 'About',
-                    icon: 'pi pi-exclamation-circle'
-                    command : ()=>{
-                      props.showabout(true);
+                    icon: 'pi pi-exclamation-circle',
+                    command: () =>{
+                        showAbout(true);
                     }
 
                 },
@@ -43,7 +45,7 @@ function Home(props) {
             ]
         }
     ];
-  return (
+    return (
     <div className="App flex-column">
       <div className='flex justify-content-center h-8rem navbar'>
         <div className='flex align-items-center justify-content-center w-full text-6xl'>
@@ -53,7 +55,7 @@ function Home(props) {
         {/* <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" label="logout" raised onClick={() => onLogoutclicked()}/>
         <Avatar label="sv" size="xlarge" className='text-black-alpha-60 text-5xl' shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
-        <About/>    
+        <About  showAbout={(value)=>setshowAbout(value)} label="show" icon="pi pi-exclamation-circle" onClick={() => setVisible(true)}/>    
         </div>
      </div>
      <div className='flex h-full'>

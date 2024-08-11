@@ -8,7 +8,7 @@ function Storelist(props){
     const storeDirectory = [{
      "id":1001,
      "storeName":"Birdsway",
-     "storeDetails":"Near Juction road",
+     "storeDetails":"Near Juction",
      "storeTimings":["Mon-Fri-8am to 9pm", 
                      "Sat-Sun-9am to 5pm"
                     ],
@@ -72,7 +72,7 @@ function Storelist(props){
    {
    "id":1006,
      "storeName":"Birdsway",
-     "storeDetails":"Near Juction road",
+     "storeDetails":"Near Juction",
      "storeTimings":["Mon-Fri-8am to 9pm", 
                      "sat-sun-9am to 5pm"
                     ],
@@ -107,7 +107,7 @@ const [displayedstoreDirectory, setDisplayedstoreDirectory] = useState(storeDire
       
       
        return (
-        <div className='flex-column border-500 surface-overlay border-1 border-round font-medium line-height-3 lg:2 w-full h-4rem'>
+        <div className='flex-column text-align: left; border-500 surface-overlay border-1 border-round font-medium line-height-3 lg:2 w-full h-4rem'>
         <div className='flex ml-2 w-8rem'>
             <div>{store.storeName}</div></div>
                <div className='flex ml-2 w-8rem'>
@@ -135,7 +135,7 @@ const searchDirectory = (value) =>{
         <>
         <div className="title">
         <InputText onChange={(e)=> searchDirectory(e.target.value)} className='text-black-alpha-60 text-3xl border-700 surface-overly border-round m-3'/>
-        <div className="card xl:flex xl:justify-content-center">
+        <div className="card xl:flex xl:justify-content-center ">
         <ListBox options={displayedstoreDirectory} 
                  onChange={(e) => setselectedstore(e.value)}
                  itemTemplate={storeTemplate} 
