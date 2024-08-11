@@ -9,11 +9,16 @@ import StoreTimings from '../store-timings/Store-Timings';
 import StoreAddress from '../store-address/Store-Address';
 import { Menu } from 'primereact/menu';
 import StoreMap from '../store-map/Store-Map';
+import About from '../about/About';
 
 
 
 function Home(props) {
+  const [showAbout, setShowAbout] = useState(false);
   const [selectedStoreObj, setSelectedStoreObj] = useState(null);
+  const onLogoutClicked = () =>{
+    props.LogoutSuccess()
+  }
   const menuRight = useState(null);
   
   const items = [
@@ -22,7 +27,10 @@ function Home(props) {
         items: [
             {
                 label: 'About',
-                icon: 'pi pi-exclamation-circle'
+                icon: 'pi pi-exclamation-circle',
+                command: () =>{
+                  showAbout(true)
+                }
             },
             {
                 label: 'Logout',
@@ -51,7 +59,7 @@ function Home(props) {
         {/* <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
         <Avatar label="SR" mr-9 size="xlarge"   shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
-        
+        <About showAbout={ (visible) => setShowAbout (visible) }/>
        
 
         </div>
