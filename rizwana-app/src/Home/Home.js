@@ -16,7 +16,7 @@ import About from '../about/About';
 function Home(props) {
   const [showAbout, setShowAbout] = useState(false);
   const [selectedStoreObj, setSelectedStoreObj] = useState(null);
-  const onLogoutClicked = () =>{
+  const onlogoutClicked = () =>{
     props.LogoutSuccess()
   }
   const menuRight = useState(null);
