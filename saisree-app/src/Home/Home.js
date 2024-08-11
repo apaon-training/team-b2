@@ -7,6 +7,7 @@ import StoreTimings from '../store-Timings/storeTimings';
 import StoreAddress from '../store-Address/storeAddress';
 import { Menu } from 'primereact/menu';
 import StoreMap from '../store-Map/storeMap';
+import About from '../About/about';
 
 
 function Home(props) {
@@ -43,7 +44,8 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center w-8rem text-6xl mr-6'>
         {/* <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" label="logout" raised onClick={() => onLogoutclicked()}/>
-        <Avatar label="sv" size="xlarge" className='text-black-alpha-60 text-5xl' shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />      
+        <Avatar label="sv" size="xlarge" className='text-black-alpha-60 text-5xl' shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
+        <About/>    
         </div>
      </div>
      <div className='flex h-full'>
