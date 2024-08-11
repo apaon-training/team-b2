@@ -15,6 +15,10 @@ function Home(props) {
   const onLogoutclicked = ()=>{
   props.LogoutSuccess();
   }
+  const [showabout, setshowabout]=useState(false);
+  const visible = () =>{
+    props.visible();
+  }
   const menuRight = useState(null);
     const items = [
         {
@@ -23,6 +27,10 @@ function Home(props) {
                 {
                     label: 'About',
                     icon: 'pi pi-exclamation-circle'
+                    command : ()=>{
+                      props.showabout(true);
+                    }
+
                 },
                 {
                     label: 'Logout',
