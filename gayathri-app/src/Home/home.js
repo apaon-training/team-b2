@@ -1,8 +1,5 @@
-import { InputText } from 'primereact/inputtext';
-import logo from '../logo.svg';
 import './home.css';
 import {Avatar} from 'primereact/avatar';
-import { Button } from 'primereact/button';
 import StoreList from '../store-list/store-list';
 import { useState } from 'react';
 import StoreTimings from '../store-timings/store-timings';
@@ -15,9 +12,6 @@ import About from '../About/About';
 function Home(props) {
   const [showAbout, setShowAbout] = useState(false);
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
-  const onLogoutClicked = () =>{
-    props.logoutSuccess()
-  }
   const menuRight = useRef(null);
   const items = [
     {
@@ -26,7 +20,7 @@ function Home(props) {
                 label: 'About',
                 icon: 'pi pi-exclamation-circle',
                 command: () =>{
-                  showAbout(true)
+                  showAbout(true);
                 }
             },
             {
