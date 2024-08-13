@@ -1,23 +1,22 @@
 import { Dialog } from 'primereact/dialog';
-import React, { useState } from "react";
+import './About.css';
 function About (props) {
-
-    const [visible, setVisible] = useState(false);
 
     return (
         <div className="card flex justify-content-center">
-            <Dialog header="About" visible={props.visible} style={{ width: '50vw' }} onHide={() => {if (!visible) return; setVisible(false); }}>
-            <div className="flex-row about-bar text-white">
-                <p className="m-0">
+            <Dialog header="About"  visible={props.visible} style={{ width: '25vw'}} onHide={() => {props.onClose(false)}}>
+                <p className="m-0 py-4">
                    Store Locator Web 
                 </p>
-                <p className="m-0">
-                   Designed and developed by 
+                <p className="m-0 mt-2">
+                   &copy; Designed and developed by 
                 </p>
-                <p className="m-0">
-                   WWW.apaon.com.au-Batch B2 (k.Gayathri)
+                <p className="m-0 mt-2">
+                   <a href="https://www.apaon.com.au" target='blank' className='text-white'>www.apaon.com.au</a> - Batch B2
                 </p>
-                </div>
+                <p className="m-0 mt-2 text-sm">
+                   By K.Gayathri
+                </p>
             </Dialog>
         </div>
     )
