@@ -16,10 +16,10 @@ function Home(props) {
   props.LogoutSuccess();
   }
 
-  const [showAbout, setshowAbout]=useState(false);
-  const setVisible = () => {
+  const [showAbout, setShowAbout]=useState(false);
+ /* const setVisible = () => {
         props.showAbout();
-  }
+  }*/
   
   const menuRight = useState(null);
     const items = [
@@ -30,7 +30,7 @@ function Home(props) {
                     label: 'About',
                     icon: 'pi pi-exclamation-circle',
                     command: () =>{
-                        showAbout(true);
+                        setShowAbout(true);
                     }
 
                 },
@@ -55,7 +55,7 @@ function Home(props) {
         {/* <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" label="logout" raised onClick={() => onLogoutclicked()}/>
         <Avatar label="sv" size="xlarge" className='text-black-alpha-60 text-5xl' shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
-        <About  showAbout={(value)=>setshowAbout(value)} label="show" icon="pi pi-exclamation-circle" onClick={() => setVisible(true)}/>    
+        <About  visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={() => setShowAbout(false)}/>    
         </div>
      </div>
      <div className='flex h-full'>
