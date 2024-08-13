@@ -11,13 +11,14 @@ import { Menu } from 'primereact/menu';
 import React, { useState } from 'react';
 import StoreTimings from '../store--Timings/store-timings';
 import StoreAddress from '../store-Address/store-address';
+import About from '../about/about';
 
 function Home(props) {
   const [SelectedstoreObj, setSelectedstoreObj] = useState(null);
   const onLogoutClicked=()=>{
   props.logoutSuccess();
-  const [showAbout, setshowAbout]=useState(false);
   }
+  const [showAbout, setShowAbout]=useState(false);
   const menuRight = useState(null);
   const items = [
       {
@@ -25,12 +26,17 @@ function Home(props) {
           items: [
               {
                 label: 'About',
-                icon: ' pi pi-exclamation-circle'
+                icon: ' pi pi-exclamation-circle',
+                command:()=>
+                  {
+                    setShowAbout(true);
+
+                  }
               },
               {
                    label: ' LogOut',
                   icon: ' pi pi-sign-out',
-                  command:()=>{props.logoutSuccess()
+                  command:()=>{props.logoutSuccess();
 
                   }
               }
@@ -46,9 +52,10 @@ function Home(props) {
       </div>
         <div className='flex align-items-center justify-content-center w-9rem text-6xl mr-4'>
         {/* <Button label="Logout" severity="danger" onClick={()=> onLogoutClicked()} /> */}
-        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
+        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" raised onClick={()=>onLogoutClicked()}/>
             <Avatar label="PP" size="xlarge" shape="circle" className='text' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup  />
-        </div>
+     <About visible={showAbout} label ="About" icon="pi pi-exclamation-circle" onClose={() => setShowAbout(false)}/>
+     </div>
      </div>
      <div className='flex h-full'>
       <div className='flex-column w-30rem  bg-white'>
