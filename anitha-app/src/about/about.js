@@ -9,7 +9,7 @@ function About(props) {
         <div className='card flex justify-content-center bg-color-blue-900 text-white'>
        <Dialog header="About" visible={props.visible} style={{ width: '25vw'}} onHide={() => {props.onClose(false)}}>
               
-              <p className='m-0 py-2'>
+              <p className='m-0 py-4'>
                 Store Locator Web
                 </p>  
                 <p className='m-0 mt-2'>
