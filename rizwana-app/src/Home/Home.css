@@ -21,6 +21,9 @@
   .avatar{
     color:#473dc1;
   }
+  .store-list{
+    overflow-y: auto;
+  }
   
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
