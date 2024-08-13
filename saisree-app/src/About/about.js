@@ -16,7 +16,7 @@ function About(props){
                    &copy; Designed and developed by B2 team - Sai Sree
                 </p>
                 <p className='m-0 mt-2'>
-                   <a href='https://www.apaon.com.au' target='blank' className='text-white'> www.apaon.com.au</a> - Batch B2
+                   <a href='https://www.apaon.com.au' target='blank' className='text-white'> www.apaon.com.au</a> 
                    </p>
 
             </Dialog>
