@@ -10,12 +10,15 @@ import StoreContact from '../store-contact/store-contact';
 import { Menu } from 'primereact/menu';
 import { useState } from 'react';
 import StoreMap from '../store-map/store-map';
+import About from '../about/about';
 
 
 function Home(props) {
   const onLogoutClicked = () => {
     props.logoutSuccess()
   }
+  const [showAbout ,setShowAbout] = useState(false);
+  
   const [selectedStoreObj,setSelectedStoreObj] = useState(null);
   const menuRight = useRef(null);
   const items = [
@@ -24,7 +27,11 @@ function Home(props) {
           items: [
               {
                   label: 'About',
-                  icon: 'pi pi-exclamation-circle'
+                  icon: 'pi pi-exclamation-circle',
+                  command: () =>{
+                    setShowAbout(true);
+
+                  }
               },
               {
                   label: 'Logout',
@@ -49,6 +56,7 @@ function Home(props) {
         
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right"/>
           <Avatar label="VA" size="xlarge" shape="circle" className='mr-3'  onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
+            <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={()=> setShowAbout(false)}/>
         </div>
       </div>
       <div className='flex h-auto'>

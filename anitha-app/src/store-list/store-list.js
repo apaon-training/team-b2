@@ -108,7 +108,7 @@ function StoreList(props) {
  const storeTemplate = (store) => {
     
         return (
-            <div className="flex-column border-500 surface-overlay border-1 border-round p-4 text-blue-900 text-xl">
+            <div className="flex-column border-500 surface-overlay border-1 border-round p-4 text-blue-900 text-lg">
             <div className="flex column align-items-center w-8rem">
                   {store.storeName}
              </div>
@@ -136,7 +136,7 @@ const filteredValues = storeDirectory.filter((item) => {
     return (
         <>
         <span className="title">
-            <InputText onChange={(e) => searchDirectory(e.target.value)} className=' flex-black-alpha-90 text-xl w-20rem h-5rem border-500 surface-overlay border-1 border-round w-3'/>
+            <InputText onChange={(e) => searchDirectory(e.target.value)} className=' flex-black-alpha-90 text-xl w-20rem h-4rem border-500 surface-overlay border-1 border-round m-4 p-1'/>
             <div className="card xl:flex xl:justify-content-center">
         <ListBox options={displayedStoreDirectory} 
         onChange={(e) => setSelectedStore(e.value)}
