@@ -17,7 +17,7 @@ function Home(props) {
   const [showAbout, setShowAbout] = useState(false);
   const [selectedStoreObj, setSelectedStoreObj] = useState(null);
   const onlogoutClicked = () =>{
-    props.LogoutSuccess()
+    props.LogoutSuccess();
   }
   const menuRight = useState(null);
   
@@ -29,7 +29,7 @@ function Home(props) {
                 label: 'About',
                 icon: 'pi pi-exclamation-circle',
                 command: () =>{
-                  showAbout(true)
+                  setShowAbout(true); 
                 }
             },
             {
@@ -59,8 +59,8 @@ function Home(props) {
         {/* <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
         <Avatar label="SR" mr-9 size="xlarge"   shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
-        <About showAbout={ (visible) => setShowAbout (visible) }/>
-       
+        <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={()=> setShowAbout(false)}  />
+        
 
         </div>
       </div>
