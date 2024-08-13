@@ -44,4 +44,7 @@
       transform: rotate(360deg);
     }
   }
+  .store-list{
+    overflow-y: auto;
+  }
   

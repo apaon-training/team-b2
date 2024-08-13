@@ -59,7 +59,7 @@ function Home(props) {
         </div>
      </div>
      <div className='flex h-full'>
-      <div className='flex-column  w-30rem bg-white'>
+      <div className='flex-column h-40rem w-30rem bg-white store-list'>
       {/* <InputText type="text" placeholder="Search" /> */}
       <Storelist selectedstore={(value)=>setselectedstoreObj(value)}/>
       </div>
@@ -70,7 +70,7 @@ function Home(props) {
        <StoreMap storeObj={selectedstoreObj}/>
    
        </div>
-       <div className='flex h-12rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
+       <div className='flex h-15rem text-xl align-items-center justify-content-center px-8 bg-white text-black-alpha-60'>
         <div className='flex-row w-6'>
           <StoreTimings storeObj={selectedstoreObj}/>
       </div>
