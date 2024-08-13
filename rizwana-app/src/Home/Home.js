@@ -80,8 +80,8 @@ function Home(props) {
         
 
         </div>
-        <div className='flex h-14rem text-2xl  align-items-center justify-content-center Store-Timings px-8 bg-white text-black-alpha-60'>
-        <div className='flex-row text-blue-700 w-6 '>
+        <div className='flex h-15rem text-2xl  align-items-center justify-content-center Store-Timings px-8 bg-white text-black-alpha-60'>
+        <div className='flex text-blue-700 w-6 '>
            <StoreTimings storeObj={selectedStoreObj}/>
 
         </div>

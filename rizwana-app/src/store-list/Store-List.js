@@ -153,7 +153,7 @@ const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(storeDire
     const storeTemplate = (store) => {
         return (
 
-            <div className='flex-cloumn border-500 surface-overlay  border-1  border-round font-medium line-height-3 1g:2 w-full  h-4rem'>
+            <div className='flex-cloumn border-500 surface-overlay text-lg border-1  border-round font-medium line-height-3 1g:2 w-full  h-4rem'>
             <div className='flex align-items-center  ml-2 w-8rem'>
                  <div>{store.storeName}
                  </div>
