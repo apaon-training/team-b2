@@ -8,9 +8,11 @@ import { Menu } from 'primereact/menu';
 import React, { useRef } from 'react';
 import StoreMap from '../store-map/store-map';
 import About from '../About/About';
+import StoreForm from '../store-form/store-form';
 
 function Home(props) {
   const [showAbout, setShowAbout] = useState(false);
+  const [showStoreForm, setShowStoreForm] = useState(true);
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
   const menuRight = useRef(null);
   const items = [
@@ -42,6 +44,8 @@ function Home(props) {
           Store Locator
         </div>
         <div className='flex align-items-center justify-content-center w-11rem'>
+        <Avatar icon= 'pi pi-shop' size="xlarge" shape="circle" className='mr-4'/>
+        <StoreForm visible={showStoreForm} label="About" icon="pi pi-exclamation-circle" onClose={ () => setShowStoreForm(false) }/>
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
           <Avatar label="BA" size="xlarge" shape="circle" className='mr-4' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
             <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={ () => setShowAbout(false) }/>
