@@ -11,8 +11,6 @@ import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import '../node_modules/primeflex/primeflex.css';
 import 'primeflex/themes/primeone-light.css';
-import Login from './Login/Login';
-import Home from './Home/home';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
