@@ -11,6 +11,7 @@ import { Menu } from 'primereact/menu';
 import { useState } from 'react';
 import StoreMap from '../store-map/store-map';
 import About from '../about/about';
+import StoreForm from '../store-form/store-form';
 
 
 function Home(props) {
@@ -18,7 +19,8 @@ function Home(props) {
     props.logoutSuccess()
   }
   const [showAbout ,setShowAbout] = useState(false);
-  
+  const [showStoreForm ,setShowStoreForm] = useState(true);
+
   const [selectedStoreObj,setSelectedStoreObj] = useState(null);
   const menuRight = useRef(null);
   const items = [
@@ -55,8 +57,10 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center gap-2 w-10rem'>
         
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right"/>
-          <Avatar label="VA" size="xlarge" shape="circle" className='mr-3'  onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
+          <Avatar icon="pi pi-shop" size="xlarge" shape="circle" className='mr-3' aria-controls="popup_menu_right" aria-haspopup/>
             <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={()=> setShowAbout(false)}/>
+            <Avatar label="VA" size="xlarge" shape="circle" className='mr-3'  onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
+       <StoreForm visible={showStoreForm} label="StoreForm" icon="pi pi-exclamation-circle" onClose={()=> setShowStoreForm (true)}/>
         </div>
       </div>
       <div className='flex h-auto'>
