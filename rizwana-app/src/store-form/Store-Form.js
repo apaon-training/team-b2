@@ -18,7 +18,7 @@ function StoreForm (props) {
                     Add Store
                 </p>
                 <div className='flex  gap-6  my-3 '>
-                    <div className=''>
+                    <div className='py-2'>
                         Name:
                     </div>
                     <div className=''>
@@ -26,7 +26,7 @@ function StoreForm (props) {
                     </div>
                 </div>
                 <div className='flex  gap-6 my-3 '>
-                    <div className=''>
+                    <div className='py-2'>
                         Details:
                     </div>
                     <div className=''>
