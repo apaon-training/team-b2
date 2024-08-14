@@ -3,38 +3,83 @@ import './store-form.css';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
 function StoreForm (props) {
-    const [visible, setvisible] = useState(false); 
-    
-                            
-
     return (
         <div className="card flex justify-content-center">
-            <Dialog header="Web store"  visible={props.visible} style={{ width: '50vw', height: '50vh'}} onHide={() => {props.onClose(false)}}>
-                <div className='flex column h-screen'>
-                    <div className='flex h-10rem text-4xl ml-3'>
-                        <span>
-                            Add Store
-                        </span>
-                    </div>
+            <Dialog header="Add store"  visible={props.visible} style={{ width: '65vh', height: '75vh'}} onHide={() => {props.onClose(false)}}>
+                <div className='flex-column  h-auto'>
                 </div>
-                <div className='flex align-items-center justify-content-center gap-4 my-3'>
-                    <div className='Name'>
-                        Name :
+                <div className='flex gap-6 h-1rem my-3'>
+                    <div className=''>
+                        Name    :
                     </div>
                     <div className=''>
-                        <InputText value={ Text } onChange={ (e) => setName (e.target.value)}/>
+                        <input></input>
                     </div>
                 </div>
-                <div className='flex align-items-center justify-content-center gap-4 my-3'>
-                    <div className='Details'>
+                <div className='flex gap-6 h-2rem my-3'>
+                    <div className=''>
                         Details :
                     </div>
                     <div className=''>
-                        <InputText value={ Text } onChange={ (e) => setDetails (e.target.value)}/>
+                        <input></input>
                     </div>
                 </div>
-
-
+                <div className='flex gap-5 h-1rem my-3'>
+                    <div className=''>
+                        Timings1 :
+                    </div>
+                    <div className=''>
+                        <input></input>
+                    </div>
+                </div>
+                <div className='flex gap-5 h-2rem my-3'>
+                    <div className=''>
+                        Timings2 :
+                    </div>
+                    <div className=''>
+                        <input></input>
+                    </div>
+                </div>
+                <div className='flex gap-6 h-1rem my-3'>
+                    <div className=''>
+                        Phone    :
+                    </div>
+                    <div className=''>
+                        <input></input>
+                    </div>
+                </div>
+                <div className='flex gap-5 h-2rem my-3'>
+                    <div className=''>
+                        Address  :
+                    </div>
+                    <div className=''>
+                        <input></input>
+                    </div>
+                </div>
+                <div className='flex gap-5 h-1rem my-3'>
+                    <div className=''>
+                        Latitude  :
+                    </div>
+                    <div className=''>
+                        <input></input>
+                    </div>
+                </div>
+                <div className='flex gap-4 my-3'>
+                    <div className=''>
+                        Longitude :
+                    </div>
+                    <div className=''>
+                        <input></input>
+                    </div>
+                </div>
+                <div className='flex align-items-center justify-content-center gap-5 md:h-5rem'>
+                    <button className='ml-8 '>
+                        Cancel 
+                    </button>
+                    <button className='bg-blue-900 text-white'>
+                        Save 
+                    </button>
+                </div>
             </Dialog>
         </div>
     )
