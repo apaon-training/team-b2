@@ -10,6 +10,7 @@ import StoreAddress from '../store-address/Store-Address';
 import { Menu } from 'primereact/menu';
 import StoreMap from '../store-map/Store-Map';
 import About from '../about/About';
+import StoreForm from '../store-form/Store-Form';
 
 
 
@@ -19,6 +20,7 @@ function Home(props) {
   const onlogoutClicked = () =>{
     props.LogoutSuccess();
   }
+  const [showstoreForm, setShowstoreForm] = useState(true);
   const menuRight = useState(null);
   
   const items = [
@@ -58,6 +60,8 @@ function Home(props) {
         <div className='flex  align-items-center justify-content-center avatar w-8rem text-6xl mr-5 '>
         {/* <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
+        <StoreForm/>
+        <Avatar visible={showstoreForm} icon="pi pi-shop" size="xlarge" shape="circle" onClick={() => setShowstoreForm(true) } className='text-black-alpha-60 mr-2'/>
         <Avatar label="SR" mr-9 size="xlarge"   shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
         <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={()=> setShowAbout(false)}  />
         
