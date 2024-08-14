@@ -1,5 +1,6 @@
 import { Dialog } from 'primereact/dialog';
 import React, { useState } from "react";
+import './Store-Form.css';
 
 
 function StoreForm (props) {
@@ -10,7 +11,7 @@ function StoreForm (props) {
         <>
         <div className="card flex justify-content-center  ">
 
-        <Dialog header="About" visible={props.visible}  style={{ width: '25vw'}} onClick={() => {props.onClick(true)}}>
+        <Dialog header="About" visible={props.visible}  style={{ width: '50vw',height:"50vh"}} onHide={() => {props.onClose(false)}}>
                
                 <p className="m-0 mb-2 font-bold text-1xl  ">
                     Show Store

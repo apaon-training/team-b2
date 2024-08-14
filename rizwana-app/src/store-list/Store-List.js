@@ -129,23 +129,23 @@ const storeDirectory=[
             "lng": 23.2345
         }
     },
-    {
-        "id": 10008,
-        "storeName": "food stall",
-        "storeDetails": "items",
-        "storeTimings": [
-            "Mon-Fri- 9 to 6 pm",
-            "Sat-Sun-9 to 10pm"
-        ],
-        "storeAddress": {
-            "phoneNumber": "Phone: +91 678 456 0978",
-            "Address": "Address: 34-12 assom"
-        },
-        "storeMapLocator": {
-            "lat": 43.9087,
-            "lng": 90.7432
-        }
-    },
+    // {
+    //     "id": 10008,
+    //     "storeName": "food stall",
+    //     "storeDetails": "items",
+    //     "storeTimings": [
+    //         "Mon-Fri- 9 to 6 pm",
+    //         "Sat-Sun-9 to 10pm"
+    //     ],
+    //     "storeAddress": {
+    //         "phoneNumber": "Phone: +91 678 456 0978",
+    //         "Address": "Address: 34-12 assom"
+    //     },
+    //     "storeMapLocator": {
+    //         "lat": 43.9087,
+    //         "lng": 90.7432
+    //     }
+    // },
 ];
 
 const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(storeDirectory);

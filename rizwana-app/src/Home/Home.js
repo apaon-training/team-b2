@@ -14,13 +14,15 @@ import StoreForm from '../store-form/Store-Form';
 
 
 
+
 function Home(props) {
   const [showAbout, setShowAbout] = useState(false);
   const [selectedStoreObj, setSelectedStoreObj] = useState(null);
   const onlogoutClicked = () =>{
     props.LogoutSuccess();
   }
-  const [showstoreForm, setShowstoreForm] = useState(true);
+  const [showStoreForm, setShowStoreForm] = useState(false);
+
   const menuRight = useState(null);
   
   const items = [
@@ -60,10 +62,11 @@ function Home(props) {
         <div className='flex  align-items-center justify-content-center avatar w-8rem text-6xl mr-5 '>
         {/* <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
-        <StoreForm/>
-        <Avatar visible={showstoreForm} icon="pi pi-shop"  size="xlarge" shape="circle" onClick={() => setShowstoreForm(true) } className='text-black-alpha-60 py-4 mr-2'/>
-        <Avatar label="SR" mr-9 size="xlarge"   shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
-        <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={()=> setShowAbout(false)}  />
+        <StoreForm visible={showStoreForm} label="StoreForm" icon="pi pi-exclamation-circle" onClose={() =>setShowStoreForm(false)}/>
+        <Avatar raised onClick={() => setShowStoreForm(true) }   icon="pi pi-shop"  size="xlarge" shape="circle" className='text-black-alpha-60 mr-2' aria-controls="popup_menu_right" aria-haspopup  />
+        <Avatar label="SR" mr-9 size="xlarge"   shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
+        
+        <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={()=> setShowAbout(false)}/>
         
 
         </div>
@@ -84,7 +87,7 @@ function Home(props) {
         
 
         </div>
-        <div className='flex h-19rem text-2xl  align-items-center justify-content-center Store-Timings px-8 bg-white text-black-alpha-60'>
+        <div className='flex h-15rem text-2xl  align-items-center justify-content-center Store-Timings px-8 bg-white text-black-alpha-60'>
         <div className='flex text-blue-700 w-6 '>
            <StoreTimings storeObj={selectedStoreObj}/>
 
@@ -98,7 +101,9 @@ function Home(props) {
        </div> 
        </div>
     </div>
+    
   );
 }
+
 
 export default Home;
