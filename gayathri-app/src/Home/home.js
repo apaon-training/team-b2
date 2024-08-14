@@ -12,7 +12,7 @@ import StoreForm from '../store-form/store-form';
 
 function Home(props) {
   const [showAbout, setShowAbout] = useState(false);
-  const [showStoreForm, setShowStoreForm] = useState(true);
+  const [showStoreForm, setShowStoreForm] = useState(false);
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
   const menuRight = useRef(null);
   const items = [
@@ -44,7 +44,7 @@ function Home(props) {
           Store Locator
         </div>
         <div className='flex align-items-center justify-content-center w-11rem'>
-        <Avatar icon= 'pi pi-shop' size="xlarge" shape="circle" className='mr-4' onClick={ () => setShowStoreForm(true)}/>
+        <Avatar icon= 'pi pi-shop' size="xlarge" shape="circle" className='mr-4' raised onClick={ () => setShowStoreForm(true)}/>
         <StoreForm visible={showStoreForm} onClose={ () => setShowStoreForm(false) }/>
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
           <Avatar label="BA" size="xlarge" shape="circle" className='mr-4' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
