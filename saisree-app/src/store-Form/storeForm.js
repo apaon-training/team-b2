@@ -6,8 +6,8 @@ function StoreForm(props){
     
     return(
         <>
-        <div className="card flex justify-content-center bg-blue">
-        <Dialog header="About" visible={props.visible} style={{ width: '25vw'}} onClick={() => {props.onClick(true)}}>
+        <div className="card flex justify-content-center">
+        <Dialog header="About" visible={props.visible} style={{ width: '25vw'}} onHide={() =>  {props.onClick(true)}}>
                 <p className="m-0 mb-2 font-bold text-1xl">
                     Show Store
                 </p>
