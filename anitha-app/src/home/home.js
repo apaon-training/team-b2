@@ -19,7 +19,7 @@ function Home(props) {
     props.logoutSuccess()
   }
   const [showAbout ,setShowAbout] = useState(false);
-  const [showStoreForm ,setShowStoreForm] = useState(true);
+  const [showStoreForm ,setShowStoreForm] = useState(false);
 
   const [selectedStoreObj,setSelectedStoreObj] = useState(null);
   const menuRight = useRef(null);
@@ -55,12 +55,11 @@ function Home(props) {
           Store Locator
         </div>
         <div className='flex align-items-center justify-content-center gap-2 w-10rem'>
-        
-        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right"/>
-          <Avatar icon="pi pi-shop" size="xlarge" shape="circle" className='mr-3' aria-controls="popup_menu_right" aria-haspopup/>
-            <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={()=> setShowAbout(false)}/>
+         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right"/>
+           <Avatar  raised onClick={() => setShowStoreForm (true)} icon="pi pi-shop" size="xlarge" shape="circle" className='mr-3' aria-controls="popup_menu_right" aria-haspopup/>
             <Avatar label="VA" size="xlarge" shape="circle" className='mr-3'  onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
-       <StoreForm visible={showStoreForm} label="StoreForm" icon="pi pi-exclamation-circle" onClose={()=> setShowStoreForm (true)}/>
+             <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={()=> setShowAbout(false)}/>
+             <StoreForm visible={showStoreForm} label="StoreForm" icon="pi pi-exclamation-circle" onClose={()=> setShowStoreForm (false)}/>
         </div>
       </div>
       <div className='flex h-auto'>

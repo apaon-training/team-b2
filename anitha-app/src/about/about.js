@@ -24,6 +24,6 @@ function About(props) {
             </Dialog>
             </div>
         </>
-    )
+    );
 }
 export default About ;
