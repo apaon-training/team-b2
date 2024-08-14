@@ -21,7 +21,7 @@ function Home(props) {
  /* const setVisible = () => {
         props.showAbout();
   }*/
- const[showstoreForm, setShowstoreForm]=useState(true);
+ const[showStoreForm, setShowStoreForm]=useState(false);
   
   const menuRight = useState(null);
     const items = [
@@ -56,10 +56,11 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center w-8rem text-6xl mr-6'>
         {/* <Button label="logout" severity="danger" raised onClick={() => onLogoutclicked()} size= "small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" label="logout" raised onClick={() => onLogoutclicked()}/>
-        <StoreForm/>
-        <Avatar visible={showstoreForm} onClick={() => setShowstoreForm(true)} icon="pi pi-shop" size="xlarge" shape="circle" className='text-black-alpha-60 mr-2'/>
+        <StoreForm visible={showStoreForm} label="StoreForm" icon="pi pi-exclamation-circle" onClose={() => setShowStoreForm(false)} />
+        <Avatar  raised onClick={() => setShowStoreForm(true)} icon="pi pi-shop" size="xlarge" shape="circle" className='text-black-alpha-60 mr-2'/>
         <Avatar label="sv" size="xlarge" className='text-black-alpha-60 text-5xl' shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup />
         
+
         <About  visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={() => setShowAbout(false)}/>    
         </div>
      </div>
