@@ -75,7 +75,7 @@ function StoreForm(props){
                         </div>
                         <div className='ml-2'>
                             {/* <input className='w-15rem'></input> */}
-                            <InputNumber type="Number" className=' p-inputtext-sm w-15rem' />
+                            <InputNumber type="value1" className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -84,7 +84,7 @@ function StoreForm(props){
                         </div>
                         <div className='mr-1'>
                             {/* <input className='w-15rem'></input> */}
-                            <InputNumber type="Number" className=' p-inputtext-sm w-15rem' />
+                            <InputNumber type="value2"  className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                             <div className='text-right text-2xl'>
