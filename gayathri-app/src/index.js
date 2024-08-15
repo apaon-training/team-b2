@@ -5,7 +5,7 @@ import './Login/Login.css';
 import './Home/home.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {PrimeReactProvider,PrimeReactContext} from 'primereact/api';
+import {PrimeReactProvider} from 'primereact/api';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';

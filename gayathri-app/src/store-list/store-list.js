@@ -1,5 +1,4 @@
 import { InputText } from 'primereact/inputtext';
-import logo from '../logo.svg';
 import './store-list.css';
 import { ListBox } from 'primereact/listbox';
 import { useState } from 'react';

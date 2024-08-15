@@ -1,6 +1,5 @@
 import { Map, Marker } from "@vis.gl/react-google-maps";
 import { APIProvider } from "@vis.gl/react-google-maps";
-import { useEffect, useState } from "react";
 function StoreMap(props) { 
 
     return(
