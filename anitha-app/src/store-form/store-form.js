@@ -5,9 +5,35 @@ import './store-form.css';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { InputNumber } from 'primereact/inputnumber';
+import { useFormik } from 'formik';
 
 function StoreForm(props) {
     const [visible,setVisible]=useState(false);
+
+    const tempObg = {
+        "id":1001,
+        "storeName":"Jyothi Mall",
+        "storeDetails":"Groceries",
+        "storeTimings":[
+                          "Thus-Fri 5am to 5pm",
+                          "Wed-Sun 7am to 06pm"
+
+        ],
+        "storeContact":{
+            "phone":"Phone: +61 665 678 987",
+            "address":"Address: 54-54 Ganesh Nagar, Kurnool-518002"
+        },
+        "storeMapLocation":{
+            "lat":15.830749264964458,
+            "lng":78.04023528591568
+        }
+    };
+    const formik = useFormik({
+        initialValues: tempObg,
+        onSubmit: values => {
+          alert(JSON.stringify(values, null, 2));
+        },
+      });
     const setName=(value)=>{
         setName(value);
     }
@@ -47,15 +73,16 @@ function StoreForm(props) {
         <div className='card flex justify-content-center'>
        <Dialog header=" Add Store" visible={props.visible} style={{ width: '65vh', height: '80vh'}} onHide={() => {props.onClose(false)}}>
        <div className='flex-column h-auto'>
-    
-        
-       </div>
-            <div className='flex gap-6 mb-2'>
+     <form>
+
+     
+            <div className='flex gap-6 mb-2 mt-2'>
                 <div className='Name'>
                     Name:
                 </div>
                 <div className=''>
-                    <InputText value={ Text } onChange={(e) => setName (e.target.value)}/>
+                    <InputText onChange={(e) => setName (e.target.value)} value={formik.values.storeName}/>
+                    
                 </div>
             </div>
             <div className='flex gap-6 mb-5'>
@@ -63,7 +90,7 @@ function StoreForm(props) {
                     Details:
                 </div>
                 <div className=''>
-                    <InputText value={ Text } onChange={(e) => setDetails (e.target.value)}/>
+                    <InputText value={formik.values.storeDetails} onChange={(e) => setDetails (e.target.value)}/>
                 </div>
             </div>
             <div className='flex gap-5 mb-2'>
@@ -71,7 +98,7 @@ function StoreForm(props) {
                     Timings1:
                 </div>
                 <div className=''>
-                    <InputText value={ Text } onChange={(e) => setTiming1 (e.target.value)}/>
+                    <InputText value={formik.values.storeTimings[0] } onChange={(e) => setTiming1 (e.target.value)}/>
                 </div>
             </div>
             <div className='flex gap-5 mb-5'>
@@ -79,7 +106,7 @@ function StoreForm(props) {
                     Timings2:
                 </div>
                 <div className=''>
-                    <InputText value={ Text } onChange={(e) => setTiming2 (e.target.value)}/>
+                    <InputText value={formik.values.storeTimings[1]} onChange={(e) => setTiming2 (e.target.value)}/>
                 </div>
             </div>
             <div className='flex gap-6 mb-2'>
@@ -87,7 +114,7 @@ function StoreForm(props) {
                     Phone:
                 </div>
                 <div className=''>
-                    <InputNumber value={ Number } onChange={(e) => setPhone (e.target.value)}/>
+                    <InputText value={formik.values.storeContact.phone} onChange={(e) => setPhone (e.target.value)}/>
                 </div>
             </div>
             <div className='flex gap-5 mb-5'>
@@ -95,7 +122,7 @@ function StoreForm(props) {
                     Address:
                 </div>
                 <div className=''>
-                    <InputText value={ Text } onChange={(e) => setAddress (e.target.value)}/>
+                    <InputText value={formik.values.storeContact.address} onChange={(e) => setAddress (e.target.value)}/>
                 </div>
             </div>
             <div className='flex gap-5 mb-2'>
@@ -104,7 +131,7 @@ function StoreForm(props) {
                    Latitude :
                 </div>
                 <div className=''>
-                    <InputNumber value={ Number } onChange={(e) => setLatitude (e.target.value)}/>
+                    <InputNumber value={formik.values.storeMapLocation.lat} onChange={(e) => setLatitude (e.target.value)}/>
                 </div>
             </div>
             <div className='flex gap-5 mb-5'>
@@ -112,13 +139,16 @@ function StoreForm(props) {
                     Longitude:
                 </div>
                 <div className=''>
-                    <InputNumber value={ Number } onChange={(e) => setLongitude (e.target.value)}/>
+                    <InputNumber value={formik.values.storeMapLocation.lng} onChange={(e) => setLongitude (e.target.value)}/>
                 </div>
             </div>
             <div className="flex align-items-center justify-content-end text-xl gap-3 mr-3 ">
             <Button label="Cancel" severity="secondary" outlined size='small' onClick={() => cancelClicked()} />
-            <Button label="Save" severity="info" raised size='small' onClick={() => saveClicked()} />
+            <Button label="Save" type="submit" severity="info" raised size='small' onClick={() => saveClicked()} />
             </div>
+            </form>
+            </div>
+            
             </Dialog>
             </div>
         </>
