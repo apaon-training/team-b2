@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './storeForm.css';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import { InputNumber } from 'primereact/inputnumber';
 function StoreForm(props){
 
      const [visible, setVisible] = useState(false);
@@ -10,16 +11,17 @@ function StoreForm(props){
     return(
         <>
         <div className="card flex justify-content-center">
-        <Dialog header="About" visible={props.visible} style={{ width: '50vw', height:"50vh"}} onHide={() =>  {props.onClose(false)}}>
-                <p className="m-0 mb-2 gap-2 font-bold text-3xl">
-                Add Store
-                </p>
+        <Dialog header="Add Store" visible={props.visible} style={{ width: '50vw', height:"85vh"}} onHide={() =>  {props.onClose(false)}}>
+                {/* <p className="m-0 mb-2 gap-2 font-bold text-3xl"> */}
+            
+                {/* </p> */}
                 <div className=' flex gap-2 text-xl my-3'>
                 <div className='pr-2'>
                         Name:
                         </div>
                         <div className='ml-5'>
-                            <input className='w-15rem'></input>
+                            {/* <input className='w-15rem'></input> */}
+                            <InputText type="text" className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl my-3'>
@@ -27,7 +29,8 @@ function StoreForm(props){
                         Details:
                         </div>
                         <div className='ml-4 w'>
-                            <input className='w-25rem'></input>
+                            {/* <input className='w-25rem'></input> */}
+                            <InputText type="text" className= 'p-inputtext-sm w-25rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -35,7 +38,8 @@ function StoreForm(props){
                         Timings1:
                         </div>
                         <div className='ml-2'>
-                            <input className='w-15rem'></input>
+                            {/* <input className='w-15rem'></input> */}
+                            <InputText type="text" className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -43,7 +47,8 @@ function StoreForm(props){
                         Timings2:
                         </div>
                         <div className='ml-1'>
-                            <input className='w-15rem'></input>
+                            {/* <input className='w-15rem'></input> */}
+                            <InputText type="text" className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -51,7 +56,8 @@ function StoreForm(props){
                         Phone:
                         </div>
                         <div className='ml-5'>
-                            <input className='w-15rem'></input>
+                            {/* <input className='w-15rem'></input> */}
+                            <InputText type="text" className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -59,7 +65,8 @@ function StoreForm(props){
                         Address:
                         </div>
                         <div className='ml-3'>
-                            <input className='w-15rem'></input>
+                            {/* <input className='w-15rem'></input> */}
+                            <InputText type="text" className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -67,7 +74,8 @@ function StoreForm(props){
                         Lattitude:
                         </div>
                         <div className='ml-2'>
-                            <input className='w-15rem'></input>
+                            {/* <input className='w-15rem'></input> */}
+                            <InputNumber type="Number" className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -75,16 +83,13 @@ function StoreForm(props){
                         Longitude:
                         </div>
                         <div className='mr-1'>
-                            <input className='w-15rem'></input>
+                            {/* <input className='w-15rem'></input> */}
+                            <InputNumber type="Number" className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
-                            <div className='text-right text-xl'>
-                                <button className='mr-4 bg-white-600 w-2 h-2rem'>
-                                Cancel
-                                </button>
-                                <button className='mr-4 bg-blue-600 form w-2 h-2rem '>
-                                    Save
-                                </button>
+                            <div className='text-right text-2xl'>
+                            <Button label="Cancel" severity="Cancel" raised className='mr-4 bg-white-600 w-2 h-2rem button'></Button>
+                            <Button label="Save" severity="" raise className='mr-4 bg-blue-600 form w-2 h-2rem'></Button>
                                 </div>
                 {/* <p className="m-0 mb-2 animation-fill-forwards"> */}
                    
