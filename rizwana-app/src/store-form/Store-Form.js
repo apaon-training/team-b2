@@ -14,7 +14,7 @@ function StoreForm (props) {
 
         <Dialog header="About" visible={props.visible}  style={{ width: '50vw',height:"50vh"}} onHide={() => {props.onClose(false)}}>
                
-                <p className="m-0 mb-2 font-bold text-1xl  ">
+                <p className="m-0 mb-2 font-bold gap-6 text-1xl  ">
                     Add Store
                 </p>
                 <div className='flex  gap-6  my-3 '>
@@ -34,7 +34,7 @@ function StoreForm (props) {
                     </div>
                 </div>
                 <div className='flex  gap-6 my-3 '>
-                    <div className=''>
+                    <div className='py-2'>
                         Timings1:
                     </div>
                     <div className=''>
@@ -42,7 +42,7 @@ function StoreForm (props) {
                     </div>
                 </div>
                 <div className='flex gap-6  my-2 '>
-                    <div className=''>
+                    <div className='py-2'>
                         Timings2:
                     </div>
                     <div className=''>
@@ -50,7 +50,7 @@ function StoreForm (props) {
                     </div>
                 </div>
                 <div className='flex gap-6  my-3 '>
-                    <div className=''>
+                    <div className='py-2'>
                         Phone:
                     </div>
                     <div className=''>
@@ -58,7 +58,7 @@ function StoreForm (props) {
                     </div>
                 </div>
                 <div className='flex gap-6 my-3 '>
-                    <div className=''>
+                    <div className='py-2'>
                         Address:
                     </div>
                     <div className=''>
@@ -66,7 +66,7 @@ function StoreForm (props) {
                     </div>
                 </div>
                 <div className='flex gap-6 my-3 '>
-                    <div className=''>
+                    <div className='py-2'>
                         Latitude:
                     </div>
                     <div className=''>
@@ -74,7 +74,7 @@ function StoreForm (props) {
                     </div>
                 </div>
                 <div className='flex gap-6  my-3 '>
-                    <div className=''>
+                    <div className='py-2'>
                         Longitude:
                     </div>
                     <div className=''>
@@ -82,10 +82,10 @@ function StoreForm (props) {
                     </div>
                 </div>
                 <div className='flex align-items-center justify-content-center my-3 gap-5'>
-                    <button className=''>
+                    <button className='py-2'>
                         cancel
                     </button>
-                    <button className='save'>
+                    <button className='save py-2'>
                         save
                     </button>
                 </div>
