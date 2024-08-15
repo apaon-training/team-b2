@@ -15,83 +15,80 @@ function StoreForm(props){
                 Add Store
                 </p>
                 <div className=' flex gap-2 text-xl my-3'>
-                <div className='pl-2'>
+                <div className='pr-2'>
                         Name:
                         </div>
-                        <div className=''>
-                            <input></input>
+                        <div className='ml-5'>
+                            <input className='w-15rem'></input>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl my-3'>
-                        <div className='pl-2'>
+                        <div className='pr-2'>
                         Details:
                         </div>
-                        <div className=''>
-                            <input></input>
+                        <div className='ml-4 w'>
+                            <input className='w-25rem'></input>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
-                        <div className='pl-2'>
+                        <div className='pr-2'>
                         Timings1:
                         </div>
-                        <div className=''>
-                            <input></input>
+                        <div className='ml-2'>
+                            <input className='w-15rem'></input>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
-                        <div className='pl-2'>
+                        <div className='pr-2'>
                         Timings2:
                         </div>
-                        <div className=''>
-                            <input></input>
+                        <div className='ml-1'>
+                            <input className='w-15rem'></input>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
-                        <div className='pl-2'>
+                        <div className='pr-2'>
                         Phone:
                         </div>
-                        <div className=''>
-                            <input></input>
+                        <div className='ml-5'>
+                            <input className='w-15rem'></input>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
-                        <div className='pl-2'>
+                        <div className='pr-2'>
                         Address:
                         </div>
-                        <div className=''>
-                            <input></input>
+                        <div className='ml-3'>
+                            <input className='w-15rem'></input>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
-                        <div className='pl-2'>
+                        <div className='pr-2'>
                         Lattitude:
                         </div>
-                        <div className=''>
-                            <input></input>
+                        <div className='ml-2'>
+                            <input className='w-15rem'></input>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
-                        <div className='pl-2'>
+                        <div className='pr-2'>
                         Longitude:
                         </div>
-                        <div className=''>
-                            <input></input>
+                        <div className='mr-1'>
+                            <input className='w-15rem'></input>
                         </div>
                         </div>
-                        <div>
-                            <div className=''>
-                                <button>Cancel</button>
-                            </div>
-                        </div>
-                        <div>
-                            <div className=''>
-                                <button>Submit</button>
-                            </div>
-                        </div>
-    
-                <p className="m-0 mb-2 animation-fill-forwards">
+                            <div className='text-right text-xl'>
+                                <button className='mr-4 bg-white-600 w-2 h-2rem'>
+                                Cancel
+                                </button>
+                                <button className='mr-4 bg-blue-600 form w-2 h-2rem '>
+                                    Save
+                                </button>
+                                </div>
+                {/* <p className="m-0 mb-2 animation-fill-forwards"> */}
                    
-                </p> 
+                {/* </p>  */}
 
 
             </Dialog>
