@@ -4,7 +4,7 @@ import { useState } from 'react';
 import './store-form.css';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { InputNumber } from 'primereact/inputtext';
+import { InputNumber } from 'primereact/inputnumber';
 
 function StoreForm(props) {
     const [visible,setVisible]=useState(false);
@@ -87,7 +87,7 @@ function StoreForm(props) {
                     Phone:
                 </div>
                 <div className=''>
-                    <InputText value={ Text } onChange={(e) => setPhone (e.target.value)}/>
+                    <InputNumber value={ Number } onChange={(e) => setPhone (e.target.value)}/>
                 </div>
             </div>
             <div className='flex gap-5 mb-5'>
@@ -112,7 +112,7 @@ function StoreForm(props) {
                     Longitude:
                 </div>
                 <div className=''>
-                    <InputNumber value={ number } onChange={(e) => setLongitude (e.target.value)}/>
+                    <InputNumber value={ Number } onChange={(e) => setLongitude (e.target.value)}/>
                 </div>
             </div>
             <div className="flex align-items-center justify-content-end text-xl gap-3 mr-3 ">
