@@ -9,7 +9,7 @@ import { useFormik } from 'formik';
 function Form(props){
      
     const [visible, setVisible]=useState(false);
-    const tempObj= {
+    let tempObj= {
         "id":5001,
         "storeName":"Wollong",
         "storeDetails":"textile",
@@ -24,6 +24,31 @@ function Form(props){
             "lng": 78.48424496412154
         }
     };
+//     const setName=(value)=>{
+//          tempObj.storeName=value
+//     }
+//     const setDetails=(value)=>{
+//         tempObj.storeDetails=value
+//     }
+//     const setTimings1=(value)=>{
+//         tempObj.storeTimings[0]=value
+//    }
+//    const setTimings2=(value)=>{
+//        tempObj.storeTimings[1]=value
+//    } 
+//    const setPhone=(value)=>{
+//     tempObj.storeAddress.phone=value
+// } 
+// const setAddress=(value)=>{
+//     tempObj.storeAddress.address=value
+// }
+// const setLatitudes=(value)=>{
+//     tempObj.storeMapLocation.lat=value
+// }
+// const setLongitudes=(value)=>{
+//     tempObj.storeMapLocation.lng=value
+// }
+   
     const formik = useFormik({
         initialValues: tempObj,
         onSubmit: values => {
@@ -33,7 +58,7 @@ function Form(props){
     return(
         <>
          <div className="flex column text-white bg-blue"> 
-        <Dialog header="About" visible={props.visible} style={{ width: '50vw',height:'85vh'}} onHide={() => {props.onClose(false)}}>
+        <Dialog header="About" visible={props.visible} style={{ width: '50vw',height:'90vh'}} onHide={() => {props.onClose(false)}}>
        <form> 
         <div className="flex-column h-auto">
       <div className="flex text-3xl">
@@ -44,55 +69,55 @@ function Form(props){
      <div className="flex-column mb-2 mt-2 gap-3">
         <div className='Name'>
          Name:
-         <InputText type="text" className="ml-7" value={formik.values.storeName}/>
+         <InputText type="text" className="ml-7" value={formik.values.storeName} onChange={(e) => formik.setFieldValue('storeName', e.target.value)}/>
+         {/* <InputText type="text" className="ml-7" value={formik.values.storeName}/> */}
       </div>
       </div>
             <div className="flex mb-2 my-2 gap-3">
                 <div className='Details'> 
                 Details:      
-         <InputText type="text"className='ml-7' value={formik.values.storeDetails}/>
+         <InputText type="text"className='ml-7' value={formik.values.storeDetails} onChange={(e) => formik.setFieldValue('storeDetails', e.target.value)}/>
             </div>
             </div> 
             
                 <div className="flex mb-2   gap-3">
                     <div className='Timing1'> 
                  Timings1:
-                <InputText type="text" className='ml-5'value={formik.values.storeTimings[0]}/>
+                <InputText type="text" className='ml-5'value={formik.values.storeTimings[0]} onChange={(e) => formik.setFieldValue('storeTimings[0]', e.target.value)}/>
                 </div>
                 </div>
-                <div className="flex mb-2    gap-3">
+                <div className="flex mb-2  gap-3">
                     <div className='Timings2'>
                 Timings2:
-                <InputText type="text" className='ml-6'value={formik.values.storeTimings[1]}/>
+                <InputText type="text" className='ml-6'value={formik.values.storeTimings[1]} onChange={(e) => formik.setFieldValue('storeTimings[1]', e.target.value)}/>
                 </div>  
                 </div>
                 <div className="flex mb-2  gap-3">
                     <div className='Phone'>
                  Phone:
-                <InputText type="text" className="ml-6" value={formik.values.storeAddress.phone}/>
+                <InputText type="text" className="ml-6" value={formik.values.storeAddress.phone} onChange={(e) => formik.setFieldValue('storeAddress.phone', e.target.value)}/>
                 </div>
                 </div>
                 <div className="flex mb-2 gap-3">
                     <div className='Address'> 
                 Address:
-                <InputText type="text"className='ml-5' value={formik.values.storeAddress.address}/>
+                <InputText type="text"className='ml-5' value={formik.values.storeAddress.address} onChange={(e) => formik.setFieldValue('storeAddress.address', e.target.value)}/>
                 </div> 
                  </div>
-                <div className="flex mb-2  gap-3">
-                    <div className='Longitudes'>
-                 Longitudes:
-                  
-                <FloatLabel>
-                <InputNumber type="text" minFractionDigits={6}value={formik.values.storeMapLocation.lat}/>
-                </FloatLabel>
-                 </div>
-                </div>
-                 <div className="flex mb-2  gap-3">
+                <div className="flex mb-2 gap-3">
                     <div className='Latitudes'>
                  Latitudes:
-                   <FloatLabel>
-                <InputNumber type="text" minFractionDigits={6}value={formik.values.storeMapLocation.lng}/>
-                 </FloatLabel>
+                {/* <FloatLabel> */}
+                <InputNumber type="text" minFractionDigits={6} value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
+                {/* </FloatLabel> */}
+                 </div>
+                </div>
+                 <div className="flex mb-4 gap-5">
+                    <div className='Longitudes'>
+                 Longitudes:
+                   {/* <FloatLabel> */}
+                <InputNumber type="text" minFractionDigits={6} value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
+                   {/* </FloatLabel> */}
                 </div>
                 </div>
        <div className=" text-right text-5xl  "> 
