@@ -5,6 +5,7 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { InputNumber } from 'primereact/inputnumber';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 
 
@@ -28,8 +29,47 @@ function StoreForm (props) {
             "lng": 78.02985281909494
         }
     };
-    const formik = useFormik({
+    const storeValidation=Yup.object({
+        storeName: Yup.string()
+        .min(5,'Too short name')
+        .max(50,'Too long name')
+        .required(
+            'storeName is required'
+        ),
+        storeDetails: Yup.string()
+        .min(5,'Too short name')
+        .max(50,'Too long name')
+        .required(
+            'storeDetails is required'
+        ),
+        storeTimings: Yup.string()
+        .min(5,'Too short name')
+        .max(50,'Too long name')
+        .required(
+            'storeTimings is required'
+        ),
+        storeAddress: Yup.string()
+        .min(5,'Too short name')
+        .max(50,'Too long name')
+        .required(
+            'storeAddress is required'
+        ),
+
+
+    });
+    
+    const isFormFieldInvalid=(name)=>!!(formik.touched[name]&&formik.errors[name]);
+
+    const getFormErrorMessage=(name)=>{
+        return isFormFieldInvalid(name)
+    ?<small className='p-error'>
+        {formik.errors[name]}
+        </small> 
+    :<small className='p-error'>&nbsp;</small>
+    }
+       const formik = useFormik({
         initialValues: tempObg,
+        validationSchema:storeValidation,
         onSubmit: values => {
           alert(JSON.stringify(values, null, 2));
         },
@@ -89,7 +129,7 @@ function StoreForm (props) {
         <Dialog header="Add Store" visible={props.visible}  style={{ width: '65vh',height:"95vh"}} onHide={() => {props.onClose(false)}}>
                
                 <div className='flex-column '>
-                    <form>
+                    <form onSubmit={formik.handleSubmit}>
 
                 
                 <div className='flex mt-3 gap-6 mb-2'>
@@ -100,6 +140,9 @@ function StoreForm (props) {
                         {/* <input></input> */}
                         <InputText  value={formik.values.storeName} onChange={(e) =>formik.setFieldValue('storeName',e.target.value)} />
                         {/* <InputText onChange={(e) => setName(e.target.value)} value={formik.values.storeName}  /> */}
+                    <span>
+                        {getFormErrorMessage('storeName')}
+                    </span>
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
@@ -109,6 +152,9 @@ function StoreForm (props) {
                     <div className=''>
                         {/* <input></input> */}
                         <InputText value={formik.values.storeDetails }   onChange={(e) =>formik.setFieldValue('storeDetails',e.target.value)}  />
+                        <span>
+                        {getFormErrorMessage('storeDetails')}
+                    </span>
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-2  '>
@@ -118,6 +164,9 @@ function StoreForm (props) {
                     <div className=''>
                         {/* <input></input> */}
                         <InputText value={formik.values.storeTimings[0]}  onChange={(e) =>formik.setFieldValue('storeTimings',e.target.value)}  />
+                        <span>
+                        {getFormErrorMessage('storeTimings')}
+                    </span>
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
@@ -127,6 +176,9 @@ function StoreForm (props) {
                     <div className=''>
                         {/* <input></input> */}
                         <InputText value={formik.values.storeTimings[1] } onChange={(e) =>formik.setFieldValue('storeTimings',e.target.value)}  />
+                        <span>
+                        {getFormErrorMessage('storeTimings')}
+                    </span>
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-2'>
@@ -136,6 +188,9 @@ function StoreForm (props) {
                     <div className=''>
                         {/* <input></input> */}
                         <InputText value={formik.values.storeAddress.phoneNumber}  onChange={(e) =>formik.setFieldValue('storeAddress.phoneNumber',e.target.value)} />
+                        <span>
+                        {getFormErrorMessage('storeAddress')}
+                    </span>
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
