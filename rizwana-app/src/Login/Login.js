@@ -52,7 +52,7 @@ function Login(props) {
         </div>
         <div className="">
            {/*<input></input>*/}
-           <InputText value={userText}onChange={(e) => setUserName(e.target.value)} />
+           <InputText value={userText} onChange={(e) => setUserName(e.target.value)} />
         </div>
         </div>
         

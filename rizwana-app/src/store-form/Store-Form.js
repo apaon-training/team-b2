@@ -11,7 +11,7 @@ import { useFormik } from 'formik';
 function StoreForm (props) {
 
     const [visible, setVisible] = useState(false);
-    const tempObg = {
+    let tempObg = {
         "id": 10001,
         "storeName": "Wollong",
         "storeDetails": "D-mart",
@@ -34,38 +34,38 @@ function StoreForm (props) {
           alert(JSON.stringify(values, null, 2));
         },
       });
-    const setName = (value)=>{
-        setName(value);
+    // const setName = (value)=>{
+    //     tempObg.storeName=value
         
-    }
-    const setDetails = (value)=>{
-        setDetails(value);
+    // }
+    // const setDetails = (value)=>{
+    //     tempObg.storeDetails=value
         
-    }
-    const setTimings1= (value)=>{
-        setTimings1(value);
+    // }
+    // const setTimings1= (value)=>{
+    //     tempObg.storeTimings=value
         
-    }
-    const setTimings2 = (value)=>{
-        setTimings2(value);
+    // }
+    // const setTimings2 = (value)=>{
+    //     tempObg.storeTimings=value
         
-    }
-    const setPhone = (value)=>{
-        setPhone(value);
+    // }
+    // const setPhone = (value)=>{
+    //     tempObg.storePhone=value
         
-    }
-    const setAddress = (value)=>{
-        setAddress(value);
+    // }
+    // const setAddress = (value)=>{
+    //     tempObg.storeAddress=value
         
-    }
-    const setLatitude= (value)=>{
-        setLatitude(value);
+    // }
+    // const setLatitude= (value)=>{
+    //     tempObg.storeMapLocator.lat=value
         
-    }
-    const setLongitude= (value)=>{
-        setLongitude(value);
+    // }
+    // const setLongitude= (value)=>{
+    //     tempObg.storeLongitude=value
         
-    }
+    // }
     const saveClicked =() =>{
         {
             console.log('Login Successful !');
@@ -98,7 +98,8 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputText onChange={(e) => setName(e.target.value)} value={formik.values.storeName} />
+                        <InputText  value={formik.values.storeName} onChange={(e) =>formik.setFieldValue('storeName',e.target.value)} />
+                        {/* <InputText onChange={(e) => setName(e.target.value)} value={formik.values.storeName}  /> */}
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
@@ -107,7 +108,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputText value={formik.values.storeDetails } onChange={(e) => setDetails(e.target.value)} />
+                        <InputText value={formik.values.storeDetails }   onChange={(e) =>formik.setFieldValue('storeDetails',e.target.value)}  />
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-2  '>
@@ -116,7 +117,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputText value={formik.values.storeTimings[0]} onChange={(e) => setTimings1(e.target.value)} />
+                        <InputText value={formik.values.storeTimings[0]}  onChange={(e) =>formik.setFieldValue('storeTimings',e.target.value)}  />
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
@@ -125,7 +126,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputText value={formik.values.storeTimings[1] } onChange={(e) => setTimings2(e.target.value)} />
+                        <InputText value={formik.values.storeTimings[1] } onChange={(e) =>formik.setFieldValue('storeTimings',e.target.value)}  />
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-2'>
@@ -134,7 +135,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputText value={formik.values.storeAddress.phoneNumber} onChange={(e) => setPhone(e.target.value)} />
+                        <InputText value={formik.values.storeAddress.phoneNumber}  onChange={(e) =>formik.setFieldValue('storeAddress.phoneNumber',e.target.value)} />
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
@@ -143,7 +144,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputText value={ formik.values.storeAddress.Address} onChange={(e) => setAddress(e.target.value)} />
+                        <InputText value={ formik.values.storeAddress.Address}  onChange={(e) =>formik.setFieldValue('storeAddress.Address',e.target.value)} />
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-2'>
@@ -152,7 +153,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputNumber value={ formik.values.storeMapLocator.lat } onChange={(e) => setLatitude(e.target.value)} />
+                        <InputNumber value={ formik.values.storeMapLocator.lat }  onChange={(e) =>formik.setFieldValue('storeMapLocator.lat',e.value)} />
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
@@ -161,10 +162,10 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputNumber value={formik.values.storeMapLocator.lng} onChange={(e) => setLongitude(e.target.value)} />
+                        <InputNumber value={formik.values.storeMapLocator.lng}  onChange={(e) =>formik.setFieldValue('storeMapLocator.lng',e.value)} />
                     </div>
                 </div>
-
+ 
                 
                 <div className="flex  align-items-center justify-content-end text-xl mr-3 gap-3">
         {/*<button className="cancel">Cancel</button>
