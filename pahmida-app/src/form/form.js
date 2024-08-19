@@ -6,6 +6,8 @@ import { InputNumber } from  'primereact/inputnumber';
 import { FloatLabel } from 'primereact/floatlabel';
 import { Button } from 'primereact/button';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
 function Form(props){
      
     const [visible, setVisible]=useState(false);
@@ -24,33 +26,26 @@ function Form(props){
             "lng": 78.48424496412154
         }
     };
-//     const setName=(value)=>{
-//          tempObj.storeName=value
-//     }
-//     const setDetails=(value)=>{
-//         tempObj.storeDetails=value
-//     }
-//     const setTimings1=(value)=>{
-//         tempObj.storeTimings[0]=value
-//    }
-//    const setTimings2=(value)=>{
-//        tempObj.storeTimings[1]=value
-//    } 
-//    const setPhone=(value)=>{
-//     tempObj.storeAddress.phone=value
-// } 
-// const setAddress=(value)=>{
-//     tempObj.storeAddress.address=value
-// }
-// const setLatitudes=(value)=>{
-//     tempObj.storeMapLocation.lat=value
-// }
-// const setLongitudes=(value)=>{
-//     tempObj.storeMapLocation.lng=value
-// }
-   
+    const storevalidation=Yup.object({
+        storeName: Yup.string().min(5,'Too short name') .max(50,'Too long name').required('storeName is required'),
+        storeDetails: Yup.string().min(5,'too short') .max(10,'too long').required('storeDetails is required'),
+        storeTimings: Yup.string().min(10,'too short') .max(20,'too long')
+    })
+    const isFormFieldInvalid=(name)=> !!(formik.touched[name] && formik.errors[name]);
+    const getFormErrorMessage = (name)=>{
+        return isFormFieldInvalid(name)
+        ? <small className='p-error'>
+            {
+                formik.errors[name]
+            }
+
+        </small>
+        :<small className='p-error'> &nbsp;</small>
+    }
+
     const formik = useFormik({
         initialValues: tempObj,
+  validationSchema:storevalidation,
         onSubmit: values => {
           alert(JSON.stringify(values, null, 2));
         },
@@ -59,7 +54,7 @@ function Form(props){
         <>
          <div className="flex column text-white bg-blue"> 
         <Dialog header="About" visible={props.visible} style={{ width: '50vw',height:'90vh'}} onHide={() => {props.onClose(false)}}>
-       <form> 
+       <form onSubmit={formik.handleSubmit}> 
         <div className="flex-column h-auto">
       <div className="flex text-3xl">
          <span>
@@ -70,13 +65,18 @@ function Form(props){
         <div className='Name'>
          Name:
          <InputText type="text" className="ml-7" value={formik.values.storeName} onChange={(e) => formik.setFieldValue('storeName', e.target.value)}/>
-         {/* <InputText type="text" className="ml-7" value={formik.values.storeName}/> */}
+         <span>
+            {getFormErrorMessage('storeName')}
+         </span>
       </div>
       </div>
             <div className="flex mb-2 my-2 gap-3">
                 <div className='Details'> 
                 Details:      
          <InputText type="text"className='ml-7' value={formik.values.storeDetails} onChange={(e) => formik.setFieldValue('storeDetails', e.target.value)}/>
+         <span>
+            {getFormErrorMessage('storeDetails')}
+         </span>
             </div>
             </div> 
             
@@ -84,12 +84,18 @@ function Form(props){
                     <div className='Timing1'> 
                  Timings1:
                 <InputText type="text" className='ml-5'value={formik.values.storeTimings[0]} onChange={(e) => formik.setFieldValue('storeTimings[0]', e.target.value)}/>
+                <span>
+            {getFormErrorMessage('storeTimings')}
+         </span>
                 </div>
                 </div>
                 <div className="flex mb-2  gap-3">
                     <div className='Timings2'>
                 Timings2:
                 <InputText type="text" className='ml-6'value={formik.values.storeTimings[1]} onChange={(e) => formik.setFieldValue('storeTimings[1]', e.target.value)}/>
+                <span>
+            {getFormErrorMessage('storeTimings')}
+         </span>
                 </div>  
                 </div>
                 <div className="flex mb-2  gap-3">
