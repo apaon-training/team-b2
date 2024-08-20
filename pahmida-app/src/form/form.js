@@ -7,7 +7,6 @@ import { FloatLabel } from 'primereact/floatlabel';
 import { Button } from 'primereact/button';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-
 function Form(props){
      
     const [visible, setVisible]=useState(false);
@@ -26,10 +25,24 @@ function Form(props){
             "lng": 78.48424496412154
         }
     };
-    const storevalidation=Yup.object({
+    const storevalidation=Yup.object ({
         storeName: Yup.string().min(5,'Too short name') .max(50,'Too long name').required('storeName is required'),
         storeDetails: Yup.string().min(5,'too short') .max(10,'too long').required('storeDetails is required'),
-        storeTimings: Yup.string().min(10,'too short') .max(20,'too long')
+        storeTimings: Yup.array().of(
+            Yup.string()
+            .required('please enter storeTimings'),
+        )
+        .min(2,'Both two storeTimings are required') .required("Timings are required"),
+        storeAddress: Yup.object({
+            phone: Yup.string()
+            .min(5,'minmum 5 characters for phone number') .max(10,'Maximum 10 characters for phone number') .required('please enter phone number'),
+            address: Yup.string().min(5,'minmum 5 characters for Address').max(10,'Maximum 10 characters for Address').required('please enter Address'),
+        })
+        storeMapLocation: Yup.object({
+            Latitudes: Yup.string()
+            .min(5,'minmum 5 characters for phone number') .max(10,'Maximum 10 characters for Latitudes') .required('please enter Latitude'),
+            Longitudes: Yup.string().min(5,'minmum 5 characters for Address').max(10,'Maximum 10 characters for Longitudes').required('please enter Longitude'),
+        })
     })
     const isFormFieldInvalid=(name)=> !!(formik.touched[name] && formik.errors[name]);
     const getFormErrorMessage = (name)=>{
@@ -38,7 +51,15 @@ function Form(props){
             {
                 formik.errors[name]
             }
-
+        </small>
+        :<small className='p-error'> &nbsp;</small>
+    }
+    const getFormErrorMessageNested = (name,subname)=>{
+        return isFormFieldInvalid(name)
+        ? <small className='p-error'>
+            {
+            formik.errors[name][subname] 
+            }
         </small>
         :<small className='p-error'> &nbsp;</small>
     }
@@ -85,7 +106,7 @@ function Form(props){
                  Timings1:
                 <InputText type="text" className='ml-5'value={formik.values.storeTimings[0]} onChange={(e) => formik.setFieldValue('storeTimings[0]', e.target.value)}/>
                 <span>
-            {getFormErrorMessage('storeTimings')}
+                     {getFormErrorMessage('storeTimings')}
          </span>
                 </div>
                 </div>
@@ -102,12 +123,18 @@ function Form(props){
                     <div className='Phone'>
                  Phone:
                 <InputText type="text" className="ml-6" value={formik.values.storeAddress.phone} onChange={(e) => formik.setFieldValue('storeAddress.phone', e.target.value)}/>
+                <span>
+            {getFormErrorMessageNested('storeAddress','phone')}
+         </span>
                 </div>
                 </div>
                 <div className="flex mb-2 gap-3">
                     <div className='Address'> 
                 Address:
                 <InputText type="text"className='ml-5' value={formik.values.storeAddress.address} onChange={(e) => formik.setFieldValue('storeAddress.address', e.target.value)}/>
+                <span>
+            {getFormErrorMessageNested('storeAddress','address')}
+         </span>
                 </div> 
                  </div>
                 <div className="flex mb-2 gap-3">
@@ -116,6 +143,9 @@ function Form(props){
                 {/* <FloatLabel> */}
                 <InputNumber type="text" minFractionDigits={6} value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
                 {/* </FloatLabel> */}
+                <span>
+            {getFormErrorMessage('storeMapLocation'.'lat')}
+         </span>
                  </div>
                 </div>
                  <div className="flex mb-4 gap-5">
@@ -124,6 +154,9 @@ function Form(props){
                    {/* <FloatLabel> */}
                 <InputNumber type="text" minFractionDigits={6} value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
                    {/* </FloatLabel> */}
+                   <span>
+            {getFormErrorMessage('storeMapLocation'.'lng')}
+         </span>
                 </div>
                 </div>
        <div className=" text-right text-5xl  "> 
