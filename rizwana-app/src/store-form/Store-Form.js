@@ -42,16 +42,27 @@ function StoreForm (props) {
         .required(
             'storeDetails is required'
         ),
-        storeTimings: Yup.string()
-        .min(5,'Too short name')
-        .max(50,'Too long name')
-        .required(
-            'storeTimings is required'
-        ),
+        storeTimings: Yup.array()
+        .of(
+         Yup.string()
+         .required( 'Please enter storeTimings'),
+    )
+        .min(2,'Please enter both timings')
+        .required("Timings are required"),
+        storeAddress:Yup.object({
+           phone: Yup.string()
+                   .min(5,'Min 5 characters for phone number')
+                   .max(10,'Max 10 characters  for phone number')
+                   .required('please enter phone number'),
+            address: Yup.string()
+                   .min(5,'Min 5 characters for phone number')
+                   .max(10,'Max 10 characters  for phone number')
+                   .required('please enter address'),
+
+
+        })
         
-
-
-    });
+     })
     
     const isFormFieldInvalid=(name)=>!!(formik.touched[name]&&formik.errors[name]);
 
@@ -183,7 +194,9 @@ function StoreForm (props) {
                     <div className=''>
                         {/* <input></input> */}
                         <InputText value={formik.values.storeAddress.phoneNumber}  onChange={(e) =>formik.setFieldValue('storeAddress.phoneNumber',e.target.value)} />
-                        
+                        <span>
+                        {getFormErrorMessage('storeAddress.phoneNumber')}
+                    </span> 
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
@@ -193,6 +206,9 @@ function StoreForm (props) {
                     <div className=''>
                         {/* <input></input> */}
                         <InputText value={ formik.values.storeAddress.Address}  onChange={(e) =>formik.setFieldValue('storeAddress.Address',e.target.value)} />
+                        <span>
+                        {getFormErrorMessage('storeAddress.Address')}
+                    </span>
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-2'>
