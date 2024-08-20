@@ -27,17 +27,40 @@ function StoreForm (props) {
 
     const storevalidation = Yup.object
     ( { 
-    storeName : Yup.string().min(5 ,'Too short name').max(50, 'Too long name').required('storeName is required'),
-    storeDetails : Yup.string().min(5 ,'Too short name').max(50, 'Too long name').required('storeDetails is required'),
-    storeTimings : Yup.string().min(5 ,'Too short name').max(50, 'Too long name').required('storeTimings is required'),
-    storeContact : Yup.string().min(5 ,'Too short name').max(50, 'Too long name').required('storeContact is required')
-})
+    storeName : Yup.string().min(5,'Too short name').max(50, 'Too long name').required('storeName is required'),
+    storeDetails : Yup.string().min(5,'Too short name').max(50, 'Too long name').required('storeDetails is required'),
+    storeTimings : Yup.array()
+    .of(
+        Yup.string()
+        .required('Please enter storeTimings'),
+    )
+        .min(2,'Please enter both timings').required("Timings are required"),
+
+    storeContact: Yup.object({
+        phone: Yup.string()
+            .min(5,'Minimum 5 characters for phone number')
+            .max(10,'Maximum 10 characters for phone number')
+            .required('Please enter phone number'),
+        address: Yup.string()
+            .min(5,'Minimum 5 characters for address')
+            .max(10,'Maximum 10 characters for address')
+            .required('Please enter address')
+        })
+    })
 
 const isFormFieldInvalid = (name) => !!(formik.touched[name]&&formik.errors[name]);
 const getFromErrorMessage = (name) => {
     return isFormFieldInvalid(name)
     ?<small className='p-error' >
-    {formik.errors[name]}
+        {formik.errors[name]}
+    </small>
+    :<small className='p-error'>&nbsp;</small>
+}
+
+const getFromErrorMessageNested = (name, subname) => {
+    return isFormFieldInvalid(name)
+    ?<small className='p-error' >
+    {formik.errors[name][subname]}
     </small>
     :<small className='p-error'>&nbsp;</small>
 }
@@ -97,7 +120,7 @@ const getFromErrorMessage = (name) => {
                     </div>
                     <div className=''>
                     <InputText value={formik.values.storeContact.phone} onChange={(e) => formik.setFieldValue('storeContact.phone',e.target.value)} />
-                    <span>{getFromErrorMessage('storeContact')}</span>
+                    <span>{getFromErrorMessageNested('storeContact', 'phone')}</span>
                     </div>
                 </div>
                 <div className='flex gap-5 mb-4'>
@@ -106,7 +129,7 @@ const getFromErrorMessage = (name) => {
                     </div>
                     <div className=''>
                     <InputText value={formik.values.storeContact.address} onChange={(e) => formik.setFieldValue('storeContact.address',e.target.value)} />
-                    <span>{getFromErrorMessage('storeContact')}</span>
+                    <span>{getFromErrorMessageNested('storeContact', 'address')}</span>
                     </div>
                 </div>
                 <div className='flex gap-5 mb-2'>
@@ -115,6 +138,7 @@ const getFromErrorMessage = (name) => {
                     </div>
                     <div className=''>
                     <InputNumber value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat',e.value)} />
+                    <span>{getFromErrorMessage('storeMapLocation')}</span>
                     </div>
                 </div>
                 <div className='flex gap-4 mb-4'>
@@ -123,6 +147,7 @@ const getFromErrorMessage = (name) => {
                     </div>
                     <div className=''>
                     <InputNumber value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lan',e.value)} />
+                    <span>{getFromErrorMessage('storeMapLocation')}</span>
                     </div>
                 </div>
                 <div className='flex align-items-center justify-content-end gap-5'>
