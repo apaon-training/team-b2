@@ -34,16 +34,46 @@ function StoreForm(props){
         .min(5,'Too short name')
         .max(50,'Too long name')
         .required('storeName is required'),
+        storeTimings: Yup.array()
+           .of(
+             Yup.string()
+            .required('Please enter storeTimings'),  
+            )
+            .min(2, 'Please enter both timinings')
+            .required("Timings are required"),
 
+        storeAddress: Yup.object({
+            phone: Yup.string()
+                    .min(5, 'Minimum 5 characters for phone number')
+                    .max(10, 'Max 10 characters for phone number')
+                    .required('Please enter phone no'),
+
+            address: Yup.string()
+                    .min(5, 'Minimum 5 characters for address')
+                    .max(10, 'Max 10 characters for address')
+                    .required('Please enter address')
+        })
     })
 
     const isFormFieldInvalid=(name)=>!!(formik.touched[name] && formik.errors[name]);
     const getFormErrorMessage = (name) =>{
         return isFormFieldInvalid(name)
         ? <small className='p-error'>
-            {
-                formik.errors[name]
-            }
+            
+                {formik.errors[name]}
+                
+            
+        </small>
+        :<small className='p-error'> &nbsp; </small>
+    }
+    const getFormErrorMessageNested = (name, subname) =>{
+        return isFormFieldInvalid(name)
+        ? <small className='p-error'>
+            
+                {formik.errors[name][subname]}
+
+                
+            
         </small>
         :<small className='p-error'> &nbsp; </small>
     }
@@ -91,7 +121,10 @@ function StoreForm(props){
                         </div>
                         <div className='ml-2'>
                             {/* <input className='w-15rem'></input> */}
-                            <InputText type="text" value={formik.values.storeTimings[0]} onChange={(e) =>formik.setFieldValue('storeTimings', e.target.value)} className=' p-inputtext-sm w-15rem' />
+                            <InputText type="text" value={formik.values.storeTimings[0]} onChange={(e) =>formik.setFieldValue('storeTimings[0]', e.target.value)} className=' p-inputtext-sm w-15rem' />
+                            <span>
+                                {getFormErrorMessage('storeTimings')}
+                            </span>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -100,7 +133,7 @@ function StoreForm(props){
                         </div>
                         <div className='ml-1'>
                             {/* <input className='w-15rem'></input> */}
-                            <InputText type="text" value={formik.values.storeTimings[1]} onChange={(e) =>formik.setFieldValue('storeTimings2', e.target.value)} className=' p-inputtext-sm w-15rem' />
+                            <InputText type="text" value={formik.values.storeTimings[1]} onChange={(e) =>formik.setFieldValue('storeTimings[1]', e.target.value)} className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -110,6 +143,9 @@ function StoreForm(props){
                         <div className='ml-5'>
                             {/* <input className='w-15rem'></input> */}
                             <InputText type="text" value={formik.values.storeAddress.phone} onChange={(e) =>formik.setFieldValue('storeAddress.phone', e.target.value)} className=' p-inputtext-sm w-15rem' />
+                            <span>
+                                {getFormErrorMessageNested('storeAddress', 'phone')}
+                            </span>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -119,6 +155,9 @@ function StoreForm(props){
                         <div className='ml-3'>
                             {/* <input className='w-15rem'></input> */}
                             <InputText type="text" value={formik.values.storeAddress.address} onChange={(e) =>formik.setFieldValue('storeAddress.address', e.target.value)} className=' p-inputtext-sm w-15rem' />
+                            <span>
+                                {getFormErrorMessageNested('storeAddress','address')}
+                            </span>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -148,7 +187,7 @@ function StoreForm(props){
                    
                 {/* </p>  */}
 
-
+-
             </Dialog>
         </div>
 
