@@ -48,12 +48,7 @@ function StoreForm (props) {
         .required(
             'storeTimings is required'
         ),
-        storeAddress: Yup.string()
-        .min(5,'Too short name')
-        .max(50,'Too long name')
-        .required(
-            'storeAddress is required'
-        ),
+        
 
 
     });
@@ -163,7 +158,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputText value={formik.values.storeTimings[0]}  onChange={(e) =>formik.setFieldValue('storeTimings',e.target.value)}  />
+                        <InputText value={formik.values.storeTimings[0]}  onChange={(e) =>formik.setFieldValue('storeTimings[0]',e.target.value)}  />
                         <span>
                         {getFormErrorMessage('storeTimings')}
                     </span>
@@ -175,7 +170,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputText value={formik.values.storeTimings[1] } onChange={(e) =>formik.setFieldValue('storeTimings',e.target.value)}  />
+                        <InputText value={formik.values.storeTimings[1] } onChange={(e) =>formik.setFieldValue('storeTimings[1]',e.target.value)}  />
                         <span>
                         {getFormErrorMessage('storeTimings')}
                     </span>
@@ -188,9 +183,7 @@ function StoreForm (props) {
                     <div className=''>
                         {/* <input></input> */}
                         <InputText value={formik.values.storeAddress.phoneNumber}  onChange={(e) =>formik.setFieldValue('storeAddress.phoneNumber',e.target.value)} />
-                        <span>
-                        {getFormErrorMessage('storeAddress')}
-                    </span>
+                        
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
