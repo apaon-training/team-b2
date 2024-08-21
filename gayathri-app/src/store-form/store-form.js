@@ -4,26 +4,47 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { InputNumber } from 'primereact/inputnumber';
 import { useFormik } from 'formik';
-import React from 'react';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
 function StoreForm (props) {
-    const tempObg = {
-        "id":1001,
-        "storeName": "Joyalukkas",
-        "storeDetails": "Jewellery Store",
-        "storeTimings": ["Mon-Fri-10:30 to 8:30 pm", 
-            "Sat-Sun-11 to 8 pm"
+    const [storeObj, setStoreObj] = useState(
+        {
+        "id":1003,
+        "storeName": "Polar Bear",
+        "storeDetails": "Ice Cream Parlour",
+        "storeTimings": ["Mon-Fri-11 to 11:30 pm", 
+            "Sat-Sun-12 to 11:30 pm"
 
         ],
         "storeContact": {
-            "phone": "Phone: +08 518 289 888",
-            "address": "Address: 40-29-SP Square Park road"
+            "phone": "Phone: +09 741 130 033",
+            "address": "Address: Nandyal Check Post-Sree Rama Nagar"
         },
         "storeMapLocation": {
-            "lat":15.82962667811701,
-            "lng":78.04052562119666
+            "lat":15.799024873087912,
+            "lng":78.05193162754628
         }
-    };
+    });
+    // useEffect(() =>{
+    //     setStoreObj (props?.storeObj);
+    // },[props?.storeObj])
+    // const tempObg = {
+    //     "id":1001,
+    //     "storeName": "Joyalukkas",
+    //     "storeDetails": "Jewellery Store",
+    //     "storeTimings": ["Mon-Fri-10:30 to 8:30 pm", 
+    //         "Sat-Sun-11 to 8 pm"
+
+    //     ],
+    //     "storeContact": {
+    //         "phone": "Phone: +08 518 289 888",
+    //         "address": "Address: 40-29-SP Square Park road"
+    //     },
+    //     "storeMapLocation": {
+    //         "lat":15.82962667811701,
+    //         "lng":78.04052562119666
+    //     }
+    // };
 
     const storevalidation = Yup.object
     ( { 
@@ -39,13 +60,24 @@ function StoreForm (props) {
     storeContact: Yup.object({
         phone: Yup.string()
             .min(5,'Minimum 5 characters for phone number')
-            .max(10,'Maximum 10 characters for phone number')
+            .max(50,'Maximum 50 characters for phone number')
             .required('Please enter phone number'),
         address: Yup.string()
             .min(5,'Minimum 5 characters for address')
-            .max(10,'Maximum 10 characters for address')
+            .max(50,'Maximum 50 characters for address')
             .required('Please enter address')
-        })
+        }),
+
+        storeMapLocation: Yup.object({
+            lat: Yup.number()
+                .min(5,'Minimum 5 characters for lat')
+                .max(10,'Maximum 10 characters for lng')
+                .required('Please enter Maplocation'),
+            lng: Yup.number()
+                .min(5,'Minimum 5 characters for lat')
+                .max(10,'Maximum 10 characters for lng')
+                .required('Please enter Maplocation')
+            })
     })
 
 const isFormFieldInvalid = (name) => !!(formik.touched[name]&&formik.errors[name]);
@@ -66,12 +98,22 @@ const getFromErrorMessageNested = (name, subname) => {
 }
 
     const formik = useFormik({
-        initialValues: tempObg,
+        initialValues: props?.storeObj,
         validationSchema:storevalidation,
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+        //   alert(JSON.stringify(values, null, 2));
+        props.onClose(values);
+
         },
       });
+
+      const saveClicked = () => {
+        console.log('Login Successful !');
+      }
+
+      const cancelClicked = () => {
+        console.log('Cancel Clicked !');
+      }
 
     return (
         <div className="card flex justify-content-center">
@@ -137,8 +179,8 @@ const getFromErrorMessageNested = (name, subname) => {
                         Latitude  :
                     </div>
                     <div className=''>
-                    <InputNumber value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat',e.value)} />
-                    <span>{getFromErrorMessage('storeMapLocation')}</span>
+                    <InputNumber useGrouping={false} minFractionDigits={2} mode="decimal" value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat',e.value)} />
+                    <span>{getFromErrorMessage('storeMapLocation', 'lat')}</span>
                     </div>
                 </div>
                 <div className='flex gap-4 mb-4'>
@@ -146,13 +188,13 @@ const getFromErrorMessageNested = (name, subname) => {
                         Longitude :
                     </div>
                     <div className=''>
-                    <InputNumber value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lan',e.value)} />
-                    <span>{getFromErrorMessage('storeMapLocation')}</span>
+                    <InputNumber useGrouping={false} minFractionDigits={2} mode="decimal" value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lan',e.value)} />
+                    <span>{getFromErrorMessage('storeMapLocation', 'lng')}</span>
                     </div>
                 </div>
                 <div className='flex align-items-center justify-content-end gap-5'>
-                <Button label="Cancel" severity="secondary" outlined size='small'/>
-                <Button label="Save" type="submit" severity="info" raised size='small'/> 
+                <Button label="Cancel" severity="secondary" outlined size='small' onClick={() => cancelClicked ()}/>
+                <Button label="Save" type="submit" severity="info" raised size='small' onClick={() => saveClicked ()}/> 
                 </div>
                 </form>
                 </div>
