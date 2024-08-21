@@ -80,10 +80,24 @@ function StoreForm (props) {
             Address: Yup.string()
                    .min(5,'Minimum 5 characters for address')
                    .max(50,'Max 50 characters  for address')
-                   .required('please enter address')
+                   .required('please enter address'),
+                   
 
 
-        })
+        }),
+        storeMapLocator:Yup.object({
+            lat: Yup.number()
+                    .min(5,'Minimum 5 characters for lat')
+                    .max(10,'Max 10 characters  for lat'),
+                    
+             lng: Yup.number()
+                    .min(5,'Minimum 5 characters for lng')
+                    .max(10,'Max 10 characters  for lng')
+                    
+                    
+ 
+ 
+         })
         
      })
     
@@ -255,7 +269,10 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputNumber value={ formik.values.storeMapLocator.lat }  onChange={(e) =>formik.setFieldValue('storeMapLocator.lat',e.value)} />
+                        <InputNumber useGrouping={false} minFractionDigits={2}  mode="decimal" value={ formik.values.storeMapLocator.lat }  onChange={(e) =>formik.setFieldValue('storeMapLocator.lat',e.value)} />
+                        <span>
+                        {getFormErrorMessageNested('storeMapLocator','lat')}
+                    </span>
                     </div>
                 </div>
                 <div className='flex  gap-6 mb-4'>
@@ -264,7 +281,10 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputNumber value={formik.values.storeMapLocator.lng}  onChange={(e) =>formik.setFieldValue('storeMapLocator.lng',e.value)} />
+                        <InputNumber useGrouping={false} minFractionDigits={2}  mode="decimal" value={formik.values.storeMapLocator.lng}  onChange={(e) =>formik.setFieldValue('storeMapLocator.lng',e.value)} />
+                        <span>
+                        {getFormErrorMessageNested('storeMapLocator','lng')}
+                    </span>
                     </div>
                 </div>
  
