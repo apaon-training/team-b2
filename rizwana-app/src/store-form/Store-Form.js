@@ -1,5 +1,5 @@
 import { Dialog } from 'primereact/dialog';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Store-Form.css';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
@@ -12,23 +12,46 @@ import * as Yup from 'yup';
 function StoreForm (props) {
 
     const [visible, setVisible] = useState(false);
-    let tempObg = {
-        "id": 10001,
-        "storeName": "Wollong",
-        "storeDetails": "D-mart",
+    const [storeObj, setStoreObj] = useState({
+        "id": 10005,
+        "storeName": "Dress Circle",
+        "storeDetails": "Cloths",
         "storeTimings": [
-            "Mon-Fri- 9 to 12 pm",
-            "Sat-Sun-9 to 4 pm"
+            "Mon-Fri- 8 to 11:30 pm",
+            "Sat-Sun-8:30 to 11 pm"
         ],
         "storeAddress": {
-            "phoneNumber": "Phone: +91 799 339 2948",
-            "Address": "Address: 71-127 kallur"
+            "phoneNumber": "Phone: +91 789 345 7865",
+            "Address": "Address: 45-96 old bustand"
         },
         "storeMapLocator": {
-            "lat": 15.818716285887168,
-            "lng": 78.02985281909494
+            "lat": 15.83069524947175, 
+            "lng": 78.03865625424572
         }
-    };
+    });
+
+
+  /*  useEffect(() =>{
+        setStoreObj( props?.storeObj);
+    },[props?.storeObj])*/
+
+    // let tempObg = {
+    //     "id": 10001,
+    //     "storeName": "Wollong",
+    //     "storeDetails": "D-mart",
+    //     "storeTimings": [
+    //         "Mon-Fri- 9 to 12 pm",
+    //         "Sat-Sun-9 to 4 pm"
+    //     ],
+    //     "storeAddress": {
+    //         "phoneNumber": "Phone: +91 799 339 2948",
+    //         "Address": "Address: 71-127 kallur"
+    //     },
+    //     "storeMapLocator": {
+    //         "lat": 15.818716285887168,
+    //         "lng": 78.02985281909494
+    //     }
+    // };
     const storeValidation=Yup.object({
         storeName: Yup.string()
         .min(5,'Too short name')
@@ -50,14 +73,14 @@ function StoreForm (props) {
         .min(2,'Please enter both timings')
         .required("Timings are required"),
         storeAddress:Yup.object({
-           phone: Yup.string()
-                   .min(5,'Min 5 characters for phone number')
-                   .max(10,'Max 10 characters  for phone number')
+           phoneNumber: Yup.string()
+                   .min(5,'Minimum 5 characters for phone number')
+                   .max(50,'Max 50 characters  for phone number')
                    .required('please enter phone number'),
-            address: Yup.string()
-                   .min(5,'Min 5 characters for address')
-                   .max(10,'Max 10 characters  for address')
-                   .required('please enter address'),
+            Address: Yup.string()
+                   .min(5,'Minimum 5 characters for address')
+                   .max(50,'Max 50 characters  for address')
+                   .required('please enter address')
 
 
         })
@@ -74,7 +97,7 @@ function StoreForm (props) {
        
         
         </small> 
-    :<small className='p-error'>&nbsp;</small>
+    :<small className='p-error'> &nbsp; </small>
     }
 
     const getFormErrorMessageNested=(name, subname)=>{
@@ -85,13 +108,14 @@ function StoreForm (props) {
        
         
         </small> 
-    :<small className='p-error'>&nbsp;</small>
+    :<small className='p-error'> &nbsp; </small>
     }
        const formik = useFormik({
-        initialValues: tempObg,
+        initialValues: props?.storeObj,
         validationSchema:storeValidation,
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+          //alert(JSON.stringify(values, null, 2));
+          props.onClose(values);
         },
       });
     // const setName = (value)=>{
@@ -209,7 +233,7 @@ function StoreForm (props) {
                         {/* <input></input> */}
                         <InputText value={formik.values.storeAddress.phoneNumber}  onChange={(e) =>formik.setFieldValue('storeAddress.phoneNumber',e.target.value)} />
                         <span>
-                        {getFormErrorMessageNested('storeAddress','phone')}
+                        {getFormErrorMessageNested('storeAddress','phoneNumber')}
                     </span> 
                     </div>
                 </div>
@@ -221,7 +245,7 @@ function StoreForm (props) {
                         {/* <input></input> */}
                         <InputText value={ formik.values.storeAddress.Address}  onChange={(e) =>formik.setFieldValue('storeAddress.Address',e.target.value)} />
                         <span>
-                        {getFormErrorMessageNested('storeAddress','address')}
+                        {getFormErrorMessageNested('storeAddress','Address')}
                     </span>
                     </div>
                 </div>

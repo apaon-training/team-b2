@@ -62,7 +62,15 @@ function Home(props) {
         <div className='flex  align-items-center justify-content-center avatar w-8rem text-6xl mr-5 '>
         {/* <Button label="Logout" severity="danger"  raised onClick={()=>onLogoutClicked()} size="small" className='flex mr-4 pl-2'/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
-        <StoreForm visible={showStoreForm} label="StoreForm" icon="pi pi-exclamation-circle" onClose={() =>setShowStoreForm(false)}/>
+        {
+          showStoreForm && (
+            <StoreForm visible={showStoreForm} storeObj={selectedStoreObj} label="StoreForm" icon="pi pi-exclamation-circle" onClose={(values) =>{
+              setSelectedStoreObj(values);
+              setShowStoreForm(false);
+            }}/> 
+          )
+        }
+        {/* <StoreForm visible={showStoreForm} storeObj={selectedStoreObj} label="StoreForm" icon="pi pi-exclamation-circle" onClose={() =>setShowStoreForm(false)}/> */}
         <Avatar raised onClick={() => setShowStoreForm(true) }   icon="pi pi-shop"  size="xlarge" shape="circle" className='text-black-alpha-60 mr-2' aria-controls="popup_menu_right" aria-haspopup  />
         <Avatar label="SR" mr-9 size="xlarge"   shape="circle" onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
         
