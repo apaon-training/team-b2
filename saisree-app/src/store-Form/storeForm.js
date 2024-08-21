@@ -73,9 +73,19 @@ function StoreForm(props){
             address: Yup.string()
                     .min(5, 'Minimum 5 characters for address')
                     .max(50, 'Max 10 characters for address')
-                    .required('Please enter address')
-        })
-    })
+                    .required('Please enter address'),
+        }),
+        storeMaplocation: Yup.object({
+                lat: Yup.number()
+                .min(5, 'Minimum 5 characters for lat')
+                .max(10, 'Max 10 characters for lat'),
+                
+            lng: Yup.number()
+                .min(5, 'Minimum 5 characters for lng')
+                .max(10, 'Max 10 characters for lng')
+                
+            })
+        })   
 
     const isFormFieldInvalid=(name)=>!!(formik.touched[name] && formik.errors[name]);
     const getFormErrorMessage = (name) =>{
@@ -190,7 +200,7 @@ function StoreForm(props){
                         </div>
                         <div className='ml-2'>
                             {/* <input className='w-15rem'></input> */}
-                            <InputNumber type="value1" value={formik.values.storeMaplocation.lat} onChange={(e) =>formik.setFieldValue('storeMaploction.lat', e.value)} className=' p-inputtext-sm w-15rem' />
+                            <InputNumber type="value1" useGrouping={false} minFractionDigits={2} mode="decimal" value={formik.values.storeMaplocation.lat} onChange={(e) =>formik.setFieldValue('storeMaploction.lat', e.value)} className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
@@ -199,7 +209,7 @@ function StoreForm(props){
                         </div>
                         <div className='mr-1'>
                             {/* <input className='w-15rem'></input> */}
-                            <InputNumber type="value2" value={formik.values.storeMaplocation.lng} onChange={(e) =>formik.setFieldValue('storeMaplocation.lng', e.value)}  className=' p-inputtext-sm w-15rem' />
+                            <InputNumber type="value2" useGrouping={false} minFractionDigits={2} mode="decimal" value={formik.values.storeMaplocation.lng} onChange={(e) =>formik.setFieldValue('storeMaplocation.lng', e.value)}  className=' p-inputtext-sm w-15rem' />
                         </div>
                         </div>
                             <div className='text-right text-2xl'>
