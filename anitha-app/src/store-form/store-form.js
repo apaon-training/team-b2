@@ -1,6 +1,6 @@
 import { Dialog } from 'primereact/dialog';
 import { props } from 'primereact/utils';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './store-form.css';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
@@ -10,25 +10,46 @@ import * as Yup from 'yup';
 
 function StoreForm(props) {
     const [visible,setVisible]=useState(false);
+const[storeObj,setStoreObj]=useState({
+    "id":1001,
+    "storeName":"Jyothi Mall",
+    "storeDetails":"Groceries",
+    "storeTimings":[
+                      "Thus-Fri 5am to 5pm",
+                      "Wed-Sun 7am to 06pm"
 
-    const tempObg = {
-        "id":1001,
-        "storeName":"Jyothi Mall",
-        "storeDetails":"Groceries",
-        "storeTimings":[
-                          "Thus-Fri 5am to 5pm",
-                          "Wed-Sun 7am to 06pm"
+    ],
+    "storeContact":{
+        "phone":"Phone: +61 665 678 987",
+        "address":"Address: 54-54 Ganesh Nagar, Kurnool-518002"
+    },
+    "storeMapLocation":{
+        "lat":15.830749264964458,
+        "lng":78.04023528591568
+    }
+});
+// useEffect(()=>{
+//     setStoreObj (props?.storeObj);
+// },[props?.storeObj])
 
-        ],
-        "storeContact":{
-            "phone":"Phone: +61 665 678 987",
-            "address":"Address: 54-54 Ganesh Nagar, Kurnool-518002"
-        },
-        "storeMapLocation":{
-            "lat":15.830749264964458,
-            "lng":78.04023528591568
-        }
-    };
+    // // // const tempObg = {
+    // // //     "id":1001,
+    // // //     "storeName":"Jyothi Mall",
+    // // //     "storeDetails":"Groceries",
+    // // //     "storeTimings":[
+    // // //                       "Thus-Fri 5am to 5pm",
+    // // //                       "Wed-Sun 7am to 06pm"
+
+    // // //     ],
+    // // //     "storeContact":{
+    // // //         "phone":"Phone: +61 665 678 987",
+    // // //         "address":"Address: 54-54 Ganesh Nagar, Kurnool-518002"
+    // // //     },
+    // // //     "storeMapLocation":{
+    // // //         "lat":15.830749264964458,
+    // // //         "lng":78.04023528591568
+    // //     }
+    // };
     const storeValidation=Yup.object({
         storeName:Yup.string()
         .min(5,'Too short name')
@@ -52,15 +73,30 @@ function StoreForm(props) {
             .required("Timings are required"),
     
         storeContact: Yup.object({
-            phone: Yup.string()
+            phone: Yup.number()
             .min(5, 'minimum 5 characters for phone number')
-            .max(10, 'max 10 characters for phone number')
+            .max(50, 'max 50 characters for phone number')
             .required('Please enter phone number'),
+
             address: Yup.string()
             .min(5, 'minimum 5 characters for address')
             .max(10, 'max 10 characters for address')
             .required('Please enter address')
-        })
+        }),
+
+    storeMapLocation: Yup.object({
+                lat: Yup.number()
+                .min(5, 'minimum 5 characters for lat')
+                .max(10, 'max 10 characters for lat'),
+                
+    
+                lng: Yup.number()
+                .min(5, 'minimum 5 characters for lng')
+                .max(50, 'max 50 characters for lng')
+                
+
+    })       
+        
     })
 
 const isFormFieldInvalid=(name)=>!!(formik.touched[name]&&formik.errors[name]);
@@ -85,10 +121,11 @@ const getFormErrorMessageNested=(name,subname)=>{
 
 
     const formik = useFormik({
-        initialValues: tempObg,
+        initialValues: props?.storeObj,
         validationSchema:storeValidation,
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+          //alert(JSON.stringify(values, null, 2));
+          props.onClose(values);
         },
       });
     // const setName=(value)=>{
@@ -207,7 +244,10 @@ const getFormErrorMessageNested=(name,subname)=>{
                    Latitude :
                 </div>
                 <div className=''>
-                    <InputNumber value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
+                    <InputNumber useGrouping={false} minFractionDigits={2}  mode="decimal" value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
+                    <span>
+                    {getFormErrorMessageNested('storeMapLocation','lat')}
+                    </span>
                 </div>
             </div>
             <div className='flex gap-5 mb-5'>
@@ -215,7 +255,10 @@ const getFormErrorMessageNested=(name,subname)=>{
                     Longitude:
                 </div>
                 <div className=''>
-                    <InputNumber value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
+                    <InputNumber  useGrouping={false} minFractionDigits={2}  mode="decimal" value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
+                    <span>
+                    {getFormErrorMessageNested('storeMapLocation','lng')}
+                    </span>
                 </div>
             </div>
             <div className="flex align-items-center justify-content-end text-xl gap-3 mr-3 ">
