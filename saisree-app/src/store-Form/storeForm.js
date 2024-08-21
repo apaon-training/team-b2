@@ -1,5 +1,5 @@
 import { Dialog } from 'primereact/dialog';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './storeForm.css';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
@@ -11,22 +11,44 @@ import * as Yup from 'yup';
 function StoreForm(props){
 
      const [visible, setVisible] = useState(false);
-     const tempObj = {
-        "id":1001,
-        "storeName":"Birdsway",
-        "storeDetails":"Near Juction",
-        "storeTimings":["Mon-Fri-8am to 9pm", 
-                        "Sat-Sun-9am to 5pm"
-                       ],
-        "storeAddress":{
-           "phone": "Phone: +61 234 453 654",
-           "address":"Address: 2,12-20 jam RadioNodeList"
-        },
-        "storeMaplocation":{
-           "lat":15.8337677,
-           "lng":78.0340215
-        }
-    };
+     const [storeObj, setStoreObj]= useState({
+        "id":1002,
+        "storeName":"wollongong",
+         "storeDetails":"Textile mall",
+         "storeTimings":["Mon-Fri-7am to 8pm", 
+                         "Sat-Sun-10am to 4pm"
+                        ],
+         "storeAddress":{
+            "phone": "Phone: +61 253 453 654",
+            "address":"Address: 10-20 station road, NSW"
+         },
+         "storeMaplocation":{
+            "lat":15.8224004,
+            "lng":78.0418776
+         }
+      });
+     
+    //   useEffect(()=>{
+    //     setStoreObj(props?.storeObj);
+    //   },[props?.storeObj])
+
+    //  const tempObj = {
+    //     "id":1001,
+    //     "storeName":"Birdsway",
+    //     "storeDetails":"Near Juction",
+    //     "storeTimings":["Mon-Fri-8am to 9pm", 
+    //                     "Sat-Sun-9am to 5pm"
+    //                    ],
+    //     "storeAddress":{
+    //        "phone": "Phone: +61 234 453 654",
+    //        "address":"Address: 2,12-20 jam RadioNodeList"
+    //     },
+
+    //     "storeMaplocation":{
+    //        "lat":15.8337677,
+    //        "lng":78.0340215
+    //     }
+    // };
     
     const storevalidation=Yup.object({
 
@@ -45,12 +67,12 @@ function StoreForm(props){
         storeAddress: Yup.object({
             phone: Yup.string()
                     .min(5, 'Minimum 5 characters for phone number')
-                    .max(10, 'Max 10 characters for phone number')
+                    .max(50, 'Max 10 characters for phone number')
                     .required('Please enter phone no'),
 
             address: Yup.string()
                     .min(5, 'Minimum 5 characters for address')
-                    .max(10, 'Max 10 characters for address')
+                    .max(50, 'Max 10 characters for address')
                     .required('Please enter address')
         })
     })
@@ -79,13 +101,15 @@ function StoreForm(props){
     }
     
         const formik = useFormik({
-          initialValues: tempObj,
+          initialValues: props?.storeObj,
           validationSchema:storevalidation,
           onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
+            props.onClose(values);
           },
         });
     
+
     return(
         <>
         <div className="card flex justify-content-center">
