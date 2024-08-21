@@ -51,13 +51,13 @@ function StoreForm (props) {
         .required("Timings are required"),
         storeAddress:Yup.object({
            phone: Yup.string()
-                   .min(5,'Min 5 characters for phone Number')
-                   .max(10,'Max 10 characters  for phone Number')
-                   .required('please enter phone Number'),
+                   .min(5,'Min 5 characters for phone number')
+                   .max(10,'Max 10 characters  for phone number')
+                   .required('please enter phone number'),
             address: Yup.string()
-                   .min(5,'Min 5 characters for Address')
-                   .max(10,'Max 10 characters  for Address')
-                   .required('please enter Address'),
+                   .min(5,'Min 5 characters for address')
+                   .max(10,'Max 10 characters  for address')
+                   .required('please enter address'),
 
 
         })
@@ -209,7 +209,7 @@ function StoreForm (props) {
                         {/* <input></input> */}
                         <InputText value={formik.values.storeAddress.phoneNumber}  onChange={(e) =>formik.setFieldValue('storeAddress.phoneNumber',e.target.value)} />
                         <span>
-                        {getFormErrorMessageNested('storeAddress','phoneNumber')}
+                        {getFormErrorMessageNested('storeAddress','phone')}
                     </span> 
                     </div>
                 </div>
@@ -221,7 +221,7 @@ function StoreForm (props) {
                         {/* <input></input> */}
                         <InputText value={ formik.values.storeAddress.Address}  onChange={(e) =>formik.setFieldValue('storeAddress.Address',e.target.value)} />
                         <span>
-                        {getFormErrorMessageNested('storeAddress','Address')}
+                        {getFormErrorMessageNested('storeAddress','address')}
                     </span>
                     </div>
                 </div>
