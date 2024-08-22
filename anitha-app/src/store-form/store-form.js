@@ -73,29 +73,29 @@ const[storeObj,setStoreObj]=useState({
             .required("Timings are required"),
     
         storeContact: Yup.object({
-            phone: Yup.number()
+            phone: Yup.string()
             .min(5, 'minimum 5 characters for phone number')
             .max(50, 'max 50 characters for phone number')
             .required('Please enter phone number'),
 
             address: Yup.string()
             .min(5, 'minimum 5 characters for address')
-            .max(10, 'max 10 characters for address')
+            .max(50, 'max 50 characters for address')
             .required('Please enter address')
         }),
 
-    storeMapLocation: Yup.object({
-                lat: Yup.number()
-                .min(5, 'minimum 5 characters for lat')
-                .max(10, 'max 10 characters for lat'),
+    // // storeMapLocation: Yup.object({
+    // //             lat: Yup.number()
+    // //             .min(5, 'minimum 5 characters for lat')
+    // //             .max(10, 'max 10 characters for lat'),
                 
     
-                lng: Yup.number()
-                .min(5, 'minimum 5 characters for lng')
-                .max(50, 'max 50 characters for lng')
+    // //             lng: Yup.number()
+    // //             .min(5, 'minimum 5 characters for lng')
+    // //             .max(50, 'max 50 characters for lng')
                 
 
-    })       
+    // })       
         
     })
 
