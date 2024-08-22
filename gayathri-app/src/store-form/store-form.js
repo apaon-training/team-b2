@@ -25,26 +25,6 @@ function StoreForm (props) {
             "lng":78.05193162754628
         }
     });
-    // useEffect(() =>{
-    //     setStoreObj (props?.storeObj);
-    // },[props?.storeObj])
-    // const tempObg = {
-    //     "id":1001,
-    //     "storeName": "Joyalukkas",
-    //     "storeDetails": "Jewellery Store",
-    //     "storeTimings": ["Mon-Fri-10:30 to 8:30 pm", 
-    //         "Sat-Sun-11 to 8 pm"
-
-    //     ],
-    //     "storeContact": {
-    //         "phone": "Phone: +08 518 289 888",
-    //         "address": "Address: 40-29-SP Square Park road"
-    //     },
-    //     "storeMapLocation": {
-    //         "lat":15.82962667811701,
-    //         "lng":78.04052562119666
-    //     }
-    // };
 
     const storevalidation = Yup.object
     ( { 
@@ -68,14 +48,14 @@ function StoreForm (props) {
             .required('Please enter address')
         }),
 
-        // storeMapLocation: Yup.object({
-        //     lat: Yup.number()
-        //         .min(5,'Minimum 5 characters for lat')
-        //         .max(10,'Maximum 10 characters for lat'),
-        //     lng: Yup.number()
-        //         .min(5,'Minimum 5 characters for lng')
-        //         .max(10,'Maximum 10 characters for lng')
-        //     })
+        storeMapLocation: Yup.object({
+            lat: Yup.number()
+                .min(5,'Minimum 5 characters for lat')
+                .max(10,'Maximum 10 characters for lat'),
+            lng: Yup.number()
+                .min(5,'Minimum 5 characters for lng')
+                .max(10,'Maximum 10 characters for lng')
+            })
     })
 
 const isFormFieldInvalid = (name) => !!(formik.touched[name]&&formik.errors[name]);
