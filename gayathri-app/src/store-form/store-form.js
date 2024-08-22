@@ -68,14 +68,14 @@ function StoreForm (props) {
             .required('Please enter address')
         }),
 
-        storeMapLocation: Yup.object({
-            lat: Yup.number()
-                .min(5,'Minimum 5 characters for lat')
-                .max(10,'Maximum 10 characters for lat'),
-            lng: Yup.number()
-                .min(5,'Minimum 5 characters for lng')
-                .max(10,'Maximum 10 characters for lng')
-            })
+        // storeMapLocation: Yup.object({
+        //     lat: Yup.number()
+        //         .min(5,'Minimum 5 characters for lat')
+        //         .max(10,'Maximum 10 characters for lat'),
+        //     lng: Yup.number()
+        //         .min(5,'Minimum 5 characters for lng')
+        //         .max(10,'Maximum 10 characters for lng')
+        //     })
     })
 
 const isFormFieldInvalid = (name) => !!(formik.touched[name]&&formik.errors[name]);
@@ -110,7 +110,7 @@ const getFromErrorMessageNested = (name, subname) => {
       }
 
       const cancelClicked = () => {
-        console.log('Cancel Clicked !');
+        console.log('cancel Clicked !');
       }
 
     return (
@@ -186,7 +186,7 @@ const getFromErrorMessageNested = (name, subname) => {
                         Longitude :
                     </div>
                     <div className=''>
-                    <InputNumber useGrouping={false} minFractionDigits={2} mode="decimal" value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lan',e.value)} />
+                    <InputNumber useGrouping={false} minFractionDigits={2} mode="decimal" value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lng',e.value)} />
                     <span>{getFromErrorMessageNested('storeMapLocation', 'lng')}</span>
                     </div>
                 </div>

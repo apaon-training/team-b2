@@ -98,7 +98,7 @@ function StoreList(props) {
     }
     ];
 
-    const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(storeDirectory);
+    const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(props.storeDirectory);
 
 
     const storeTemplate = (store) => {
@@ -119,7 +119,7 @@ function StoreList(props) {
         props.selectedStore(value);
     }
     const searchDirectory = (value) => {
-        const filteredValues = storeDirectory.filter((item) => {
+        const filteredValues = props.storeDirectory.filter((item) => {
             if(JSON.stringify(item).indexOf(value) > -1) {
                 return true;
             }else{
