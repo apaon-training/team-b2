@@ -110,6 +110,7 @@ function Home(props) {
 }];
   const [storesData, setStoresData] = useState(storeDirectory);
 
+
   const [selectedstoreObj, setselectedstoreObj]=useState(null);
   const onLogoutclicked = ()=>{
   props.LogoutSuccess();
