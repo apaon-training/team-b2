@@ -109,6 +109,7 @@ function Home(props) {
     }
 }];
   const [storesData, setStoresData] = useState(storeDirectory);
+
   const [selectedstoreObj, setselectedstoreObj]=useState(null);
   const onLogoutclicked = ()=>{
   props.LogoutSuccess();
@@ -152,13 +153,11 @@ function Home(props) {
         storeDirectory[index] = values;
         setStoresData(storeDirectory);
 
-      }
-
-
-
-
-      setselectedstoreObj(values);
+     }
+ 
+       setselectedstoreObj(values);
           setShowStoreForm(false);
+          
 
     }
     return (
@@ -173,8 +172,8 @@ function Home(props) {
           {
             showStoreForm &&(
         <StoreForm visible={showStoreForm} storeObj={selectedstoreObj} icon="pi pi-exclamation-circle" onClose={(values)=>{
-          // setselectedstoreObj(values);
-          // setShowStoreForm(false);
+         //  setselectedstoreObj(values);
+         //  setShowStoreForm(false);
           updatestoreObj(values);
         }}/>
       )
