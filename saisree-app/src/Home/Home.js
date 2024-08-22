@@ -108,6 +108,7 @@ function Home(props) {
        "lng":77.8634611,
     }
 }];
+  const [storesData, setStoresData] = useState(storeDirectory);
   const [selectedstoreObj, setselectedstoreObj]=useState(null);
   const onLogoutclicked = ()=>{
   props.LogoutSuccess();
@@ -143,6 +144,23 @@ function Home(props) {
             ]
         }
     ];
+
+    const updatestoreObj = (values)=>{
+
+      const index = storeDirectory.findIndex((item) => item?.id === values?.id);
+      if(index  > -1){
+        storeDirectory[index] = values;
+        setStoresData(storeDirectory);
+
+      }
+
+
+
+
+      setselectedstoreObj(values);
+          setShowStoreForm(false);
+
+    }
     return (
     <div className="App flex-column">
       <div className='flex justify-content-center h-8rem navbar'>
@@ -155,8 +173,9 @@ function Home(props) {
           {
             showStoreForm &&(
         <StoreForm visible={showStoreForm} storeObj={selectedstoreObj} icon="pi pi-exclamation-circle" onClose={(values)=>{
-          setselectedstoreObj(values);
-          setShowStoreForm(false);
+          // setselectedstoreObj(values);
+          // setShowStoreForm(false);
+          updatestoreObj(values);
         }}/>
       )
       }
@@ -170,7 +189,7 @@ function Home(props) {
      <div className='flex h-full'>
       <div className='flex-column h-40rem w-30rem bg-white store-list'>
       {/* <InputText type="text" placeholder="Search" /> */}
-      <Storelist selectedstore={(value)=>setselectedstoreObj(value)} storeDirectory={storeDirectory}/>
+      <Storelist selectedstore={(value)=>setselectedstoreObj(value)} storeDirectory={storesData}/>
       </div>
 
       <div className='flex-column w-full'>

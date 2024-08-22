@@ -1,12 +1,16 @@
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
 import './storelist.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
          
 function Storelist(props){
    
 const [displayedstoreDirectory, setDisplayedstoreDirectory] = useState(props.storeDirectory);
+
+useEffect(()=>{
+   setDisplayedstoreDirectory(props.storeDirectory)
+},[props.storeDirectory])
 
        const storeTemplate = (store) => {
       
