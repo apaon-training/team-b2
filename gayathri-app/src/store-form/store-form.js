@@ -71,12 +71,10 @@ function StoreForm (props) {
         storeMapLocation: Yup.object({
             lat: Yup.number()
                 .min(5,'Minimum 5 characters for lat')
-                .max(10,'Maximum 10 characters for lng')
-                .required('Please enter Maplocation'),
+                .max(10,'Maximum 10 characters for lat'),
             lng: Yup.number()
-                .min(5,'Minimum 5 characters for lat')
+                .min(5,'Minimum 5 characters for lng')
                 .max(10,'Maximum 10 characters for lng')
-                .required('Please enter Maplocation')
             })
     })
 
@@ -180,7 +178,7 @@ const getFromErrorMessageNested = (name, subname) => {
                     </div>
                     <div className=''>
                     <InputNumber useGrouping={false} minFractionDigits={2} mode="decimal" value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat',e.value)} />
-                    <span>{getFromErrorMessage('storeMapLocation', 'lat')}</span>
+                    <span>{getFromErrorMessageNested('storeMapLocation', 'lat')}</span>
                     </div>
                 </div>
                 <div className='flex gap-4 mb-4'>
@@ -189,7 +187,7 @@ const getFromErrorMessageNested = (name, subname) => {
                     </div>
                     <div className=''>
                     <InputNumber useGrouping={false} minFractionDigits={2} mode="decimal" value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lan',e.value)} />
-                    <span>{getFromErrorMessage('storeMapLocation', 'lng')}</span>
+                    <span>{getFromErrorMessageNested('storeMapLocation', 'lng')}</span>
                     </div>
                 </div>
                 <div className='flex align-items-center justify-content-end gap-5'>
