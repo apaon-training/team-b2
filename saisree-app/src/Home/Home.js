@@ -12,6 +12,102 @@ import StoreForm from '../store-Form/storeForm';
 
 
 function Home(props) {
+  let storeDirectory = [{
+    "id":1001,
+    "storeName":"Birdsway",
+    "storeDetails":"Near Juction",
+    "storeTimings":["Mon-Fri-8am to 9pm", 
+                    "Sat-Sun-9am to 5pm"
+                   ],
+    "storeAddress":{
+       "phone": "Phone: +61 234 453 654",
+       "address":"Address: 2,12-20 jam RadioNodeList"
+    },
+    "storeMaplocation":{
+       "lat":15.8337677,
+       "lng":78.0340215
+    }
+},
+ {
+   "id":1002,
+   "storeName":"wollongong",
+    "storeDetails":"Textile mall",
+    "storeTimings":["Mon-Fri-7am to 8pm", 
+                    "Sat-Sun-10am to 4pm"
+                   ],
+    "storeAddress":{
+       "phone": "Phone: +61 253 453 654",
+       "address":"Address: 10-20 station road, NSW"
+    },
+    "storeMaplocation":{
+       "lat":15.8224004,
+       "lng":78.0418776
+    }
+ },
+ {
+   "id":1004,
+   "storeName":"wallmart",
+    "storeDetails":"grocery",
+    "storeTimings":["Mon-Fri-10am to 8pm", 
+                    "Sat-Sun-8am to 6pm"
+                   ],
+    "storeAddress":{
+       "phone" :"phone: +61 253 483 654",
+       "address":"Address: 10-20 station road"
+    },
+    "storeMaplocation":{
+       "lat":15.8261087,
+       "lng":78.0196085
+    }
+},
+{
+   "id":1005,
+   "storeName":"Jyothi",
+    "storeDetails":"grocery",
+    "storeTimings":["Mon-Fri-8am to 9pm", 
+                    "Sat-Sun-9am to 5pm"
+                   ],
+    "storeAddress":{
+       "phone": "Phone: +61 253 483 654",
+       "address":"Address: 10-20 Near Abdullah Khan estate"
+    },
+    "storeMaplocation":{
+       "lat":15.8125994,
+       "lng":78.0121861
+    }
+},
+  {
+  "id":1006,
+    "storeName":"Birdsway",
+    "storeDetails":"Near Juction",
+    "storeTimings":["Mon-Fri-8am to 9pm", 
+                    "sat-sun-9am to 5pm"
+                   ],
+    "storeAddress":{
+       "phone": "Phone: +61 234 453 654",
+       "address":"Address: 2, 12-20 jam RadioNodeList"
+    },
+    "storeMaplocation":{
+       "lat":15.8125994,
+       "lng":78.0121861
+    }
+},
+ {
+   "id":1008,
+   "storeName":"wallmart",
+    "storeDetails":"grocery",
+    "storeTimings":["Mon-Fri-10am to 8pm", 
+                    "Sat-Sun-8am to 6pm"
+                   ],
+    "storeAddress":{
+       "phone": "Phone: +61 253 483 654",
+       "address":"Address: 10-20 station road"
+    },
+    "storeMaplocation":{
+       "lat":15.7551875,
+       "lng":77.8634611,
+    }
+}];
   const [selectedstoreObj, setselectedstoreObj]=useState(null);
   const onLogoutclicked = ()=>{
   props.LogoutSuccess();
@@ -74,7 +170,7 @@ function Home(props) {
      <div className='flex h-full'>
       <div className='flex-column h-40rem w-30rem bg-white store-list'>
       {/* <InputText type="text" placeholder="Search" /> */}
-      <Storelist selectedstore={(value)=>setselectedstoreObj(value)}/>
+      <Storelist selectedstore={(value)=>setselectedstoreObj(value)} storeDirectory={storeDirectory}/>
       </div>
 
       <div className='flex-column w-full'>

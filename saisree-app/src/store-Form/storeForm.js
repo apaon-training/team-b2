@@ -75,16 +75,16 @@ function StoreForm(props){
                     .max(50, 'Max 10 characters for address')
                     .required('Please enter address'),
         }),
-        storeMaplocation: Yup.object({
-                lat: Yup.number()
-                .min(5, 'Minimum 5 characters for lat')
-                .max(10, 'Max 10 characters for lat'),
+        // storeMaplocation: Yup.object({
+        //         lat: Yup.number()
+        //         .min(5, 'Minimum 5 characters for lat')
+        //         .max(10, 'Max 10 characters for lat'),
                 
-            lng: Yup.number()
-                .min(5, 'Minimum 5 characters for lng')
-                .max(10, 'Max 10 characters for lng')
+        //     lng: Yup.number()
+        //         .min(5, 'Minimum 5 characters for lng')
+        //         .max(10, 'Max 10 characters for lng')
                 
-            })
+        //     })
         })   
 
     const isFormFieldInvalid=(name)=>!!(formik.touched[name] && formik.errors[name]);
