@@ -121,6 +121,9 @@ function Home(props) {
   const [showStoreForm ,setShowStoreForm] = useState(false);
 
   const [selectedStoreObj,setSelectedStoreObj] = useState(null);
+
+  const [storesData,setStoresData]=useState(storeDirectory);
+  
   const menuRight = useRef(null);
   const items = [
       {
@@ -146,6 +149,17 @@ function Home(props) {
       }
   ];
 
+  const updateStoreObject = (values) =>{
+
+const index = storeDirectory.findIndex((item) => item?.id === values?.id);
+if(index > -1) {
+  storeDirectory[index] = values;
+  setStoresData(storeDirectory);
+}
+
+    setSelectedStoreObj(values);
+    setShowStoreForm (false);
+  }
   return (
     <>
     <div className="App flex-column">
@@ -161,8 +175,9 @@ function Home(props) {
 {
 showStoreForm && (
   <StoreForm visible={showStoreForm} storeObj={selectedStoreObj} label="StoreForm" icon="pi pi-exclamation-circle" onClose={(values)=>{
-  setSelectedStoreObj(values);
-  setShowStoreForm (false);
+  // setSelectedStoreObj(values);
+  // setShowStoreForm (false);
+  updateStoreObject(values);
 }}/>
   )
 }
@@ -173,7 +188,7 @@ showStoreForm && (
       </div>
       <div className='flex h-auto'>
         <div className='flex-column text-white-alpha-90 w-30rem bg-pink-100 surface-500'>
-          <StoreList selectedStore={(value) => setSelectedStoreObj(value)} storeDirectory={storeDirectory} />
+          <StoreList selectedStore={(value) => setSelectedStoreObj(value)} storeDirectory={storesData} />
         </div>
         <div className='flex-column text-black-alpha-90 text-right text-2xl w-full bg-green-200'>
         <div className='flex h-30rem'>
