@@ -3,7 +3,7 @@ import './store-list.css';
 import { ListBox } from 'primereact/listbox';
 import { InputText } from 'primereact/inputtext';
 import {props} from 'primereact/utils';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 function StoreList(props){
 // const storeDirectory=[
 //     {
@@ -100,7 +100,7 @@ function StoreList(props){
 
 // ];
 const [displayedStoreDirectory, setDisplayedStoreDirectory]= useState(props.storeDirectory);
-
+useEffect(()=> setDisplayedStoreDirectory(props.storeDirectory),[props.storeDirectory])
  const storeTemplate = (store) => {
     return (
        

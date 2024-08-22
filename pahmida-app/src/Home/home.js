@@ -116,6 +116,7 @@ function Home(props) {
   const [showAbout, setShowAbout]=useState(false);
   const [showForm, setShowForm]=useState(false);
   const menuRight = useState(null);
+  const [storesData,setStoresData]= useState(storeDirectory);
   const items = [
       {
           // label: 'Options',
@@ -139,6 +140,16 @@ function Home(props) {
           ]
       }
     ];
+    
+    const updatestoreObj =(values)=>{
+    const index = storeDirectory.findIndex((item)=> item?.id === values?.id);
+     if(index> -1){
+      storeDirectory[index] = values;
+      setStoresData(storeDirectory);
+     }
+     setSelectedstoreObj(values);
+       setShowForm(false);
+    }
   return (
     //Main container
     <div className='home flex-column'>
@@ -152,8 +163,9 @@ function Home(props) {
           {
             showForm && (
               <Form visible={showForm} storeObj={SelectedstoreObj} label ="Form" icon="pi pi-exclamation-circle" onClose={(values) =>{
-              setSelectedstoreObj(values);
-              setShowForm(false);
+              // setSelectedstoreObj(values);
+              // setShowForm(false);
+            updatestoreObj(values);
             }}/>
             )
           }
@@ -168,7 +180,7 @@ function Home(props) {
      <div className='flex h-full'>
       <div className='flex-column w-30rem  bg-white'>
          {/* <InputText type="text" placeholder=" "/> */}  
-          <StoreList Selectedstore={(value)=>setSelectedstoreObj(value) } storeDirectory={storeDirectory}/>
+          <StoreList Selectedstore={(value)=>setSelectedstoreObj(value) } storeDirectory={ storesData}/>
          
       </div>
       <div className='flex-column w-full '>
