@@ -16,6 +16,99 @@ import Form from '../form/form';
  
 
 function Home(props) {
+  let storeDirectory=[
+    {
+    "id":5001,
+    "storeName":"Wollong",
+    "storeDetails":"textile",
+    "storeTimings": ["Mon-Fri-9am to 10pm",
+                     "Sat-Sun-9am to 05pm"],
+    "storeAddress":{
+             "phone" :  "Phone: +61 234 453 656",
+             "address" :"Address: jam radionodelist"
+            },
+    "storeMapLocation":{
+        "lat": 17.446347238455438, 
+        "lng": 78.48424496412154
+    }
+},
+{
+"id":5002,
+"storeName":" blue berry",
+"storeDetails":"Groceries",
+"storeTimings": ["Mon-Fri-9am to 10pm",
+                 "Sat-Sun-9am to 07pm"],
+"storeAddress":{
+         "phone" :  "Phone: +61 234 4556",
+         "address": "Address: nh"
+        },
+"storeMapLocation":{
+    "lat": 13.030867019063377,
+    "lng":77.5864833777009
+}
+},
+{
+    "id":5003,
+    "storeName":"Wollong-A",
+    "storeDetails":"textile",
+    "storeTimings": ["Mon-tue-9am to 10pm",
+                     "wed-sun-9am to 05pm"],
+    "storeAddress":{
+             "phone" :  "Phone: +61 234 453 656",
+             "address" :"Address: jam radionodelist"
+            },
+    "storeMapLocation":{
+        "lat": 28.613486438560322, 
+        "lng": 77.20072864423555
+    }
+},
+{
+    "id":5003,
+    "storeName":"Wollong-B",
+    "storeDetails":"textile",
+    "storeTimings": ["Mon-Fri-9am to 11pm",
+                     "Sat-Sun-9am to 05pm"],
+    "storeAddress":{
+             "phone" :  "Phone: +61 234 453 656",
+             "address" :"Address: jam radionodelist"
+            },
+    "storeMapLocation":{
+        "lat": 25.209921150048142,  
+        "lng": 55.272737096350745
+    }
+},
+{
+    "id":5003,
+    "storeName":"Wollong-A",
+    "storeDetails":"textile",
+    "storeTimings": ["Mon-Fri-10am to 10pm",
+                     "Sat-Sun-9am to 05pm"],
+    "storeAddress":{
+             "phone" :  "Phone: +61 234 453 656",
+             "address" :"Addeess: jam radionodelist"
+            },
+    "storeMapLocation":{
+        "lat":  34.07578285886236,   
+        "Longitudes": 105.3599225695611,
+    }
+
+
+},{
+    "id":5003,
+    "storeName":"Wollong-c",
+    "storeDetails":"textile",
+    "storeTimings": ["Mon-Fri-10am to 10pm",
+                     "Sat-Sun-9am to 05pm"],
+    "storeAddress":{
+             "phone" :  "Phone: +61 234 453 656",
+             "address" :"Address: jam radionodelist"
+            },
+    "storeMapLocation":{
+        "lat": 28.524532281697493,
+        "lng":  77.18548550938071
+    }
+}
+];
   const [SelectedstoreObj, setSelectedstoreObj] = useState(null);
   const onLogoutClicked=()=>{
   props.logoutSuccess();
@@ -56,7 +149,17 @@ function Home(props) {
         <div className='flex align-items-center justify-content-center w-9rem text-6xl mr-4'>
         {/* <Button label="Logout" severity="danger" onClick={()=> onLogoutClicked()} /> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" raised onClick={()=>onLogoutClicked()}/>
-      <Form visible={showForm} label ="Form" icon="pi pi-exclamation-circle" onClose={() => setShowForm(false)}/>
+          {
+            showForm && (
+              <Form visible={showForm} storeObj={SelectedstoreObj} label ="Form" icon="pi pi-exclamation-circle" onClose={(values) =>{
+              setSelectedstoreObj(values);
+              setShowForm(false);
+            }}/>
+            )
+          }
+{/* 
+
+      <Form visible={showForm} label ="Form" icon="pi pi-exclamation-circle" onClose={() => setShowForm(false)}/> */}
         <Avatar raised onClick={()=>setShowForm(true)} icon="pi pi-shop"size="xlarge" shape="circle" className="text-black-alpga-70 mr-3"/>
             <Avatar label="PP" size="xlarge" shape="circle" className='text' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup  />
      <About visible={showAbout} label ="About" icon="pi pi-exclamation-circle" onClose={() => setShowAbout(false)}/>
@@ -65,7 +168,7 @@ function Home(props) {
      <div className='flex h-full'>
       <div className='flex-column w-30rem  bg-white'>
          {/* <InputText type="text" placeholder=" "/> */}  
-          <StoreList Selectedstore={(value)=>setSelectedstoreObj(value)}/>
+          <StoreList Selectedstore={(value)=>setSelectedstoreObj(value) } storeDirectory={storeDirectory}/>
          
       </div>
       <div className='flex-column w-full '>

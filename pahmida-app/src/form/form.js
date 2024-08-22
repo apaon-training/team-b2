@@ -10,21 +10,36 @@ import * as Yup from 'yup';
 function Form(props){
      
     const [visible, setVisible]=useState(false);
-    let tempObj= {
-        "id":5001,
-        "storeName":"Wollong",
-        "storeDetails":"textile",
+    const [storeObj,setstoreObj]= useState({
+        "id":5002,
+        "storeName":" blue berry",
+        "storeDetails":"Groceries",
         "storeTimings": ["Mon-Fri-9am to 10pm",
-                         "Sat-Sun-9am to 05pm"],
+                         "Sat-Sun-9am to 07pm"],
         "storeAddress":{
-                 "phone" :  "Phone: +61 234 453 656",
-                 "address" :"Address: jam radionodelist"
+                 "phone" :  "Phone: +61 234 4556",
+                 "address": "Address: nh"
                 },
         "storeMapLocation":{
-            "lat": 17.446347238455438, 
-            "lng": 78.48424496412154
+            "lat": 13.030867019063377,
+            "lng":77.5864833777009
         }
-    };
+        });
+    // let tempObj= {
+    //     "id":5001,
+    //     "storeName":"Wollong",
+    //     "storeDetails":"textile",
+    //     "storeTimings": ["Mon-Fri-9am to 10pm",
+    //                      "Sat-Sun-9am to 05pm"],
+    //     "storeAddress":{
+    //              "phone" :  "Phone: +61 234 453 656",
+    //              "address" :"Address: jam radionodelist"
+    //             },
+    //     "storeMapLocation":{
+    //         "lat": 17.446347238455438, 
+    //         "lng": 78.48424496412154
+    //     }
+    // };
     const storevalidation=Yup.object ({
         storeName: Yup.string().min(5,'Too short name') .max(50,'Too long name').required('storeName is required'),
         storeDetails: Yup.string().min(5,'too short') .max(10,'too long').required('storeDetails is required'),
@@ -35,15 +50,16 @@ function Form(props){
         .min(2,'Both two storeTimings are required') .required("Timings are required"),
         storeAddress: Yup.object({
             phone: Yup.string()
-            .min(5,'minmum 5 characters for phone number') .max(10,'Maximum 10 characters for phone number') .required('please enter phone number'),
-            address: Yup.string().min(5,'minmum 5 characters for Address').max(10,'Maximum 10 characters for Address').required('please enter Address'),
-        })
-        storeMapLocation: Yup.object({
-            Latitudes: Yup.string()
-            .min(5,'minmum 5 characters for phone number') .max(10,'Maximum 10 characters for Latitudes') .required('please enter Latitude'),
-            Longitudes: Yup.string().min(5,'minmum 5 characters for Address').max(10,'Maximum 10 characters for Longitudes').required('please enter Longitude'),
-        })
+            .min(5,'minmum 5 characters for phone number') .max(50,'Maximum 50 characters for phone number') .required('please enter phone number'),
+            address: Yup.string().min(5,'minmum 5 characters for Address').max(50,'Maximum 50 characters for Address').required('please enter Address'),
+        }),
+        // storeMapLocation: Yup.object({
+        //     Lat: Yup.number()
+        //     .min(5,'minmum 5 characters for lat') .max(10,'Maximum 10 characters for lat') ,
+        //     lng: Yup.number().min(5,'minmum 5 characters for lng').max(10,'Maximum 10 characters for lng'),
+        // })
     })
+
     const isFormFieldInvalid=(name)=> !!(formik.touched[name] && formik.errors[name]);
     const getFormErrorMessage = (name)=>{
         return isFormFieldInvalid(name)
@@ -65,10 +81,11 @@ function Form(props){
     }
 
     const formik = useFormik({
-        initialValues: tempObj,
+        initialValues: props?.storeObj,
   validationSchema:storevalidation,
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+        //   alert(JSON.stringify(values, null, 2));
+        props.onClose(values);
         },
       });
     return(
@@ -141,10 +158,10 @@ function Form(props){
                     <div className='Latitudes'>
                  Latitudes:
                 {/* <FloatLabel> */}
-                <InputNumber type="text" minFractionDigits={6} value={formik.values.storeMapLocation.lat} onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
+                <InputNumber useGrouping={false} minFractionDigits={6} value={formik.values.storeMapLocation.lat} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
                 {/* </FloatLabel> */}
                 <span>
-            {getFormErrorMessage('storeMapLocation'.'lat')}
+            {getFormErrorMessage('storeMapLocation','lat')}
          </span>
                  </div>
                 </div>
@@ -152,10 +169,10 @@ function Form(props){
                     <div className='Longitudes'>
                  Longitudes:
                    {/* <FloatLabel> */}
-                <InputNumber type="text" minFractionDigits={6} value={formik.values.storeMapLocation.lng} onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
+                <InputNumber useGrouping={false}  minFractionDigits={6} value={formik.values.storeMapLocation.lng} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
                    {/* </FloatLabel> */}
                    <span>
-            {getFormErrorMessage('storeMapLocation'.'lng')}
+            {getFormErrorMessage('storeMapLocation','lng')}
          </span>
                 </div>
                 </div>
