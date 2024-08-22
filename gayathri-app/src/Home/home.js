@@ -109,6 +109,7 @@ function Home(props) {
   const [showAbout, setShowAbout] = useState(false);
   const [showStoreForm, setShowStoreForm] = useState(false);
   const [selectedStoreObj,setSelectedStoreObj]=useState(null);
+  const [storesData, setStoresData]=useState(storeDirectory);
   const menuRight = useRef(null);
   const items = [
     {
@@ -132,6 +133,18 @@ function Home(props) {
     }
 ];
 
+const updateStoreObj = (values) =>{
+  
+  const index = storeDirectory.findIndex((item) => item?.id === values?.id);
+  if(index > -1){
+    storeDirectory[index] = values;
+    setStoresData(storeDirectory);
+  }
+
+  setSelectedStoreObj(values);
+  setShowStoreForm(false);
+}
+
   return (
     <div className="App flex-column">
       <div className='flex justify-content-center navigation-bar h-8rem'>
@@ -142,8 +155,9 @@ function Home(props) {
         <Avatar icon= 'pi pi-shop' size="xlarge" shape="circle" className='mr-4' raised onClick={ () => setShowStoreForm(true)}/>
         {
           showStoreForm && (<StoreForm visible={showStoreForm} storeObj = {selectedStoreObj} onClose={ (values) =>{
-            setSelectedStoreObj(values);
-            setShowStoreForm(false);
+            // setSelectedStoreObj(values);
+            // setShowStoreForm(false);
+            updateStoreObj(values);
           } }/>
 
           )
@@ -156,7 +170,7 @@ function Home(props) {
       </div>
       <div className='flex h-auto'>
         <div className='flex-column justify-content-center align-items-center text-white-alpha-90 font-bold w-30rem bg-white'>
-        <StoreList selectedStore={ (value) => setSelectedStoreObj (value) } storeDirectory={storeDirectory}/>
+        <StoreList selectedStore={ (value) => setSelectedStoreObj (value) } storeDirectory={storesData}/>
         </div>
         <div className='flex-column justify-content-center align-items-center text-black-alpha-90 text-right w-full bg-green-600'>
         <div className='flex h-25rem'>
