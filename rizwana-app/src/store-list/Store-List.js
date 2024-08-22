@@ -150,6 +150,11 @@ function StoreList(props){
 
 const [displayedStoreDirectory, setDisplayedStoreDirectory] = useState(props.storeDirectory);
 
+useEffect(() =>{
+
+    setDisplayedStoreDirectory(props.storeDirectory)
+},[props.storeDirectory])
+
     const storeTemplate = (store) => {
         return (
 

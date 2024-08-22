@@ -156,6 +156,8 @@ function Home(props) {
 ];
   const [showAbout, setShowAbout] = useState(false);
   const [selectedStoreObj, setSelectedStoreObj] = useState(null);
+  const [storesData,setStoresData] = useState(storeDirectory);
+  
   const onlogoutClicked = () =>{
     props.LogoutSuccess();
   }
@@ -190,6 +192,20 @@ function Home(props) {
   const onLogoutClicked= ()=>{
     props.LogoutSuccess();
   }
+
+  const updateStoreObj = (values) =>{
+
+    const index = storeDirectory.findIndex((item) => item?.id === values?.id);
+    if(index > -1){
+        storeDirectory[index] = values;
+        setStoresData(storeDirectory);
+    }
+   
+
+
+    setSelectedStoreObj(values);
+    setShowStoreForm(false);
+  }
   
   return (
     <div className="App flex-column">
@@ -203,8 +219,9 @@ function Home(props) {
         {
           showStoreForm && (
             <StoreForm visible={showStoreForm} storeObj={selectedStoreObj} label="StoreForm" icon="pi pi-exclamation-circle" onClose={(values) =>{
-              setSelectedStoreObj(values);
-              setShowStoreForm(false);
+            //   setSelectedStoreObj(values);
+            //   setShowStoreForm(false);
+            updateStoreObj(values);
             }}/> 
           )
         }
@@ -220,7 +237,7 @@ function Home(props) {
       <div className='flex h-full'>
         <div className='flex-column h-40rem w-30rem bg-white store-list'>
         {/* <InputText type="" placeholder=""/> */}
-        <StoreList selectedStore={(value) => setSelectedStoreObj(value)} storeDirectory={storeDirectory}/>
+        <StoreList selectedStore={(value) => setSelectedStoreObj(value)} storeDirectory={storesData}/>
         
 
         </div>
