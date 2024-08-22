@@ -7,7 +7,7 @@ import { InputNumber } from 'primereact/inputnumber';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-
+ 
 
 function StoreForm (props) {
 
@@ -85,19 +85,19 @@ function StoreForm (props) {
 
 
         }),
-        storeMapLocator:Yup.object({
-            lat: Yup.number()
-                    .min(5,'Minimum 5 characters for lat')
-                    .max(10,'Max 10 characters  for lat'),
+        // storeMapLocator:Yup.object({
+        //     lat: Yup.number()
+        //             .min(5,'Minimum 5 characters for lat')
+        //             .max(10,'Max 10 characters  for lat'),
                     
-             lng: Yup.number()
-                    .min(5,'Minimum 5 characters for lng')
-                    .max(10,'Max 10 characters  for lng')
+        //      lng: Yup.number()
+        //             .min(5,'Minimum 5 characters for lng')
+        //             .max(10,'Max 10 characters  for lng')
                     
                     
  
  
-         })
+        //  })
         
      })
     
