@@ -53,11 +53,10 @@ function Form(props){
             .min(5,'minmum 5 characters for phone number') .max(50,'Maximum 50 characters for phone number') .required('please enter phone number'),
             address: Yup.string().min(5,'minmum 5 characters for Address').max(50,'Maximum 50 characters for Address').required('please enter Address'),
         }),
-        // storeMapLocation: Yup.object({
-        //     Lat: Yup.number()
-        //     .min(5,'minmum 5 characters for lat') .max(10,'Maximum 10 characters for lat') ,
-        //     lng: Yup.number().min(5,'minmum 5 characters for lng').max(10,'Maximum 10 characters for lng'),
-        // })
+        storeMapLocation: Yup.object({
+            lat:Yup.number().required('Lat is required'),
+           lng:Yup.number().required('lng is required')
+        })
     })
 
     const isFormFieldInvalid=(name)=> !!(formik.touched[name] && formik.errors[name]);
@@ -158,10 +157,10 @@ function Form(props){
                     <div className='Latitudes'>
                  Latitudes:
                 {/* <FloatLabel> */}
-                <InputNumber useGrouping={false} minFractionDigits={6} value={formik.values.storeMapLocation.lat} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
+                <InputNumber useGrouping={false} minFractionDigits={2} value={formik.values.storeMapLocation.lat} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
                 {/* </FloatLabel> */}
                 <span>
-            {getFormErrorMessage('storeMapLocation','lat')}
+            {getFormErrorMessageNested('storeMapLocation','lat')}
          </span>
                  </div>
                 </div>
@@ -169,10 +168,10 @@ function Form(props){
                     <div className='Longitudes'>
                  Longitudes:
                    {/* <FloatLabel> */}
-                <InputNumber useGrouping={false}  minFractionDigits={6} value={formik.values.storeMapLocation.lng} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
+                <InputNumber useGrouping={false}  minFractionDigits={2} value={formik.values.storeMapLocation.lng} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
                    {/* </FloatLabel> */}
                    <span>
-            {getFormErrorMessage('storeMapLocation','lng')}
+            {getFormErrorMessageNested('storeMapLocation','lng')}
          </span>
                 </div>
                 </div>

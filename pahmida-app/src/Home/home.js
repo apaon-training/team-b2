@@ -147,6 +147,7 @@ function Home(props) {
       storeDirectory[index] = values;
       setStoresData(storeDirectory);
      }
+      
      setSelectedstoreObj(values);
        setShowForm(false);
     }
