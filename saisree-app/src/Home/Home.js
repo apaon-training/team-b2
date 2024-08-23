@@ -107,12 +107,29 @@ function Home(props) {
        "lat":15.7551875,
        "lng":77.8634611,
     }
-}];
+   }];
+
+   let emptyStoreobj = {
+      "id":0,
+      "storeName":"",
+       "storeDetails":"",
+       "storeTimings":["", 
+                       ""
+                      ],
+       "storeAddress":{
+          "phone": "",
+          "address":""
+       },
+       "storeMaplocation":{
+          "lat":0,
+          "lng":0
+       }
+}
   const [storesData, setStoresData] = useState(storeDirectory);
 //   const [storeShop, setStoreShop] = useState(storeDirectory);
 
 
-  const [selectedstoreObj, setselectedstoreObj]=useState(null);
+  const [selectedstoreObj, setselectedstoreObj]=useState(emptyStoreobj);
   const onLogoutclicked = ()=>{
   props.LogoutSuccess();
   }
@@ -154,9 +171,15 @@ function Home(props) {
       if(index  > -1){
         storeDirectory[index] = values;
         setStoresData(storeDirectory);
+      }else{ //for new object
+         //first generate new id
+         const lastid = storeDirectory[storeDirectory.length -1].id;
+         values.id= lastid +1;
+         storeDirectory.push(values); //we can use unshift instead of push to get store details at the top of the list
+         setStoresData(storeDirectory);
 
-     }
-      // setStoreShop(storeDirectory)
+      }
+      
        setselectedstoreObj(values);
           setShowStoreForm(false);
 
