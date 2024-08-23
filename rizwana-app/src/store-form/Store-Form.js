@@ -269,7 +269,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputNumber useGrouping={false} minFractionDigits={2}  mode="decimal" value={ formik.values.storeMapLocator.lat }  onChange={(e) =>formik.setFieldValue('storeMapLocator.lat',e.value)} />
+                        <InputNumber  useGrouping={false} minFractionDigits={2}  mode="decimal" value={ formik.values.storeMapLocator.lat }  onChange={(e) =>formik.setFieldValue('storeMapLocator.lat',e.value)} />
                         <span>
                         {getFormErrorMessageNested('storeMapLocator','lat')}
                     </span>
