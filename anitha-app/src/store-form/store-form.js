@@ -84,18 +84,12 @@ const[storeObj,setStoreObj]=useState({
             .required('Please enter address')
         }),
 
-    // // storeMapLocation: Yup.object({
-    // //             lat: Yup.number()
-    // //             .min(5, 'minimum 5 characters for lat')
-    // //             .max(10, 'max 10 characters for lat'),
-                
-    
-    // //             lng: Yup.number()
-    // //             .min(5, 'minimum 5 characters for lng')
-    // //             .max(50, 'max 50 characters for lng')
-                
-
-    // })       
+    storeMapLocation: Yup.object({
+                lat: Yup.number()
+                .required('latitude is required'),
+                lng: Yup.number()
+                .required('longitude is required')
+ })       
         
     })
 
