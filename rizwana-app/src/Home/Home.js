@@ -165,12 +165,12 @@ let emptyStoreObj = {
     ],
     "storeAddress": {
         "phoneNumber": "",
-        "Address": ""
+        "Address": "" 
     },
     "storeMapLocator": {
         "lat": 0,
         "lng": 0
-    }
+    } 
 };
 
 
