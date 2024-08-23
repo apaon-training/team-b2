@@ -85,19 +85,19 @@ function StoreForm (props) {
 
 
         }),
-        // storeMapLocator:Yup.object({
-        //     lat: Yup.number()
-        //             .min(5,'Minimum 5 characters for lat')
-        //             .max(10,'Max 10 characters  for lat'),
+        storeMapLocator:Yup.object({
+            lat: Yup.number()
+                    .min(5,'Minimum 5 characters for lat')
+                    .max(10,'Max 10 characters  for lat'),
                     
-        //      lng: Yup.number()
-        //             .min(5,'Minimum 5 characters for lng')
-        //             .max(10,'Max 10 characters  for lng')
+             lng: Yup.number()
+                    .min(5,'Minimum 5 characters for lng')
+                    .max(10,'Max 10 characters  for lng')
                     
                     
  
  
-        //  })
+         }),
         
      })
     
@@ -281,7 +281,7 @@ function StoreForm (props) {
                     </div>
                     <div className=''>
                         {/* <input></input> */}
-                        <InputNumber useGrouping={false} minFractionDigits={2}  mode="decimal" value={formik.values.storeMapLocator.lng}  onChange={(e) =>formik.setFieldValue('storeMapLocator.lng',e.value)} />
+                        <InputNumber  useGrouping={false} minFractionDigits={2}  mode="decimal" value={formik.values.storeMapLocator.lng}  onChange={(e) =>formik.setFieldValue('storeMapLocator.lng',e.value)} />
                         <span>
                         {getFormErrorMessageNested('storeMapLocator','lng')}
                     </span>
