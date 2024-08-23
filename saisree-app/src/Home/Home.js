@@ -109,6 +109,7 @@ function Home(props) {
     }
 }];
   const [storesData, setStoresData] = useState(storeDirectory);
+//   const [storeShop, setStoreShop] = useState(storeDirectory);
 
 
   const [selectedstoreObj, setselectedstoreObj]=useState(null);
@@ -155,10 +156,9 @@ function Home(props) {
         setStoresData(storeDirectory);
 
      }
- 
+      // setStoreShop(storeDirectory)
        setselectedstoreObj(values);
           setShowStoreForm(false);
-          
 
     }
     return (
@@ -172,9 +172,10 @@ function Home(props) {
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" label="logout" raised onClick={() => onLogoutclicked()}/>
           {
             showStoreForm &&(
-        <StoreForm visible={showStoreForm} storeObj={selectedstoreObj} icon="pi pi-exclamation-circle" onClose={(values)=>{
+        <StoreForm visible={showStoreForm} storeObj={selectedstoreObj}   icon="pi pi-exclamation-circle" onClose={(values)=>{
          //  setselectedstoreObj(values);
          //  setShowStoreForm(false);
+
           updatestoreObj(values);
         }}/>
       )
@@ -194,6 +195,7 @@ function Home(props) {
 
       <div className='flex-column w-full'>
         <div className='flex h-25rem'>
+
    
        <StoreMap storeObj={selectedstoreObj}/>
    
