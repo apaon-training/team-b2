@@ -106,9 +106,28 @@ function Home(props) {
     }
     ];
 
+    let emptyStoreObj = {
+      "id": 0,
+      "storeName": "",
+      "storeDetails": "",
+      "storeTimings": ["", 
+          ""
+      ],
+      "storeContact": {
+          "phone":"",
+          "address":""
+      },
+      "storeMapLocation":{
+          "lat":0,
+          "lng":0
+      }
+      
+  }
+
+
   const [showAbout, setShowAbout] = useState(false);
   const [showStoreForm, setShowStoreForm] = useState(false);
-  const [selectedStoreObj,setSelectedStoreObj]=useState(null);
+  const [selectedStoreObj,setSelectedStoreObj]=useState(emptyStoreObj);
   const [storesData, setStoresData]=useState(storeDirectory);
   const menuRight = useRef(null);
   const items = [
@@ -138,6 +157,11 @@ const updateStoreObj = (values) =>{
   const index = storeDirectory.findIndex((item) => item?.id === values?.id);
   if(index > -1){
     storeDirectory[index] = values;
+    setStoresData(storeDirectory);
+  }else{
+    const lastId = storeDirectory[storeDirectory.length - 1].id;
+    values.id = lastId + 1;
+    storeDirectory.unshift(values);
     setStoresData(storeDirectory);
   }
 
