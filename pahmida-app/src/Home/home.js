@@ -109,7 +109,22 @@ function Home(props) {
     }
 }
 ];
-  const [SelectedstoreObj, setSelectedstoreObj] = useState(null);
+ let emptyStoreObj = {
+  "id":0,
+    "storeName":"",
+    "storeDetails":"",
+    "storeTimings": ["",""],
+    "storeAddress":{
+             "phone" :  "",
+             "address" :""
+            },
+    "storeMapLocation":{
+        "lat": 0, 
+        "lng": 0
+    }
+};
+  
+  const [SelectedstoreObj, setSelectedstoreObj] = useState(emptyStoreObj);
   const onLogoutClicked=()=>{
   props.logoutSuccess();
   }
@@ -146,8 +161,14 @@ function Home(props) {
      if(index> -1){
       storeDirectory[index] = values;
       setStoresData(storeDirectory);
-     }
-      
+     }else{
+      //for new obj
+      //first generate new id
+      const lastId = storeDirectory[storeDirectory.length - 1].id;
+      values.id = lastId + 1;
+    storeDirectory.unshift(values);
+    setStoresData(storeDirectory);    
+  }
      setSelectedstoreObj(values);
        setShowForm(false);
     }
