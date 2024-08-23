@@ -50,11 +50,9 @@ function StoreForm (props) {
 
         storeMapLocation: Yup.object({
             lat: Yup.number()
-                .min(5,'Minimum 5 characters for lat')
-                .max(10,'Maximum 10 characters for lat'),
+            .required('Latitude is required'),
             lng: Yup.number()
-                .min(5,'Minimum 5 characters for lng')
-                .max(10,'Maximum 10 characters for lng')
+            .required('Longitude is required')
             })
     })
 
