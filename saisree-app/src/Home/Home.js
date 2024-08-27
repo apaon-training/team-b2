@@ -126,7 +126,6 @@ function Home(props) {
        }
 }
   const [storesData, setStoresData] = useState(storeDirectory);
-//   const [storeShop, setStoreShop] = useState(storeDirectory);
 
 
   const [selectedstoreObj, setselectedstoreObj]=useState(emptyStoreobj);

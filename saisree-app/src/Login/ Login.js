@@ -46,26 +46,26 @@ function Login(props) {
 
 
         {/*username*/}
-        <div className='flex align-items-center justify-content-center my-3 gap-2 text-3xl'>
+        <div className='flex align-items-center justify-content-center my-4 gap-3 text-3xl'>
             <div className="">
                 Username:
             </div>
-            <div className="flex h-2rem">
+            <div className="flex h-2rem ml-1">
                 {/*<input></input>*/}
-                <InputText value={ usertext } onChange={(e) => setUsername(e.target.value)} />
+                <InputText value={ usertext } onChange={(e) => setUsername(e.target.value)} className ='h-3rem w-17rem ' />
 
              </div>
         </div>
 
 
         {/*password*/}
-        <div className='flex align-items-center justify-content-center my-3 gap-2 text-3xl'>
+        <div className='flex align-items-center justify-content-center my-4 gap-3 text-3xl'>
             <div className=''>
                 Password:
             </div>
             <div className='flex h-2rem ml-2'>
                 {/*<input></input>*/}
-                <Password value={ passtext } onChange={(e) => setPassword (e.target.value)} toggleMask feedback={false}/>
+                <Password value={ passtext } onChange={(e) => setPassword (e.target.value)} toggleMask feedback={false} />
                 
              </div>
         </div>
