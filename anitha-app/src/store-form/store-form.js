@@ -194,7 +194,7 @@ const getFormErrorMessageNested=(name,subname)=>{
                 <div className=''>
                     <InputText value={formik.values.storeTimings[0] } onChange={(e) => formik.setFieldValue('storeTimings[0]', e.target.value)}/>
                     <span>
-                    {getFormErrorMessage('storeTimings')}
+                    {getFormErrorMessageNested('storeTimings','0')}
                     </span>
                 </div>
             </div>
@@ -206,7 +206,7 @@ const getFormErrorMessageNested=(name,subname)=>{
                     <InputText value={formik.values.storeTimings[1]} onChange={(e) => formik.setFieldValue('storeTimings[1]', e.target.value)}/>
                 
                     <span>
-                    {getFormErrorMessage('storeTimings')}
+                    {getFormErrorMessageNested('storeTimings','1')}
                     </span>
                     </div>
             </div>
