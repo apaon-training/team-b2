@@ -41,15 +41,15 @@ const cancelClicked=()=>{
             </span>
       </div>
      <div className="flex align-items-center justify-content-center gap-4 my-3">
-      <div className="user">
+      <div className="user text-3xl">
          Username:
          </div>
-         <div className="">
-         <InputText value={ userText } onChange={(e) => setUserName(e.target.value)}/>
+         <div className=" mr-3">
+         <InputText className='w-15rem' value={ userText } onChange={(e) => setUserName(e.target.value)}/>
       </div>
      </div>
-     <div className="flex align-items-center justify-content-center gap-4 my-3">
-      <div className="password">
+     <div className="flex align-items-center justify-content-center   gap-4 my-3">
+      <div className="password text-3xl">
          Password:
          </div>
          <div className="">

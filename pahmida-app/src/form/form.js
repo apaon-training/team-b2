@@ -90,7 +90,7 @@ function Form(props){
     return(
         <>
          <div className="flex column text-white bg-blue"> 
-        <Dialog header="About" visible={props.visible} style={{ width: '50vw',height:'90vh'}} onHide={() => {props.onClose(false)}}>
+        <Dialog header="About" closable={true} visible={props.visible} style={{ width: '50vw',height:'90vh'}} onHide={() => {props.onClose(formik.values)}}>
        <form onSubmit={formik.handleSubmit}> 
         <div className="flex-column h-auto">
       <div className="flex text-3xl">
@@ -101,13 +101,13 @@ function Form(props){
      <div className="flex-column mb-2 mt-2 gap-3">
         <div className='Name'>
          Name:
-         <InputText type="text" className="ml-7" value={formik.values.storeName} onChange={(e) => formik.setFieldValue('storeName', e.target.value)}/>
+         <InputText type="text" className="ml-8" value={formik.values.storeName} onChange={(e) => formik.setFieldValue('storeName', e.target.value)}/>
          <span>
             {getFormErrorMessage('storeName')}
          </span>
       </div>
       </div>
-            <div className="flex mb-2 my-2 gap-3">
+            <div className="flex mb-2 my-2 gap-4">
                 <div className='Details'> 
                 Details:      
          <InputText type="text"className='ml-7' value={formik.values.storeDetails} onChange={(e) => formik.setFieldValue('storeDetails', e.target.value)}/>
@@ -120,9 +120,9 @@ function Form(props){
                 <div className="flex mb-2   gap-3">
                     <div className='Timing1'> 
                  Timings1:
-                <InputText type="text" className='ml-5'value={formik.values.storeTimings[0]} onChange={(e) => formik.setFieldValue('storeTimings[0]', e.target.value)}/>
+                <InputText type="text" className='ml-6'value={formik.values.storeTimings[0]} onChange={(e) => formik.setFieldValue('storeTimings[0]', e.target.value)}/>
                 <span>
-                     {getFormErrorMessage('storeTimings')}
+                     {getFormErrorMessageNested('storeTimings','0')}
          </span>
                 </div>
                 </div>
@@ -131,14 +131,14 @@ function Form(props){
                 Timings2:
                 <InputText type="text" className='ml-6'value={formik.values.storeTimings[1]} onChange={(e) => formik.setFieldValue('storeTimings[1]', e.target.value)}/>
                 <span>
-            {getFormErrorMessage('storeTimings')}
+            {getFormErrorMessageNested('storeTimings','1')}
          </span>
                 </div>  
                 </div>
                 <div className="flex mb-2  gap-3">
                     <div className='Phone'>
                  Phone:
-                <InputText type="text" className="ml-6" value={formik.values.storeAddress.phone} onChange={(e) => formik.setFieldValue('storeAddress.phone', e.target.value)}/>
+                <InputText type="text" className="ml-7" value={formik.values.storeAddress.phone} onChange={(e) => formik.setFieldValue('storeAddress.phone', e.target.value)}/>
                 <span>
             {getFormErrorMessageNested('storeAddress','phone')}
          </span>
@@ -147,7 +147,7 @@ function Form(props){
                 <div className="flex mb-2 gap-3">
                     <div className='Address'> 
                 Address:
-                <InputText type="text"className='ml-5' value={formik.values.storeAddress.address} onChange={(e) => formik.setFieldValue('storeAddress.address', e.target.value)}/>
+                <InputText type="text"className='ml-6' value={formik.values.storeAddress.address} onChange={(e) => formik.setFieldValue('storeAddress.address', e.target.value)}/>
                 <span>
             {getFormErrorMessageNested('storeAddress','address')}
          </span>
@@ -157,7 +157,7 @@ function Form(props){
                     <div className='Latitudes'>
                  Latitudes:
                 {/* <FloatLabel> */}
-                <InputNumber useGrouping={false} minFractionDigits={2} value={formik.values.storeMapLocation.lat} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
+                <InputNumber className='ml-6' useGrouping={false} minFractionDigits={2} value={formik.values.storeMapLocation.lat} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lat', e.value)}/>
                 {/* </FloatLabel> */}
                 <span>
             {getFormErrorMessageNested('storeMapLocation','lat')}
@@ -168,7 +168,7 @@ function Form(props){
                     <div className='Longitudes'>
                  Longitudes:
                    {/* <FloatLabel> */}
-                <InputNumber useGrouping={false}  minFractionDigits={2} value={formik.values.storeMapLocation.lng} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
+                <InputNumber className='ml-5' useGrouping={false}  minFractionDigits={2} value={formik.values.storeMapLocation.lng} mode="decimal" onChange={(e) => formik.setFieldValue('storeMapLocation.lng', e.value)}/>
                    {/* </FloatLabel> */}
                    <span>
             {getFormErrorMessageNested('storeMapLocation','lng')}
@@ -177,7 +177,7 @@ function Form(props){
                 </div>
        <div className=" text-right text-5xl  "> 
                     
-         <Button label="cancel" severity='secondary'outlined raised size='small' className='mr-4'/>
+         <Button label="cancel" severity='secondary'outlined raised size='small' className='mr-4' onClick={()=> props.onClose({})}/>
          <Button label="Submit" type="submit" bg-primary raised size='small' className='mr-4'/>
              </div> 
             </div>

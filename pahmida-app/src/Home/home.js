@@ -156,7 +156,9 @@ function Home(props) {
       }
     ];
     
+     
     const updatestoreObj =(values)=>{
+      if(JSON.stringify(values) !== JSON.stringify(emptyStoreObj) &&JSON.stringify(values) !==JSON.stringify({})){
     const index = storeDirectory.findIndex((item)=> item?.id === values?.id);
      if(index> -1){
       storeDirectory[index] = values;
@@ -167,9 +169,11 @@ function Home(props) {
       const lastId = storeDirectory[storeDirectory.length - 1].id;
       values.id = lastId + 1;
     storeDirectory.unshift(values);
-    setStoresData(storeDirectory);    
+    setStoresData(storeDirectory);   
+      
   }
      setSelectedstoreObj(values);
+}
        setShowForm(false);
     }
   return (
