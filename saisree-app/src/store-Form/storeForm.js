@@ -229,7 +229,7 @@ function StoreForm(props){
                         </div>
                         </div>
                             <div className='text-right text-2xl'>
-                            <Button label="Cancel" severity="Cancel" raised className='mr-4 bg-white-600 w-2 h-2rem button'></Button>
+                            <Button label="Cancel" type='button' severity="Cancel" raised onClick={() => props.onClose({})} className='mr-4 bg-white-600 w-2 h-2rem button'></Button>
                             <Button label="Save" type="submit" severity="" raise className='mr-4 bg-blue-600 form w-2 h-2rem'></Button>
                                 </div>
                                 </form>
