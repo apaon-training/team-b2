@@ -96,7 +96,7 @@ const getFromErrorMessageNested = (name, subname) => {
             <Dialog header="Add store"  visible={props.visible} style={{ width: '70vh', height: '100vh'}} onHide={() => {props.onClose(formik.values)}}>
                 <div className='flex-column'>
                     <form onSubmit={formik.handleSubmit}>
-                <div className='flex gap-6 mb-2 mt-4'>
+                <div className='flex gap-6 mb-2 ml-2 mt-4'>
                     <div className=''>
                         Name    :
                     </div>
@@ -141,7 +141,7 @@ const getFromErrorMessageNested = (name, subname) => {
                     <span>{getFromErrorMessageNested('storeContact', 'phone')}</span>
                     </div>
                 </div>
-                <div className='flex gap-5 mb-4'>
+                <div className='flex gap-5 mb-4 ml-1'>
                     <div className=''>
                         Address  :
                     </div>
@@ -150,7 +150,7 @@ const getFromErrorMessageNested = (name, subname) => {
                     <span>{getFromErrorMessageNested('storeContact', 'address')}</span>
                     </div>
                 </div>
-                <div className='flex gap-5 mb-2'>
+                <div className='flex gap-5 mb-2 ml-1'>
                     <div className=''>
                         Latitude  :
                     </div>
