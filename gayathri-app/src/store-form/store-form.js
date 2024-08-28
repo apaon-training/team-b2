@@ -93,7 +93,7 @@ const getFromErrorMessageNested = (name, subname) => {
 
     return (
         <div className="card flex justify-content-center">
-            <Dialog header="Add store"  visible={props.visible} style={{ width: '70vh', height: '100vh'}} onHide={() => {props.onClose(false)}}>
+            <Dialog header="Add store"  visible={props.visible} style={{ width: '70vh', height: '100vh'}} onHide={() => {props.onClose(formik.values)}}>
                 <div className='flex-column'>
                     <form onSubmit={formik.handleSubmit}>
                 <div className='flex gap-6 mb-2 mt-4'>

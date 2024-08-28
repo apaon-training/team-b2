@@ -153,6 +153,7 @@ function Home(props) {
 
 const updateStoreObj = (values) =>{
   
+  if(JSON.stringify(values) !== JSON.stringify(emptyStoreObj)){
   const index = storeDirectory.findIndex((item) => item?.id === values?.id);
   if(index > -1){
     storeDirectory[index] = values;
@@ -165,6 +166,7 @@ const updateStoreObj = (values) =>{
   }
 
   setSelectedStoreObj(values);
+}
   setShowStoreForm(false);
 
 }
