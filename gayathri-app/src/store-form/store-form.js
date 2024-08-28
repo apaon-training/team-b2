@@ -89,6 +89,7 @@ const getFromErrorMessageNested = (name, subname) => {
 
       const cancelClicked = () => {
         console.log('cancel Clicked !');
+        props.onClose({})
       }
 
     return (
@@ -169,7 +170,7 @@ const getFromErrorMessageNested = (name, subname) => {
                     </div>
                 </div>
                 <div className='flex align-items-center justify-content-end gap-5'>
-                <Button label="Cancel" severity="secondary" outlined size='small' onClick={() => cancelClicked ()}/>
+                <Button label="Cancel" type="button" severity="secondary" outlined size='small' onClick={() => cancelClicked ()}/>
                 <Button label="Save" type="submit" severity="info" raised size='small' onClick={() => saveClicked ()}/> 
                 </div>
                 </form>
