@@ -168,7 +168,8 @@ function Home(props) {
   ];
 
   const updateStoreObject = (values) =>{
-if(JSON.stringify(values) !==JSON.stringify(emptyStoreObj)){
+if(JSON.stringify(values) !==JSON.stringify(emptyStoreObj) && 
+JSON.stringify(values) !==JSON.stringify({})){
 const index = storeDirectory.findIndex((item) => item?.id === values?.id);
 if(index > -1) {
   storeDirectory[index] = values;

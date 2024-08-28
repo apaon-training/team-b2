@@ -148,13 +148,14 @@ const getFormErrorMessageNested=(name,subname)=>{
     // }
     const saveClicked = () =>{
     {
-            console.log('Login successful !');
+            console.log('Login successfu !');
 
         }
     }
         const cancelClicked =() =>{
             
             console.log('cancel Clicked');
+            props.onClose({});
         }
     return (
         <>
@@ -256,7 +257,7 @@ const getFormErrorMessageNested=(name,subname)=>{
                 </div>
             </div>
             <div className="flex align-items-center justify-content-end text-xl gap-3 mr-3 ">
-            <Button label="Cancel" severity="secondary" outlined size='small' onClick={() => cancelClicked()} />
+            <Button label="Cancel" type="button" severity="secondary" outlined size='small' onClick={() => props.onClose({})} />
             <Button label="Save" type="submit" severity="info" raised size='small' onClick={() => saveClicked()} />
             </div>
             </form>
