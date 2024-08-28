@@ -45,7 +45,7 @@ function Login(props) {
             <InputText value={userText} onChange={(e) => setUserName(e.target.value)} />
             </div>
             </div>
-            <div className="flex align-items-center justify-content-center text-3xl text-white gap-3 md:h-5rem">
+            <div className="flex align-items-center justify-content-center text-3xl text-white gap-3 ml-1 md:h-5rem">
             <div className="">
                 Password :
             </div>
