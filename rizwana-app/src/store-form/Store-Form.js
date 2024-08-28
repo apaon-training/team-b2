@@ -186,7 +186,7 @@ function StoreForm (props) {
         <>
         <div className="card flex justify-content-center ">
 
-        <Dialog header="Add Store" visible={props.visible}  style={{ width: '65vh',height:"95vh"}} onHide={() => {props.onClose(false)}}>
+        <Dialog header="Add Store" visible={props.visible}  style={{ width: '65vh',height:"95vh"}} onHide={() => {props.onClose(formik.values)}}>
                
                 <div className='flex-column '>
                     <form onSubmit={formik.handleSubmit}>

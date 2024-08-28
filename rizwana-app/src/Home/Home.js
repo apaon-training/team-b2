@@ -214,6 +214,7 @@ let emptyStoreObj = {
   }
 
   const updateStoreObj = (values) =>{
+    if(JSON.stringify(values) !== JSON.stringify(emptyStoreObj)){
 
     const index = storeDirectory.findIndex((item) => item?.id === values?.id);
     if(index > -1){
@@ -226,9 +227,10 @@ let emptyStoreObj = {
     setStoresData(storeDirectory);
     }
    
-
+    
 
     setSelectedStoreObj(values);
+}
     setShowStoreForm(false);
   }
   
