@@ -177,6 +177,7 @@ function StoreForm (props) {
     const cancelClicked =() =>{
         
         console.log('cancel Clicked');
+        props.onClose({});
     }
 
 
@@ -294,7 +295,7 @@ function StoreForm (props) {
                 <div className="flex  align-items-center justify-content-end text-xl mr-3 gap-3">
         {/*<button className="cancel">Cancel</button>
         <button className="submit">Submit</button>*/}
-        <Button label="Cancel" severity="secondary" outlined size="small"  onClick={() => cancelClicked()} />
+        <Button label="Cancel"  type="button" severity="secondary" outlined size="small"  onClick={() => props.onClose({})} />
         <Button label="Save" type="submit" severity="info" raised size="small" onClick={() => saveClicked()}  />
         </div>
                </form>
