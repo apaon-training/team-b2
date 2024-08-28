@@ -56,6 +56,10 @@ function StoreForm(props){
         .min(5,'Too short name')
         .max(50,'Too long name')
         .required('storeName is required'),
+        storeDetails:Yup.string()
+        .min(5, 'Too short')
+        .max(10, 'Too Long')
+        .required('Please enter Store Details'),
         storeTimings: Yup.array()
            .of(
              Yup.string()
@@ -126,7 +130,7 @@ function StoreForm(props){
     return(
         <>
         <div className="card flex justify-content-center">
-        <Dialog header="Add Store" visible={props.visible} style={{ width: '50vw', height:"85vh"}} onHide={() =>  {props.onClose(false)}}>
+        <Dialog header="Add Store" visible={props.visible} style={{ width: '50vw', height:"85vh"}} onHide={() =>  {props.onClose(formik.values)}}>
                 {/* <p className="m-0 mb-2 gap-2 font-bold text-3xl"> */}
             
                 {/* </p> */}
@@ -150,6 +154,9 @@ function StoreForm(props){
                         <div className='ml-4 w'>
                             {/* <input className='w-25rem'></input> */}
                             <InputText type="text" value={formik.values.storeDetails} onChange={(e) =>formik.setFieldValue('storeDetails', e.target.value)} className= 'p-inputtext-sm w-25rem' />
+                            <span>
+                                {getFormErrorMessage('storeDetails')}
+                            </span>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
