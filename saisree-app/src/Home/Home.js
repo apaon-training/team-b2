@@ -40,8 +40,8 @@ function Home(props) {
        "address":"Address: 10-20 station road, NSW"
     },
     "storeMaplocation":{
-       "lat":15.8224004,
-       "lng":78.0418776
+       "lat":18.3540,
+       "lng":79.39187
     }
  },
  {
@@ -56,8 +56,8 @@ function Home(props) {
        "address":"Address: 10-20 station road"
     },
     "storeMaplocation":{
-       "lat":15.8261087,
-       "lng":78.0196085
+       "lat":19.1961087,
+       "lng":75.10196085
     }
 },
 {
@@ -72,8 +72,8 @@ function Home(props) {
        "address":"Address: 10-20 Near Abdullah Khan estate"
     },
     "storeMaplocation":{
-       "lat":15.8125994,
-       "lng":78.0121861
+       "lat":20.3125994,
+       "lng":84.2921861
     }
 },
   {
