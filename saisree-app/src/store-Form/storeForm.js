@@ -167,7 +167,7 @@ function StoreForm(props){
                             {/* <input className='w-15rem'></input> */}
                             <InputText type="text" value={formik.values.storeTimings[0]} onChange={(e) =>formik.setFieldValue('storeTimings[0]', e.target.value)} className=' p-inputtext-sm w-15rem' />
                             <span>
-                                {getFormErrorMessage('storeTimings')}
+                                {getFormErrorMessageNested('storeTimings', '0')}
                             </span>
                         </div>
                         </div>
@@ -178,6 +178,9 @@ function StoreForm(props){
                         <div className='ml-1'>
                             {/* <input className='w-15rem'></input> */}
                             <InputText type="text" value={formik.values.storeTimings[1]} onChange={(e) =>formik.setFieldValue('storeTimings[1]', e.target.value)} className=' p-inputtext-sm w-15rem' />
+                            <span>
+                                {getFormErrorMessageNested('storeTimings', '1')}
+                            </span>
                         </div>
                         </div>
                         <div className='flex gap-2 text-xl   my-3'>
