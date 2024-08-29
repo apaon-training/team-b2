@@ -190,7 +190,7 @@ const updateStoreObj = (values) =>{
         }
         {/* <StoreForm visible={showStoreForm} onClose={ () => setShowStoreForm(false) }/> */}
         <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" />
-          <Avatar label="BA" size="xlarge" shape="circle" className='mr-4' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
+          <Avatar label="KG" size="xlarge" shape="circle" className='mr-4' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup/>
             <About visible={showAbout} label="About" icon="pi pi-exclamation-circle" onClose={ () => setShowAbout(false) }/>
         </div>
       </div>
