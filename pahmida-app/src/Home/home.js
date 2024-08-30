@@ -185,10 +185,12 @@ function Home(props) {
       </div>
         <div className='flex align-items-center justify-content-center w-9rem text-6xl mr-4'>
         {/* <Button label="Logout" severity="danger" onClick={()=> onLogoutClicked()} /> */}
-        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" raised onClick={()=>onLogoutClicked()}/>
+        <Menu model={items} popup ref={menuRight} id="popup_menu_right" popupAlignment="right" 
+        raised onClick={()=>onLogoutClicked()}/>
           {
             showForm && (
-              <Form visible={showForm} storeObj={SelectedstoreObj} label ="Form" icon="pi pi-exclamation-circle" onClose={(values) =>{
+              <Form visible={showForm} storeObj={SelectedstoreObj} label ="Form" icon="pi pi-exclamation-circle" 
+              onClose={(values) =>{
               // setSelectedstoreObj(values);
               // setShowForm(false);
             updatestoreObj(values);
@@ -199,7 +201,8 @@ function Home(props) {
 
       <Form visible={showForm} label ="Form" icon="pi pi-exclamation-circle" onClose={() => setShowForm(false)}/> */}
         <Avatar raised onClick={()=>setShowForm(true)} icon="pi pi-shop"size="xlarge" shape="circle" className="text-black-alpga-70 mr-3"/>
-            <Avatar label="PP" size="xlarge" shape="circle" className='text' onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup  />
+            <Avatar label="PP" size="xlarge" shape="circle" className='text'
+             onClick={(event) => menuRight.current.toggle(event)} aria-controls="popup_menu_right" aria-haspopup  />
      <About visible={showAbout} label ="About" icon="pi pi-exclamation-circle" onClose={() => setShowAbout(false)}/>
      </div>
      </div>

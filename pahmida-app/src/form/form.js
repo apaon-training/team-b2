@@ -45,6 +45,8 @@ function Form(props){
         storeDetails: Yup.string().min(5,'too short') .max(10,'too long').required('storeDetails is required'),
         storeTimings: Yup.array().of(
             Yup.string()
+            .min(15,'Minimum 15 characters for a store Timings')
+            .max(50,'Maximum 50 characters for a store Timings')
             .required('please enter storeTimings'),
         )
         .min(2,'Both two storeTimings are required') .required("Timings are required"),
